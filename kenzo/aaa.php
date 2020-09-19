@@ -1,5 +1,5 @@
 <?php
-echo "karamozi";
+echo "aklsdffffffffffffffffffffffffffffffffffffffffff";
 echo "git楽勝aaa";
 echo "kakaka";
 echo "ebichan";
