@@ -1,0 +1,141 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgb(240, 210, 176);
+}
+
+#top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(104, 83, 73);
+}
+
+#account_nav {
+    display: flex;
+}
+
+#ul_style {
+    display: inherit;
+    list-style: none;
+}
+
+.li_style {
+    padding: 0 1rem 0 1rem;
+}
+
+.a_style {
+    font-size: 1.5rem;
+    color: rgb(226, 226, 226);
+}
+
+.a_style:hover {
+    opacity: 0.5;
+}
+
+/* セクションの設定 */
+#section_account {
+    width: 100%;
+    /* height: 100vh; */
+    background-color: rgb(240, 210, 176);
+}
+
+#section_img {
+    text-align: center;
+    object-fit: cover;
+    padding-top: 10rem;
+    
+}
+
+.section_account_img_style {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+#section_name {
+    text-align: center;
+}
+
+#section_name h2 {
+    margin: 0;
+    padding: 1.5rem;
+    padding-bottom: 10rem;
+}
+.friend_imgs{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+/* 線の設定 */
+.sen {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #010f0e;
+    height: 1px;
+    margin: 0 1.5rem 0 1.5rem;
+    opacity: 0.5;
+}
+
+#friend_style {
+    width: 100%;
+    
+    background-color: rgb(104, 83, 73);
+    
+}
+
+#cursor {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.friend_p_box {
+    display: flex;
+}
+
+.friend_p {
+    font-size: 1rem;
+    color: rgb(226, 226, 226);
+    margin: 1rem;
+}
+
+#friend_id {
+    width: 2.5rem;
+}
+
+/* ボタンのスタイルを消す */
+.button_style {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+
+
+#scroll_info {
+    display: none;
+    font-size: 2rem;
+}
+#upstyle {
+    text-align: center;
+    cursor: pointer;    /* display: none; */
+}
+#upstyle img{
+    width: 3rem;
+}
+
+#friend_id1 {
+    text-align: center;
+}
+.account_img{
+    width: 200px;
+}

@@ -1,0 +1,234 @@
+<?php session_start(); ?>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="css/index.css">
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>新規登録</title>
+</head>
+
+<body>
+
+    <header>
+        <a href='touroku.php'>新規登録</a><br>
+        <a href='login.php'>ログイン</a>
+    </header>
+
+</body>
+
+</html>
+
+<?php
+// 二番目処理ーーーーーーーーーーーーーーーーーーーーーー
+if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
+
+
+    // 配列errorにエラー内容を挿入ーーーーーーーーーーーーー
+
+    if ($_POST["name"] == "") {
+        $error[] = "<p class='error'>名前を入力してください</p>";
+    }
+
+    if ($_POST["pass"] == "") {
+        $error[] = "<p class='error'>パスワードを入力してください</p>";
+    }
+
+    try {
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+        $name = htmlentities($_POST["name"]);
+        $pass = htmlentities($_POST["pass"]);
+
+        $qq = "SELECT COUNT(*) FROM kenzo_account WHERE pass='$pass'";
+        $q = $db->query($qq);
+        $kensyo = $q->fetchColumn();
+
+
+        if ($kensyo > 0) {
+            $error[] = "<p class='error'>そのパスワードはすでに使用されてます</p>";
+        }
+    } catch (PDOException $e) {
+        die("PDO Error:" . $e->getMessage());
+    }
+
+
+
+
+    $errors = count($error);
+
+    // もし配列errorに一つでもエラー内容が入っていたらエラーを表示してまた登録画面へーーー
+    if ($errors > 0) {
+
+        foreach ($error as $value) {
+
+            $evalue = $value . "<br>";
+        }
+        yoyaku($value);
+    } else {
+        $name = htmlentities($_POST["name"]);
+        $pass = htmlentities($_POST["pass"]);
+        $id = htmlentities($_POST["id"]);
+
+        echo <<<KAKUNIN
+        <div class="hhh">
+            <h1 class="en">REGISTAR</h1>
+            <p>新規登録</p>
+        </div>
+        <div class="toroku">
+            <hgroup>
+                <h1>この内容で登録しますか？</h1>
+            </hgroup>
+            <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
+
+                <div class="group">
+                    <input type="text" id="kakunin" name="name" value="$name" readonly>
+                </div>
+
+                <div class="group">
+                    <input type="pass" id="kakunin"  name="pass" value="$pass" readonly>
+                </div>
+
+                <div class="group">
+                    <input type="text" id="kakunin"  name="id" value="$id" readonly>
+                </div>
+                
+
+                <input type="hidden" name="hidden2">
+                <input type="submit" id="submit" value="確定">
+                
+                <button class="back"><a href="$_SERVER[SCRIPT_NAME]">やり直す</a></button>
+            </form>
+        </div>
+KAKUNIN;
+    }
+} else if (isset($_POST["hidden2"])) {
+
+    // 登録完了画面　データベースへデータを入れるーーーーーーーーーーーーーー
+    try {
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $name = htmlentities($_POST["name"]);
+        $pass = htmlentities($_POST["pass"]);
+        $id = htmlentities($_POST["id"]);
+
+        // $imgbase = file_get_contents('img/hito.png');
+        // $imgbase = base64_encode($imgbase);
+        // $img = "data:image/png;base64," . $imgbase;
+
+        // $backbase = file_get_contents('img/back.png');
+        // $backbase = base64_encode($backbase);
+        // $back = "data:image/png;base64," . $backbase;
+        $img = "hito.png";
+        $back = "back.png";
+
+
+        $stmt = $db->prepare(
+            'INSERT INTO kenzo_account(name,pass,id,img,back)' .
+                'VALUES(:name,:pass,:id,:img,:back)'
+        );
+
+
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':pass', $pass);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':img', $img);
+        $stmt->bindParam(':back', $back);
+
+
+        $stmt->execute();
+
+
+
+        $query = "CREATE TABLE " . "tomo_" . $id . "(id VARCHAR(255))";
+        $db->query($query);
+
+        echo <<<TEXT
+                <div class="hhh">
+                    <h1 class="en">REGISTAR</h1>
+                    <p>新規登録</p>
+                </div>
+
+                <div class="tx">
+                    <h2>登録が完了しました</h2>
+                </div>
+
+
+TEXT;
+    } catch (PDOException $e) {
+        die("PDO Error:" . $e->getMessage());
+    }
+} else {
+    yoyaku($evalue);
+}
+
+
+
+
+
+function yoyaku($evalue)
+{
+
+
+    try {
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("PDO Error:" . $e->getMessage());
+    }
+
+
+    echo <<<END
+        <div class="hhh">
+            <h1 class="en">REGISTAR</h1>
+            <p>新規登録</p>
+        </div>
+        <div class="toroku">
+            <div class="evalue">$evalue</div>
+            <hgroup>
+                <h1>新規登録</h1>
+            </hgroup>
+            <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
+                <div class="group">
+                    <input type="text" id="name" name="name" placeholder="お名前" required="required">
+                </div>
+                <div class="group">
+                    <input type="password" id="pass" name="pass" placeholder="パスワード" required="required">
+                </div>
+                <div class="group">
+                    <input type="text" id="id" name="id" placeholder="ID" required="required">
+                </div>
+                </div>
+
+        
+                <input type="hidden" name="hidden">
+                <input type="submit" id="submit" value="登録する">
+            </form>
+        </div>
+       
+
+END;
+}
+
+
+?>

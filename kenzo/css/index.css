@@ -1,0 +1,413 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    background: rgb(240,210,176);
+}
+
+
+/* 予約フォーム------------------------------------------ */
+
+hgroup { 
+    text-align:center;
+    margin: 4em auto 0;
+    width: 90vw;
+
+}
+hgroup h1{
+    font-size: 22px;
+    color: rgb(115, 162, 200);
+}
+hgroup p{
+    font-size: 12px;
+    color: #747474;
+}
+.yoyakuhhh{
+    margin: 0;
+    
+}
+.yoyakumain{
+    position: relative;
+    top:100px;
+}
+.yoyakutx{
+    text-align: center;
+}
+.yoyakutx h2{
+    color: rgb(115, 162, 200);
+    font-size: 22px;
+    margin-top: 60px;
+}
+.yoyakutx p{
+    font-size:14px;
+}
+#form {
+    width: 70vw;
+    max-width: 400px;
+    margin: 4em auto;
+    padding: 3em 2em 2em 2em;
+    /* background: #fafafa; */
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+    z-index: 0;
+    
+}
+
+input{
+    font-size: 16px; 
+    width: 70vw;
+    max-width: 350px;
+    padding: 10px 0;
+    margin-bottom: 40px;
+    -webkit-appearance: none;
+    display: block;
+    color: #636363;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+    /* background: rgb(240,210,176); */
+    background: transparent;
+
+}
+
+input:first-of-type{
+    margin-top: 0;
+}
+
+#form .group{
+    font-size: 18px; 
+    width: 70vw;
+    max-width: 350px;
+    margin: 3px auto 15px;
+    /* padding: 5px; */
+    color: rgba(87, 87, 87, 0.938);
+}
+.content-wrap{
+    margin-top: 60px;
+}
+.back{
+    width: 50vw;
+    max-width: 350px;
+    padding: 10px 0;
+    
+    display: block;
+    
+    margin: 50px auto 10px;
+    border-radius: 30px;
+    border: 1px solid #757575;
+    background: rgba(241, 241, 241, 0.712);
+    
+}
+.back a{
+    color: #636363;
+    font-size: 16px;
+    -webkit-appearance: none;
+    text-decoration: none;
+}
+.back:hover{
+    cursor: pointer;
+    background: rgba(23, 149, 153, 0.288);;
+
+}
+
+
+#submit{
+    margin: 50px auto 10px;
+    border-radius: 30px;
+    border: 1px solid #757575;
+    background: rgba(241, 241, 241, 0.712);
+}
+#submit:hover{
+    cursor: pointer;
+    background: rgba(23, 149, 153, 0.288);
+
+}
+input:focus { outline: none; }
+
+
+.aki{
+    font-size: 12px;
+}
+
+.emaildame,.teldame,.datedame{
+    color: red;
+    margin: 0 0 20px;
+}
+
+
+
+
+
+.evalue{
+    margin-top: 40px;
+    text-align: center;
+}
+.error{
+    font-size:24px;
+    color: red;
+}
+
+
+/* フレンドリスト */
+
+.friends{
+    cursor: pointer;
+}
+
+
+/* トークページ */
+
+.chat_head{
+    background: rgb(104, 83, 73);
+    
+    position: relative;
+    top:0;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+.head{
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.modoru{
+    font-size: 30px;
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+}
+.modoru:hover{
+    opacity: 0.5;
+}
+.aite_name{
+    margin-left: 5vw;
+    color: white;
+}
+.message{
+    width: 95vw;
+    margin: 100px auto;
+    padding-bottom: 50px;
+}
+.zibun{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.aite{
+    display: flex;
+    align-items: center;
+}
+.zibun,.aite{
+    margin: 50px 0;
+}
+.zibun-message{
+    border: 1px solid #777;
+    background: #fff;
+    border: 1px solid #777;
+    padding: 5px 10px;
+    border-radius: 15px;
+    max-width: 500px;
+    background: rgb(123, 230, 123);
+}
+.aite-message{
+    position: relative;
+    border: 1px solid #777;
+    background: #fff;
+    border: 1px solid #777;
+    padding: 5px 10px;
+    border-radius: 15px;
+    max-width: 500px;
+}
+
+.zibun-img{
+    width: 200px;
+    height: auto;
+}
+.aite-img{
+    width: 200px;
+    height: auto;
+}
+
+.zibun-topuga{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+
+}
+.aite-topuga{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+
+}
+.time{
+    font-size: 5px;
+    margin: 5px;
+}
+
+.message_box{
+    background: rgb(104, 83, 73);
+    
+    position: relative;
+    bottom:0;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textarea{
+    height: 40px;
+    width: 50vw;
+    resize: none;
+    font-size: 16px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.message_label{
+    cursor: pointer;
+    position: relative;
+    top : 20%;
+    right: 2%;
+}
+.message_img{
+    width: 55px;
+    height: 55px;
+    background: url("../img/file.png");
+    background-size: cover;
+    background-position: center;
+
+}
+.set_input {
+    display: none;
+}
+
+#send{
+    cursor: pointer;
+}
+
+#send:hover{
+    opacity: 0.5;
+}
+
+
+
+
+
+
+/* 設定ページーーーーーーーーーーーーーーーーーーーーーーーーーー */
+.setting{
+    text-align: center;
+}
+
+#updateform{
+text-align: center;
+
+}
+.input_text{
+    display: inline-block;
+}
+.setting_label{
+    margin-right: 15px;
+    padding-top:25px;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top : 78%;
+    left: 80%;
+}
+label:hover{
+    opacity: 0.5;
+}
+.set_input3 {
+    display: none;
+}
+.set_input4{
+    display: none;
+}
+
+.file_img{
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/camera.png');
+    background-size: cover;
+    background-position: center;
+}
+.file_back{
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/photo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#pv{
+    width: 270px;
+    height: 270px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+
+}
+.pv_img{
+    border-radius: 50%;
+
+}
+.pv_back{
+    border-radius: 50%;
+}
+.img_wrap{
+    position: relative;
+    width: 270px;
+    margin: 0 auto 40px;
+    padding: 20px 0;
+}
+.back_wrap{
+    position: relative;
+    width: 270px;
+    padding: 20px 0;
+    margin: 0 auto 40px;
+}
+
+
+
+
+
+
+@media screen and (min-width:414px){
+    .message{
+        width: 80vw;
+        margin: 100px auto;
+        padding: 0;
+    }
+}
+
+
+
+@media screen and (min-width:768px){
+
+    .setting_label{
+        top : 80%;
+    }
+    #pv{
+        width: 350px;
+        height: 350px;
+    }
+
+    .img_wrap{
+        width: 350px;
+    }
+    .back_wrap{
+        width: 350px;
+    }
+
+}
