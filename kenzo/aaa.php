@@ -1,6 +1,6 @@
 <?php
 echo "karamozi";
-echo "git楽勝";
+echo "git楽勝aaa";
 echo "kakaka";
 echo "ebichan";
 echo "mingdfdfffdffddfdfdfd";
@@ -27,3 +27,7 @@ echo "iii";
 echo "iii";
 echo "iii";
 echo "iii";
+echo "iii";
+echo "iii";
+echo "iiiaaaaa";
+echo "aaaaiii";
