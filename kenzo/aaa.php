@@ -5,3 +5,5 @@ echo "kakaka";
 echo "ebichan";
 echo "ming";
 echo "kkk";
+echo "iii";
+echo "iii";
