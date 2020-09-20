@@ -28,8 +28,8 @@ session_start();
 
 try {
     // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-    // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
-    $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+    $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+    // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
     // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -84,6 +84,7 @@ try {
             </div>
 
             <div id="scroll_info">
+            <div id="scroll_box">
 
 MAIN;
 
@@ -135,6 +136,7 @@ IMG;
             <div id='upstyle'>
                 <img id='friend_id1' class='friend_img' src='img/up1.png'>
             </div>
+        </div>
         </div>
         
     </section>
