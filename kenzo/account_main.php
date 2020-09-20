@@ -80,7 +80,7 @@ try {
                     <p class="friend_p">友達</p>
                     <p class="friend_p">{$kensyo}</p>
                 </div>
-                <img id='friend_id' src='img/up1.png'>
+                <img id='friend_id' class="friend_img" src='img/down1.png'>
             </div>
 
             <div id="scroll_info">
