@@ -115,7 +115,6 @@ $(function () {
                         scrollTop: $(document).height()
                     }, 700);
                 }).fail(function (xhr, textStatus, errorThrown) {
-                    alert("a");
                 });
 
             }
@@ -226,7 +225,7 @@ $(function () {
 
     })
     $("#pass").on("blur", check1);
-    $("#id").on("blur", check2);
+    // $("#id").on("blur", check2);
 
     function check1() {
         var pass1 = $("#pass").val();
