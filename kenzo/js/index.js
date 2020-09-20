@@ -98,11 +98,8 @@ $(function () {
                 alert('2MB以下の画像を添付してください。');
             } else {
 
-                // var reader_ = new FileReader();
-
-                // reader_.onload = function () {
                 var fd = new FormData();
-                // fd.append("mode", "upload_pdf");
+
                 fd.append("file", $('#img').prop('files')[0]);
 
                 $.ajax({
@@ -118,11 +115,9 @@ $(function () {
                         scrollTop: $(document).height()
                     }, 700);
                 }).fail(function (xhr, textStatus, errorThrown) {
-
+                    alert("a");
                 });
 
-                // }
-                // reader_.readAsDataURL(image_);
             }
         } else {
             //ダメだったら値をクリアする

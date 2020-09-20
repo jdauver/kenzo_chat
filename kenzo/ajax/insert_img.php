@@ -8,12 +8,12 @@ try {
     // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
 
-    // is_uploaded_file($_FILES["file"]["name"]);
-    // is_uploaded_file($_FILES["file"]["tmp_name"]);
+    is_uploaded_file($_FILES["file"]["name"]);
+    is_uploaded_file($_FILES["file"]["tmp_name"]);
     $tmp = $_FILES["file"]["tmp_name"];
     $img = $_FILES["file"]["name"];
 
-    move_uploaded_file($tmp, 'talk_img/' . $img);
+    move_uploaded_file($tmp, '../talk_img/' . $img);
 
 
     $date = date("Y-m-d");
@@ -23,7 +23,7 @@ try {
     $params = array(':name' => $_SESSION['name'], ':date' => $date, ':time' => $time, ':id' => $_SESSION['id'], ':id2' => $_SESSION['id2'], ':img' => $_FILES["file"]['name']);
     $stmt->execute($params);
 
-    echo json_encode($_FILES["file"]["name"]);
+    echo json_encode("a");
 } catch (PDOException $e) {
     die("PDO Error:" . $e->getMessage());
 }

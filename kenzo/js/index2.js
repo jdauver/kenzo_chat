@@ -8,13 +8,35 @@ $(function () {
         data: { id: $('.message .talk:last-of-type').attr('id') },
     }).done(function (response) {
         var talk = JSON.parse(response);
-        for ($i = 0; $i < talk.length; $i++) {
-            $(".message").append(talk[0][$i]);
-            if ($(".message .talk:last .time").val())
+        for ($i = 0; $i < talk[0].length; $i++) {
+            if ($(".message .talk").length < 1) {
+                $(".message").append(talk[0][$i]);
+                var class_after = $(".message .talk:last").attr("class");
+                var after_array = class_after.split(" ");
+                var hiduke = after_array[1].split("-");
+                $(".message .talk:last").before("<div class='date'>" + hiduke[0] + "年" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
+
+            } else {
+                $(".message").append(talk[0][$i]);
+                var class_before = $(".message .talk:last").prev().attr("class");
+                var class_after = $(".message .talk:last").attr("class");
+
+                var before_array = class_before.split(" ");
+                var after_array = class_after.split(" ");
+
+                var hiduke_before = before_array[1].split("-");
+                var hiduke = after_array[1].split("-");
+
+                if (hiduke_before[0] < hiduke[0]) {
+                    $(".message .talk:last").before("<div class='date'>" + hiduke[0] + "年" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
+                } else if (before_array[1] < after_array[1]) {
+                    $(".message .talk:last").before("<div class='date'>" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
+                }
+            }
+
         }
         $(".zibun-topuga").css("background-image", "url(upload/" + talk[1] + ")");
         $(".aite-topuga").css("background-image", "url(upload/" + talk[2] + ")");
-        // alert(talk[2]);
     }).fail(function (xhr, textStatus, errorThrown) {
         location.reload();
     });
@@ -47,26 +69,35 @@ $(function () {
     // トーク内容0.1秒ごとに更新するajax
     window.setInterval(function () {
         if ($(".zibun").length || $(".aite").length) {
-            // console.log("a");
             $.ajax({
                 url: "ajax/talk_roop.php",
                 type: "post",
                 dataType: 'text',
                 data: { id: $('.message .talk:last-of-type').attr('id') },
             }).done(function (response2) {
+
                 var talk = JSON.parse(response2);
-                // console.log(talk[2]);
-                // console.log(talk[3]);
                 if (talk[1]) {
                     for ($i = 0; $i < talk[0].length; $i++) {
                         $(".message").append(talk[0][$i]);
+                        var class_before = $(".message .talk:last").prev().attr("class");
+                        var class_after = $(".message .talk:last").attr("class");
+
+                        var before_array = class_before.split(" ");
+                        var after_array = class_after.split(" ");
+
+                        var hiduke_before = before_array[1].split("-");
+                        var hiduke = after_array[1].split("-");
+                        if (hiduke_before[0] < hiduke[0]) {
+                            $(".message .talk:last").before("<div class='date'>" + hiduke[0] + "年" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
+                        } else if (before_array[1] < after_array[1]) {
+                            $(".message .talk:last").before("<div class='date'>" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
+                        }
                     }
                 }
 
                 $(".zibun-topuga").css("background-image", "url(upload/" + talk[2] + ")");
                 $(".aite-topuga").css("background-image", "url(upload/" + talk[3] + ")");
-                // $(".aite-topuga").css("background-image", "url (upload/" + talk[3] + ")");
-
 
             }).fail(function (xhr, textStatus, errorThrown) {
                 location.reload();
@@ -79,9 +110,16 @@ $(function () {
                 data: { id: $('.message .talk:last-of-type').attr('id') },
             }).done(function (response) {
                 var talk = JSON.parse(response);
-                for ($i = 0; $i < talk.length; $i++) {
+                for ($i = 0; $i < talk[0].length; $i++) {
                     $(".message").append(talk[0][$i]);
+                    var class_after = $(".message .talk:last").attr("class");
+                    var after_array = class_after.split(" ");
+                    var hiduke = after_array[1].split("-");
+                    $(".message .talk:last").before("<div class='date'>" + hiduke[0] + "年" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
                 }
+                $(".zibun-topuga").css("background-image", "url(upload/" + talk[2] + ")");
+                $(".aite-topuga").css("background-image", "url(upload/" + talk[3] + ")");
+
             }).fail(function (xhr, textStatus, errorThrown) {
                 location.reload();
             });

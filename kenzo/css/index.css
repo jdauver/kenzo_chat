@@ -199,7 +199,7 @@ input:focus { outline: none; }
     align-items: center;
 }
 .zibun,.aite{
-    margin: 50px 0;
+    margin: 30px 0;
 }
 .zibun-message{
     border: 1px solid #777;
@@ -244,6 +244,12 @@ input:focus { outline: none; }
     background-size: cover;
     background-position: center;
 
+}
+.date{
+    width:80vw;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: solid 2px rgb(104, 83, 73);
 }
 .time{
     font-size: 5px;
@@ -382,7 +388,7 @@ label:hover{
 
 
 
-
+/* スマホ以上 */
 @media screen and (min-width:414px){
     .message{
         width: 80vw;
@@ -392,9 +398,20 @@ label:hover{
 }
 
 
-
+/* ipad以上 */
 @media screen and (min-width:768px){
 
+    /* チャットページ */
+    .zibun,.aite{
+        margin: 50px 0;
+}
+    .date{
+        margin: 60px auto;
+    }
+
+
+
+    /* 設定ページ */
     .setting_label{
         top : 80%;
     }

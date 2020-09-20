@@ -12,15 +12,15 @@ try {
     foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
         if ($message["img"]) {
             if ($message["id"] == $_SESSION["id"]) {
-                $talk[] = "<div id='$message[num]' class='zibun talk'><span class='time'>" . $message['time'] . "</span> <img src='talk_img/$message[img]' class='zibun-img'>　<div class='zibun-topuga'></div></div>";
+                $talk[] = "<div id='$message[num]' class='zibun $message[date] talk'><span class='time'>" . $message['time'] . "</span> <img src='talk_img/$message[img]' class='zibun-img'>　<div class='zibun-topuga'></div></div>";
             } else {
-                $talk[] = "<div id='$message[num]' class='aite talk'><div class='aite-topuga'></div>　<img src='talk_img/$message[img]' class='aite-img'> <span class='time'>" . $message['time'] . "</span></div>";
+                $talk[] = "<div id='$message[num]' class='aite $message[date] talk'><div class='aite-topuga'></div>　<img src='talk_img/$message[img]' class='aite-img'> <span class='time'>" . $message['time'] . "</span></div>";
             }
         } else {
             if ($message["id"] == $_SESSION["id"]) {
-                $talk[] = "<div id='$message[num]' class='zibun talk'><span class='time'>" . $message['time'] . "</span> <span class='zibun-message'>" . $message['talk'] . "</span>　<div class='zibun-topuga'></div></div>";
+                $talk[] = "<div id='$message[num]' class='zibun $message[date] talk'><span class='time'>" . $message['time'] . "</span> <span class='zibun-message'>" . $message['talk'] . "</span>　<div class='zibun-topuga'></div></div>";
             } else {
-                $talk[] = "<div id='$message[num]' class='aite talk'><div class='aite-topuga'></div>　<span class='aite-message'>" . $message['talk'] . "</span> <span class='time'>" . $message['time'] . "</span></div>";
+                $talk[] = "<div id='$message[num]' class='aite $message[date] talk'><div class='aite-topuga'></div>　<span class='aite-message'>" . $message['talk'] . "</span> <span class='time'>" . $message['time'] . "</span></div>";
             }
         }
 
