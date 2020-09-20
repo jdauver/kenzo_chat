@@ -79,6 +79,7 @@ try {
                 <div class="friend_p_box">
                     <p class="friend_p">友達</p>
                     <p class="friend_p">{$kensyo}</p>
+                </div>
                 <img id='friend_id' src='img/up1.png'>
             </div>
 
