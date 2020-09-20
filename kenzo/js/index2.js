@@ -10,6 +10,7 @@ $(function () {
         var talk = JSON.parse(response);
         for ($i = 0; $i < talk.length; $i++) {
             $(".message").append(talk[0][$i]);
+            if ($(".message .talk:last .time").val())
         }
         $(".zibun-topuga").css("background-image", "url(upload/" + talk[1] + ")");
         $(".aite-topuga").css("background-image", "url(upload/" + talk[2] + ")");
