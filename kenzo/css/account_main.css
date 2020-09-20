@@ -49,7 +49,7 @@ body {
     margin: 0 auto;
     background-size: cover;
     border-radius: 50%;
-    margin-top: 2rem;
+    margin-top: 9rem;
 }
 #section_name {
     text-align: center;
@@ -60,9 +60,22 @@ body {
     padding: 1.5rem;
     padding-bottom: 10rem;
 }
+.friends{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    margin: 1rem;
+    border-bottom: 1px solid;
+
+}
+.friends p{
+    font-size: 70px;
+    margin: 0;
+    padding: 2rem;
+}
 .friend_imgs{
-    width: 60px;
-    height: 60px;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     background-size: cover;
 }
@@ -120,6 +133,12 @@ body {
     display: none;
     font-size: 2rem;
 }
+#scroll_box{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
 #upstyle {
     text-align: center;
     cursor: pointer;    /* display: none; */
@@ -134,4 +153,25 @@ body {
 .account_img{
     width: 200px;
     
+}
+@media screen and(min-width 768px){
+    .friends{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    margin: 1rem;
+    border-bottom: 1px solid;
+
+}
+.friends p{
+    font-size: 70px;
+    margin: 0;
+    padding: 2rem;
+}
+.friend_imgs{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-size: cover;
+}
 }
