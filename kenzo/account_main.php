@@ -33,7 +33,7 @@ try {
     // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] WHERE id='$_SESSION[id]'";
+    $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id]";
     $q = $db->query($qq);
     $kensyo = $q->fetchColumn();
 
@@ -79,7 +79,7 @@ try {
                 <div class="friend_p_box">
                     <p class="friend_p">友達</p>
                     <p class="friend_p">{$kensyo}</p>
-                
+                <img id='friend_id' src='img/up1.png'>
             </div>
 
             <div id="scroll_info">
