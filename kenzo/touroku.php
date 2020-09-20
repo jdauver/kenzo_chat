@@ -44,8 +44,8 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
 
     try {
         // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
-        $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
         // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -55,6 +55,15 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
         $pass = htmlentities($_POST["pass"]);
 
         $qq = "SELECT COUNT(*) FROM kenzo_account WHERE pass='$pass'";
+        $q = $db->query($qq);
+        $kensyo = $q->fetchColumn();
+
+
+        if ($kensyo > 0) {
+            $error[] = "<p class='error'>そのパスワードはすでに使用されてます</p>";
+        }
+
+        $qq = "SELECT COUNT(*) FROM kenzo_account WHERE id='$id'";
         $q = $db->query($qq);
         $kensyo = $q->fetchColumn();
 
@@ -121,8 +130,8 @@ KAKUNIN;
     // 登録完了画面　データベースへデータを入れるーーーーーーーーーーーーーー
     try {
         // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
-        $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
         // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -191,8 +200,8 @@ function yoyaku($evalue)
 
     try {
         // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
-        $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
         // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -216,7 +225,8 @@ function yoyaku($evalue)
                     <input type="text" id="name" name="name" placeholder="お名前" required="required">
                 </div>
                 <div class="group">
-                    <input type="password" id="pass" name="pass" placeholder="パスワード" required="required">
+                    <input type="password" id="pass" name="pass" placeholder="パスワード"  required="required">
+                <p style="font-size:10px">※英数字６文字以上20文字未満"</p>
                 </div>
                 <div class="group">
                     <input type="text" id="id" name="id" placeholder="ID" required="required">
