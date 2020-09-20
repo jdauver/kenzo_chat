@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
 </body>
 
 
@@ -43,6 +44,7 @@ try {
         $img = $zibunval["img"];
         $back = $zibunval["back"];
     }
+    // echo $_SESSION["file_img"];
     echo <<< MAIN
 
  
@@ -61,12 +63,12 @@ try {
 
 
     <section id="section_account">
-
         <div id="section_img" class="section_account_img_style">
             
         </div>
         <div id="section_name">
             <h2>{$_SESSION['name']}</h2>
+        </div>
         </div>
 
     </section>
@@ -77,13 +79,23 @@ try {
                 <div class="friend_p_box">
                     <p class="friend_p">友達</p>
                     <p class="friend_p">{$kensyo}</p>
-                </div>
-                <img id="friend_id" class="friend_img" src="img/down1.png">
+                
             </div>
 
             <div id="scroll_info">
 
 MAIN;
+
+    echo <<<IMG
+<script type="text/javascript">
+$(function(){
+    
+    $(".section_account_img_style").css("background-image","url(upload/$_SESSION[img])");
+    
+});
+
+</script>
+IMG;
 
     $friend = $db->query("SELECT * FROM tomo_$_SESSION[id]");
     $i = 0;
@@ -105,6 +117,7 @@ MAIN;
 FRIEND;
         }
         $i++;
+        /* 友達の画像を背景に出しているソース */
         echo <<<IMG
             <script type="text/javascript">
                 $(function(){
