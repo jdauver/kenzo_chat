@@ -225,8 +225,23 @@ $(function () {
         window.location.href = 'chat.php';
 
     })
+    $("#pass").on("blur", check1);
+    $("#id").on("blur", check2);
 
+    function check1() {
+        var pass1 = $("#pass").val();
 
+        if (!pass1.match(/@/)) {
+            $("#pass").attr("placeholder", "@を入れてください");
+            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
+        } else if (pass1.match([/\w/])) {
+            $("#pass").attr("placeholder", "英数字以外は記入できません。");
+            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
+        } else if (pass1 == "") {
+            $("#pass").attr("placeholder", "６〜２０文字以内、英数字のみでご記入ください");
+            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
+        };
+    };
 
 
 });
