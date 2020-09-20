@@ -65,16 +65,17 @@ body {
     display: flex;
     justify-content: space-around;
     cursor: pointer;
-    margin: 1rem;
+    margin: 40px 0;
     border-bottom: 1px solid;
+    padding-bottom: 20px;
 }
 .friends p{
     font-size: 30px;
-    margin: 0;
-    padding: 2rem;
+    /* margin: 0; */
+    /* padding: 2rem; */
 }
 .friend_imgs{
-        width: 100px;
+    width: 100px;
     height: 100px;
     border-radius: 50%;
     background-size: cover;
@@ -134,10 +135,10 @@ body {
     font-size: 2rem;
 }
 #scroll_box{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
+    width: 85vw;
+    margin: 0 auto;
+    /* justify-content: space-around;
+    flex-wrap: wrap; */
 }
 #upstyle {
     text-align: center;
@@ -156,7 +157,6 @@ body {
 }
 @media screen and(min-width:768px){
     .friends{
-    display: flex;
     justify-content: space-around;
     cursor: pointer;
     margin: 1rem;
