@@ -45,13 +45,13 @@ $(function () {
 
     // チャットページ開いたときに一番下へーーーーー
 
-    setTimeout(function () {
-        if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
-            $('html, body').animate({
-                scrollTop: $('.message .talk:last-of-type').offset().top
-            }, 700);
-        }
-    }, 2000);
+    // setTimeout(function () {
+    //     if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
+    //         $('html, body').animate({
+    //             scrollTop: $('.message .talk:last-of-type').offset().top
+    //         }, 700);
+    //     }
+    // }, 2000);
 
 
 
