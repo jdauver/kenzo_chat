@@ -207,14 +207,34 @@ input:focus { outline: none; }
     height: 60px;
 }
 .modoru{
-    font-size: 30px;
+    font-size: 35px;
     color: white;
-    margin-left: 10px;
+    margin-left: 15px;
     text-decoration: none;
 }
 .modoru:hover{
     opacity: 0.5;
 }
+
+
+#sitabtn {
+    background: url(../img/sita.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 15px;
+    /* top: 10px; */
+    cursor: pointer;
+    /* opacity: 0.5; */
+    z-index: 1;
+}
+
+#sitabtn:hover{
+    opacity: 0.5;
+}
+
 .aite_name{
     margin-left: 5vw;
     color: white;
@@ -242,8 +262,9 @@ input:focus { outline: none; }
     border: 1px solid #777;
     padding: 5px 10px;
     border-radius: 15px;
-    max-width: 500px;
+    max-width: 150px;
     background: rgb(123, 230, 123);
+    word-wrap: break-word;
 }
 .aite-message{
     position: relative;
@@ -252,16 +273,20 @@ input:focus { outline: none; }
     border: 1px solid #777;
     padding: 5px 10px;
     border-radius: 15px;
-    max-width: 500px;
+    max-width: 150px;
+    word-wrap: break-word;
 }
 
 .zibun-img{
-    width: 200px;
+    width: 170px;
     height: auto;
+    border-radius: 10px;
 }
 .aite-img{
-    width: 200px;
+    width: 170px;
     height: auto;
+    border-radius: 10px;
+
 }
 
 .zibun-topuga{
@@ -287,8 +312,8 @@ input:focus { outline: none; }
     border-bottom: solid 2px rgb(104, 83, 73);
 }
 .time{
-    font-size: 5px;
-    margin: 5px;
+    font-size: 14px;
+    margin: 0 10px;
 }
 
 .message_box{
@@ -349,7 +374,9 @@ input:focus { outline: none; }
 .setting{
     text-align: center;
 }
-
+.setting_form{
+    margin-bottom: 100px;
+}
 #updateform{
 text-align: center;
 
@@ -430,6 +457,7 @@ label:hover{
         margin: 100px auto;
         padding: 0;
     }
+
 }
 
 
@@ -439,12 +467,33 @@ label:hover{
     /* チャットページ */
     .zibun,.aite{
         margin: 50px 0;
-}
+    }
     .date{
         margin: 60px auto;
     }
 
-
+    .zibun-message{
+        max-width: 450px;
+        font-size: 20px;
+    }
+    .aite-message{
+        max-width: 450px;
+        font-size: 20px;
+    }
+    .zibun-topuga{
+        width: 80px;
+        height: 80px;
+    }
+    .aite-topuga{
+        width: 80px;
+        height: 80px;
+    }
+    .zibun-img{
+        width: 250px;
+    }
+    .aite-img{
+        width: 250px;
+    }
 
     /* 設定ページ */
     .setting_label{

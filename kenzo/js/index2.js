@@ -55,17 +55,6 @@ $(function () {
 
 
 
-    // 送信押したとき一番下へーーーーーー
-    $("#send").on("click", function () {
-        if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
-            $('html, body').animate({
-                scrollTop: $(document).height()
-            }, 700);
-        }
-    });
-
-
-
     // トーク内容0.1秒ごとに更新するajax
     window.setInterval(function () {
         if ($(".zibun").length || $(".aite").length) {
@@ -93,6 +82,17 @@ $(function () {
                         } else if (before_array[1] < after_array[1]) {
                             $(".message .talk:last").before("<div class='date'>" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
                         }
+
+                        if (after_array[0] == "aite") {
+                            if ($('.message .talk:last-of-type').prev().offset().top > $('.message_box').offset().top + 150) {
+                                alert("新着コメントがあります");
+                            } else {
+                                $('html, body').animate({
+                                    scrollTop: $('.message .talk:last-of-type').offset().top
+                                }, 700);
+                            }
+                        }
+
                     }
                 }
 

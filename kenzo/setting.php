@@ -23,8 +23,8 @@ session_start();
         try {
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
-            $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-            // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+            // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+            $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -47,7 +47,6 @@ session_start();
             }
 
             if ($_FILES['img']['size'] > 0) {
-                // $array[2] = $_SESSION["file_img"];
                 $array[2] = $_FILES['img']['name'];
             } else {
                 $r = $db->query("SELECT * FROM kenzo_account WHERE id='$s_id'");
@@ -115,7 +114,7 @@ session_start();
                 
                 <h1>$_SESSION[name]の確認画面</h1>
 
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form class=setting_form action="" method="POST" enctype="multipart/form-data">
                     <input type="text" value="$names" name="name" id="name" readonly>
                     <input type="text" value="$pass" name="pass" id="pass" readonly>
                     <input type="image" src="upload/$img" name="img" id="img" readonly>
@@ -136,8 +135,8 @@ w;
         try {
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
-            $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-            // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+            // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+            $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -181,8 +180,8 @@ js;
         try {
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
-            $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-            // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+            // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+            $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $zibun = $db->query("SELECT * FROM kenzo_account WHERE id='$_SESSION[id]'");
@@ -208,7 +207,7 @@ js;
             <p>$_SESSION[name]さん</p>
         </div>
 
-        <form action="" id=updateform method="POST" enctype="multipart/form-data">
+        <form class=setting_form action="" id=updateform method="POST" enctype="multipart/form-data">
             <input class='input_text' type="text" name="name" placeholder="ニックネーム" class="set_input"><br>
             <input class='input_text' type="text" name="pass" placeholder="パスワード" class="set_input2"><br>
             <div class='img_wrap'>

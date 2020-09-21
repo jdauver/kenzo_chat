@@ -7,6 +7,8 @@ echo <<<HEAD
             
 
             <h2 class="aite_name"> $_SESSION[id2]</h2>
+
+            <div id="sitabtn"></div>
         </div><!-- head -->
     </header>
     

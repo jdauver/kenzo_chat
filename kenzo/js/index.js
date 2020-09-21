@@ -63,6 +63,14 @@ $(function () {
     });
 
 
+    $("#sitabtn").on("click", function () {
+        $('html, body').animate({
+            scrollTop: $(document).height()
+        }, 700);
+    });
+
+
+
     // トーク内容送信時処理
     $('#send').click(function () {
         $.ajax({
@@ -76,6 +84,15 @@ $(function () {
         }).fail(function (xhr, textStatus, errorThrown) {
             location.reload();
         });
+    });
+
+    // 送信押したとき一番下へーーーーーー
+    $("#send").on("click", function () {
+        if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
+            $('html, body').animate({
+                scrollTop: $(document).height()
+            }, 700);
+        }
     });
 
 
