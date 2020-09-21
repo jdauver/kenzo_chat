@@ -7,7 +7,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
+    <link rel="stylesheet" href="css/setting.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -100,33 +102,67 @@ session_start();
         $back_tmp =  $_FILES['imgback']['tmp_name'];
 
         echo <<<w
-                <header id="account_header">
-                    <nav id="account_nav">
-                        <ul>
-                            <li><a href="account_main.php">HOME</a></li>
-                            <li><a href="friend_search.php">友達追加</a></li>
-                            <li><a href="setting.php">設定</a></li>
-                            <li><a href="login.php">ログアウト</a></li>
-                            <li><a href="chat.php">talk</a></li>
-                        </ul>
-                    </nav>
-                </header>
-                
-                <h1>$_SESSION[name]の確認画面</h1>
+        <header id="top">
+            <nav id="account_nav">
+                <ul id="ul_style">
+                    <li class="li_style"><a href="account_main.php" class="a_style"><i class="fa fa-home" id="img1"></i></a>
+                    </li>
+                    <li class="li_style"><a href="friend_search.php" class="a_style"><i class="fa fa-user-plus" id="img2"></i></a></li>
+                    <li class="li_style"><a href="setting.php" class="a_style"><i class="fa fa-cog" id="img3"></i></a></li>
+                    <li class="li_style"><a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-                <form class=setting_form action="" method="POST" enctype="multipart/form-data">
-                    <input type="text" value="$names" name="name" id="name" readonly>
-                    <input type="text" value="$pass" name="pass" id="pass" readonly>
-                    <input type="image" src="upload/$img" name="img" id="img" readonly>
-                    <input type="image" src="uploadback/$back" name="back" id="back" readonly>
-                    <input type="hidden" value="$img_tmp" name="tmp" readonly>
-                    <input type="hidden" value="$back_tmp" name="backtmp" readonly>
-                    <input type="hidden" value="$img" name="imgsrc" readonly>
-                    <input type="hidden" value="$back" name="backsrc" readonly>
-                    <input type="submit" value="OK" name="ok" id="ok">
-                    <input type="submit" value="NG">
-                </form>
+        <div class="setting">
+            <h2>$_SESSION[name]さんの確認画面</h2>
+        </div>
+
+        <form class=setting_form action="" method="POST" enctype="multipart/form-data">
+            <div class="group">
+                <input class='input_text name' type="text" value="$names" name="name" id="name" readonly>
+            </div>
+            <div class="group">
+                <input class='input_text pass' type="text" value="$pass" name="pass" id="pass" readonly>
+            </div>
+
+            <div class='img_wrap'>
+                <div id='pv' class='pv_img'></div>
+            </div>
+            <div class='back_wrap'>
+                <div id='pv' class='pv_back'></div>
+            </div>
+
+            <input type="hidden" value="$img_tmp" name="tmp" readonly>
+            <input type="hidden" value="$back_tmp" name="backtmp" readonly>
+            <input type="hidden" value="$img" name="imgsrc" readonly>
+            <input type="hidden" value="$back" name="backsrc" readonly>
+
+            <div class="button">
+                <input type="submit" name="ok" id="ok" value="確定"><br>
+                <button type="button" name="ng" id="ng"><a href="setting.php">やり直す</a></button>
+            </div> 
             
+        </form>
+
+        <script type="text/javascript">
+            $(function(){
+                
+                $(".pv_img").css("background-image","url(upload/$img)");
+                $(".pv_back").css("background-image","url(uploadback/$back)");
+
+                if ($(".pv_back").css("background-image").match(/uploadback\/back\.png/)) {
+                    $(".pv_back").css("border", "solid 1px black");
+
+                } else {
+                    $(".pv_back").css("border", "none");
+
+                }
+             });
+
+            </script>
+
 w;
         // }
     } elseif ($_POST['ok']) {
@@ -191,25 +227,34 @@ js;
                 $back = $zibunval["back"];
             }
             echo <<< MOD
-        <header id="account_header">
+        <header id="top">
             <nav id="account_nav">
-                <ul>
-                    <li><a href="account_main.php">HOME</a></li>
-                    <li><a href="friend_search.php">友達追加</a></li>
-                    <li><a href="setting.php">設定</a></li>
-                    <li><a href="login.php">ログアウト</a></li>
-                    <li><a href="chat.php">talk</a></li>
+                <ul id="ul_style">
+                    <li class="li_style"><a href="account_main.php" class="a_style"><i class="fa fa-home" id="img1"></i></a>
+                    </li>
+                    <li class="li_style"><a href="friend_search.php" class="a_style"><i class="fa fa-user-plus" id="img2"></i></a></li>
+                    <li class="li_style"><a href="setting.php" class="a_style"><i class="fa fa-cog" id="img3"></i></a></li>
+                    <li class="li_style"><a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+                    </li>
                 </ul>
             </nav>
         </header>
         <div class="setting">
-            <h2>設定</h2>
-            <p>$_SESSION[name]さん</p>
+            <h2>アカウント設定</h2>
+            <p>アカウント情報を変更できます</p>
         </div>
 
         <form class=setting_form action="" id=updateform method="POST" enctype="multipart/form-data">
-            <input class='input_text' type="text" name="name" placeholder="ニックネーム" class="set_input"><br>
-            <input class='input_text' type="text" name="pass" placeholder="パスワード" class="set_input2"><br>
+
+            <div class="group">
+                <input class='input_text name' type="text" name="name" placeholder="ニックネーム" class="set_input">
+            </div>
+
+            <div class="group">
+                 <input class='input_text pass' type="text" name="pass" placeholder="パスワード" class="set_input2">
+                 <p>※英数字６文字以上20文字未満</p>
+            </div>
+
             <div class='img_wrap'>
                 <div id='pv' class='pv_img'></div>
                 <label class="setting_label">
@@ -227,8 +272,10 @@ js;
                     </div> 
                 </label>
             </div>
-            <button type="submit" name="update_submit" id="update_submit">OK</button>
-            <button type="submit" name="ng">NG</button>
+            <div class="button">
+                <button type="submit" name="update_submit" id="update_submit">変更</button><br>
+                <button type="reset">やり直す</button>
+            </div>
         </form>
 MOD;
 

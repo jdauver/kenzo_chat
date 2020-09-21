@@ -226,7 +226,7 @@ function yoyaku($evalue)
                 </div>
                 <div class="group">
                     <input type="password" id="pass" name="pass" placeholder="パスワード"  required="required">
-                <p style="font-size:10px">※英数字６文字以上20文字未満"</p>
+                <p style="font-size:10px">※英数字６文字以上20文字未満</p>
                 </div>
                 <div class="group">
                     <input type="text" id="id" name="id" placeholder="ID" required="required">

@@ -46,7 +46,6 @@ hgroup p{
     max-width: 400px;
     margin: 4em auto;
     padding: 3em 2em 2em 2em;
-    /* background: #fafafa; */
     border: 1px solid #ebebeb;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
     z-index: 0;
@@ -141,8 +140,8 @@ input:first-of-type{
 }
 .back:hover{
     cursor: pointer;
-    background: rgba(23, 149, 153, 0.288);;
-
+    background: rgba(23, 149, 153, 0.288);
+    transition: all 0.5s;
 }
 
 
@@ -155,7 +154,7 @@ input:first-of-type{
 #submit:hover{
     cursor: pointer;
     background: rgba(23, 149, 153, 0.288);
-
+    transition: all 0.5s;
 }
 input:focus { outline: none; }
 
@@ -214,6 +213,7 @@ input:focus { outline: none; }
 }
 .modoru:hover{
     opacity: 0.5;
+    transition: all 0.5s;
 }
 
 
@@ -233,6 +233,7 @@ input:focus { outline: none; }
 
 #sitabtn:hover{
     opacity: 0.5;
+    transition: all 0.5s;
 }
 
 .aite_name{
@@ -363,88 +364,10 @@ input:focus { outline: none; }
 
 #send:hover{
     opacity: 0.5;
+    transition: all 0.5s;
 }
 
 
-
-
-
-
-/* 設定ページーーーーーーーーーーーーーーーーーーーーーーーーーー */
-.setting{
-    text-align: center;
-}
-.setting_form{
-    margin-bottom: 100px;
-}
-#updateform{
-text-align: center;
-
-}
-.input_text{
-    display: inline-block;
-}
-.setting_label{
-    margin-right: 15px;
-    padding-top:25px;
-    display: inline-block;
-    cursor: pointer;
-    position: absolute;
-    top : 78%;
-    left: 80%;
-}
-label:hover{
-    opacity: 0.5;
-}
-.set_input3 {
-    display: none;
-}
-.set_input4{
-    display: none;
-}
-
-.file_img{
-    width: 60px;
-    height: 60px;
-    background-image: url('../img/camera.png');
-    background-size: cover;
-    background-position: center;
-}
-.file_back{
-    width: 60px;
-    height: 60px;
-    background-image: url('../img/photo.png');
-    background-size: cover;
-    background-position: center;
-}
-
-#pv{
-    width: 270px;
-    height: 270px;
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto;
-
-}
-.pv_img{
-    border-radius: 50%;
-
-}
-.pv_back{
-    border-radius: 50%;
-}
-.img_wrap{
-    position: relative;
-    width: 270px;
-    margin: 0 auto 40px;
-    padding: 20px 0;
-}
-.back_wrap{
-    position: relative;
-    width: 270px;
-    padding: 20px 0;
-    margin: 0 auto 40px;
-}
 
 
 

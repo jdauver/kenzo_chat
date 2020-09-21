@@ -1,0 +1,215 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    background: rgb(240,210,176);
+}
+
+
+/* ヘッダー */
+#top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(104, 83, 73);
+}
+
+#account_nav {
+    display: flex;
+}
+
+#ul_style {
+    display: inherit;
+    list-style: none;
+}
+
+.li_style {
+    padding: 0 1rem 0 1rem;
+}
+
+.a_style {
+    font-size: 1.5rem;
+    color: rgb(226, 226, 226);
+}
+
+.a_style:hover {
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.setting{
+    color: #636363;
+    margin-top: 50px;
+    text-align: center;
+}
+.setting_form{
+    width: 70vw;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 3em 2em 2em 2em;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+    z-index: 0;
+}
+.group{
+    width:70vw;
+    max-width: 350px;
+    margin: 0 auto;
+}
+.input_text{
+    font-size: 16px; 
+    width: 70vw;
+    max-width: 350px;
+    padding: 10px 0;
+    margin: 0 auto 40px;
+    -webkit-appearance: none;
+    display: block;
+    color: #636363;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+    background: transparent;
+}
+.pass{
+    margin-bottom: 0;
+}
+.group p{
+    font-size: 10px;
+    color: #636363;
+    margin: 0;
+}
+.input_text{
+    display: inline-block;
+}
+
+.setting_label{
+    margin-right: 15px;
+    padding-top:25px;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top : 78%;
+    left: 80%;
+}
+label:hover{
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+.set_input3 {
+    display: none;
+}
+.set_input4{
+    display: none;
+}
+
+.file_img{
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/camera.png');
+    background-size: cover;
+    background-position: center;
+}
+.file_back{
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/photo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#pv{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+
+}
+.pv_img{
+    border-radius: 50%;
+
+}
+.pv_back{
+    border-radius: 50%;
+}
+.img_wrap{
+    position: relative;
+    width: 200px;
+    margin: 50px auto 40px;
+    padding: 20px 0;
+}
+.back_wrap{
+    position: relative;
+    width: 200px;
+    padding: 20px 0;
+    margin: 0 auto 40px;
+}
+.button{
+    width:70vw;
+    max-width: 150px;
+    margin: 70px auto 0;
+}
+button{
+    width: 70vw;
+    max-width: 150px;
+    font-size: 16px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    color: white;
+    border: solid 1px black;
+    border-radius: 15px;
+    background: rgb(104, 83, 73);
+    cursor: pointer;
+}
+button:hover{
+    opacity: 0.7;
+    transition: all 0.5s;
+}
+
+#name,#pass{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(104, 83, 73);;
+}
+
+#ok{
+    width: 70vw;
+    max-width: 150px;
+    font-size: 16px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    color: white;
+    border: solid 1px black;
+    border-radius: 15px;
+    background: rgb(104, 83, 73);
+    cursor: pointer;
+}
+#ng a{
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (min-width:768px){
+    .group p{
+        font-size: 14px;
+    }
+    .setting_label{
+        top : 80%;
+    }
+    #pv{
+        width: 350px;
+        height: 350px;
+    }
+
+    .img_wrap{
+        width: 350px;
+    }
+    .back_wrap{
+        width: 350px;
+    }
+
+    #name,#pass{
+        font-size: 22px;
+    }
+}
