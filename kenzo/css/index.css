@@ -93,7 +93,7 @@ hgroup p{
     width: 70vw;
     max-width: 350px;
     padding: 10px 0;
-    margin-bottom: 40px;
+    margin: 0;
     -webkit-appearance: none;
     display: block;
     color: #636363;

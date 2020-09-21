@@ -44,9 +44,9 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
 
     try {
         // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -130,9 +130,9 @@ KAKUNIN;
     // 登録完了画面　データベースへデータを入れるーーーーーーーーーーーーーー
     try {
         // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -200,9 +200,9 @@ function yoyaku($evalue)
 
     try {
         // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
@@ -226,10 +226,11 @@ function yoyaku($evalue)
                 </div>
                 <div class="group">
                     <input type="password" id="pass" name="pass" placeholder="パスワード"  required="required">
-                <p style="font-size:10px">※英数字６文字以上20文字未満</p>
+                <p>※英数字６文字以上20文字未満</p>
                 </div>
                 <div class="group">
                     <input type="text" id="id" name="id" placeholder="ID" required="required">
+                <p>※英数字６文字以上20文字未満</p>
                 </div>
                 </div>
 
