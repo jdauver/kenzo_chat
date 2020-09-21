@@ -27,7 +27,6 @@ session_start();
 
 </html>
 <?php
-session_start();
 
 try {
     // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
