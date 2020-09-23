@@ -93,14 +93,16 @@ if (isset($_POST["submit"])) {
                 echo <<<FTOUROKU
             <img src='upload/$friend_img' class='friendimg'>
             <p class='friendname'>$friend_name</p>
-            
+
            <form action="friend_search.php" method="post">
            <input type='hidden' name='id' value='$_POST[id]'>
            <input type='hidden' name='name' value='$friend_name'>
            <input type='hidden' name='img' value='$friend_img'>
 
+
            <input type='submit' name='ok' class='friendinput' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
+           
            <input type='submit' name='ng' class='friendinput' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
 FTOUROKU;
