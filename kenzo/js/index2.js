@@ -1,6 +1,6 @@
 $(function () {
 
-    // 今までのチャット表示ーーーーーー
+    // 今までのチャット表示ーーーーーー---
     $.ajax({
         url: "ajax/talk_hyouzi.php",
         type: "post",

@@ -1,5 +1,5 @@
 <?php
-// 0.1秒ごとにトーク内容を抽出するajax 　　index2.jsから送られてくる
+// 0.1秒ごとにトーク内容を抽出するajax 　　index2.jsから送られてくる-
 session_start();
 
 try {

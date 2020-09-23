@@ -381,7 +381,7 @@ input:focus { outline: none; }
 
 
 
-/* スマホ以上 */
+/* スマホ以上-------------------------- */
 @media screen and (min-width:414px){
     .message{
         width: 80vw;
@@ -392,7 +392,7 @@ input:focus { outline: none; }
 }
 
 
-/* ipad以上 */
+/* ipad以上--------------------------- */
 @media screen and (min-width:768px){
 
     /* チャットページ */

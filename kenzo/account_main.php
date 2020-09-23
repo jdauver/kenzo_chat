@@ -119,7 +119,7 @@ IMG;
 FRIEND;
         }
         $i++;
-        /* 友達の画像を背景に出しているソース */
+        /* 友達の画像を背景に出しているソース------------ */
         echo <<<IMG
             <script type="text/javascript">
                 $(function(){

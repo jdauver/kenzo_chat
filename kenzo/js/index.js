@@ -237,7 +237,7 @@ $(function () {
 
 
 
-    // 友達になってトーク押したときチャットに飛ぶ
+    // 友達になってトーク押したときチャットに飛ぶ------
     $("#talkjump").click(function () {
         window.location.href = 'chat.php';
 

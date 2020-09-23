@@ -1,6 +1,6 @@
 <?php
 session_start();
-// ログイン切れてたらログインページに-----
+// ログイン切れてたらログインページに---------
 if (!isset($_SESSION['name'])) {
     echo <<<kireta
     <script>

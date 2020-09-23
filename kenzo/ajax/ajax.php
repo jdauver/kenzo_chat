@@ -1,5 +1,5 @@
 <?php
-// 友達押したとき、その人のIDをセッションに入れる　　　　index.jsから送られてくる
+// 友達押したとき、その人のIDをセッションに入れる　　　　index.jsから送られてくる-
 session_start();
 try {
     $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');

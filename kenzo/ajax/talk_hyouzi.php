@@ -1,5 +1,6 @@
 <?php
 session_start();
+// チャットページ開いたとき今までの履歴出す
 try {
     $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
     // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
