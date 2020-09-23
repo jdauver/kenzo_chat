@@ -1,10 +1,10 @@
 <?php
 session_start();
 try {
-    // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+    $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
     // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
     // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-    $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+    // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
     $sql = "SELECT * FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]') OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]') ORDER BY date,time";
     $stmt = $db->prepare($sql);
     $stmt->execute();
