@@ -49,6 +49,7 @@ hgroup p{
     border: 1px solid #ebebeb;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
     z-index: 0;
+    text-align: center;
     
 }
 
@@ -143,14 +144,16 @@ input:first-of-type{
     background: rgba(23, 149, 153, 0.288);
     transition: all 0.5s;
 }
-
-
 #submit{
+    width: 200px;
     margin: 50px auto 10px;
     border-radius: 30px;
     border: 1px solid #757575;
-    background: rgba(241, 241, 241, 0.712);
+    padding: 10px;
+    background: rgb(104, 83, 73);
+    color: #fff;
 }
+
 #submit:hover{
     cursor: pointer;
     background: rgba(23, 149, 153, 0.288);
