@@ -99,11 +99,9 @@ if (isset($_POST["submit"])) {
            <input type='hidden' name='name' value='$friend_name'>
            <input type='hidden' name='img' value='$friend_img'>
 
+           <input type='submit' name='ok' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
-           <input type='submit' name='ok' class='friendinput' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
-
-           
-           <input type='submit' name='ng' class='friendinput' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
+           <input type='submit' name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
 FTOUROKU;
             }
