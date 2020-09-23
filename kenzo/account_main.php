@@ -45,7 +45,6 @@ try {
         $img = $zibunval["img"];
         $back = $zibunval["back"];
     }
-    // echo $_SESSION["file_img"];
     echo <<< MAIN
 
  

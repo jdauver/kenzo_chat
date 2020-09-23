@@ -1,15 +1,7 @@
 <?php
 // 0.1秒ごとにトーク内容を抽出するajax 　　index2.jsから送られてくる
 session_start();
-if (!isset($_SESSION['LOGIN_INFO'])) {
-    // ここにログイン処理を書く（ログイン画面に遷移させる）
-    echo <<<kireta
-    <script>
-        window.location.href = 'login.php';
-    </script>
-kireta;
-    // セッションが存在している場合はセッションのライフタイムを更新
-}
+
 try {
     $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
     // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
