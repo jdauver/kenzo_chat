@@ -249,7 +249,7 @@ $(function () {
         var pass1 = $("#pass").val();
 
         if (pass1.match(/\w/[6, 20])) {
-            $("#pass").attr("alert", "英数字以外は記入できません。");
+            alert ("英数字以外は記入できません");
             $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
         } else if (pass1.match(/\W/[6, 20])) {
             $("#pass").attr("placeholder", "英数字以外は記入できません。");

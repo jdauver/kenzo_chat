@@ -43,8 +43,8 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
     }
 
     try {
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
         // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
@@ -129,8 +129,8 @@ KAKUNIN;
 
     // 登録完了画面　データベースへデータを入れるーーーーーーーーーーーーーー
     try {
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
         // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
@@ -140,13 +140,7 @@ KAKUNIN;
         $pass = htmlentities($_POST["pass"]);
         $id = htmlentities($_POST["id"]);
 
-        // $imgbase = file_get_contents('img/hito.png');
-        // $imgbase = base64_encode($imgbase);
-        // $img = "data:image/png;base64," . $imgbase;
-
-        // $backbase = file_get_contents('img/back.png');
-        // $backbase = base64_encode($backbase);
-        // $back = "data:image/png;base64," . $backbase;
+      
         $img = "hito.png";
         $back = "back.png";
 
@@ -199,8 +193,8 @@ function yoyaku($evalue)
 
 
     try {
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
+        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
         // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 

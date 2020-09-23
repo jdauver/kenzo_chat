@@ -23,10 +23,10 @@ session_start();
         $s_id = $_SESSION['id'];
 
         try {
-            // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+            $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
             // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-            $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+            // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -169,10 +169,10 @@ w;
 
 
         try {
-            // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+            $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
             // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-            $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+            // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -214,10 +214,10 @@ js;
         unset($_SESSION["file_back"]);
         //ホーム画面の設定
         try {
-            // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+            $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
             // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-            $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+            // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $zibun = $db->query("SELECT * FROM kenzo_account WHERE id='$_SESSION[id]'");
