@@ -35,12 +35,29 @@ session_start();
             </ul>
         </nav>
     </header>
-    <section>
+
+    <!-- <section>
         <form action="friend_search.php" method="POST">
             <input type="text" placeholder="ID検索" name="id" required>
             <input type="submit" value="OK" name="submit">
         </form>
+    </section> -->
+
+    <section>
+        <form action="friend_search.php" method="POST" class="form_style" id="form_style">
+            <!-- <input type="hidden" name="hidden"> -->
+            <div id="search-wrap">
+                <input type="search" placeholder="ID検索" name="id" required>
+                <div id="fri-search" class="search"></div>
+                <br>
+            </div>
+
+            <input type="button" value="探す" class="btn btn--red btn--radius btn--cubic" id="sagasu"><i class="fas fa-position-right"></i>
+
+        </form>
     </section>
+
+
 </body>
 
 </html>
@@ -80,14 +97,14 @@ if (isset($_POST["submit"])) {
            <input type='hidden' name='id' value='$_POST[id]'>
            <input type='hidden' name='name' value='$friend_name'>
            <input type='hidden' name='img' value='$friend_img'>
-           <input type='submit' name='ok' class='friendinput' value='登録'>
-           <input type='submit' name='ng' class='friendinput' value='やめる'><br>
+           <input type='submit' name='ok' class='friendinput' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+           <input type='submit' name='ng' class='friendinput' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
 FTOUROKU;
             }
 
             if ($row == 0) {
-                echo "該当なし";
+                echo "<p class='messege'>該当なし</p>";
             }
         }
     } catch (PDOException $e) {
@@ -120,9 +137,12 @@ FTOUROKU;
         echo <<<FTOUROKU
             <img src='upload/$_POST[img]' class='friendimg'>
             <p class='friendname'>$_POST[name]</p>
-           <input type='submit' id='talkjump' class='friendinput' value='トーク'>
-           <input type='submit' class='friendinput' value='もどる'><br>
+           <input type='submit' id='talkjump' class='friendinput' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+           <input type='submit' class='friendinput' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
 FTOUROKU;
+        if ($_SESSION["id2"] != $_POST['id']) {
+            echo "<p class='messege'>すでに友達になっています</p>";
+        }
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());
     }
