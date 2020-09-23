@@ -242,6 +242,8 @@ $(function () {
         window.location.href = 'chat.php';
 
     })
+
+    /* ログインと登録の正規表現 */
     $("#pass").on("blur", check1);
     $("#id").on("blur", check2);
     $("#submit").on("click", check3);
