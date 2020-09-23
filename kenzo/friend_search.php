@@ -1,33 +1,61 @@
 <?php
 session_start();
 ?>
+<!-- みんなでまとめてるやつ -->
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/etcetera.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+
     <title>友達検索ページ</title>
 </head>
 
 <body>
-    <header id="account_header">
+    <header id="top">
         <nav id="account_nav">
-            <ul><a href="account_main.php">HOME</a></ul>
-            <ul><a href="friend_search.php">友達追加</a></ul>
-            <ul><a href="setting.php">設定</a></ul>
+            <ul id="ul_style">
+                <li class="li_style"><a href="account_main.php" class="a_style"><i class="fa fa-home" id="img1"></i></a>
+                </li>
+                <li class="li_style"><a href="friend_search.php" class="a_style"><i class="fa fa-user-plus" id="img2"></i></a></li>
+                <li class="li_style"><a href="setting.php" class="a_style"><i class="fa fa-cog" id="img3"></i></a></li>
+                <li class="li_style"><a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+                </li>
+            </ul>
         </nav>
     </header>
+
     <section>
         <form action="friend_search.php" method="POST">
             <input type="text" placeholder="ID検索" name="id" required>
             <input type="submit" value="OK" name="submit">
         </form>
     </section>
+    <!-- 
+    <section>
+        <form action="friend_search.php" method="POST" class="form_style" id="form_style">
+           
+            <div id="search-wrap">
+                <input type="search" placeholder="ID検索" name="id" required>
+                <div id="fri-search" class="search"></div>
+                <br>
+            </div>
+
+            <input type="button" value="探す" class="btn btn--red btn--radius btn--cubic" id="sagasu"><i class="fas fa-position-right"></i>
+
+        </form>
+    </section> -->
 </body>
 
 </html>
@@ -67,14 +95,15 @@ if (isset($_POST["submit"])) {
            <input type='hidden' name='id' value='$_POST[id]'>
            <input type='hidden' name='name' value='$friend_name'>
            <input type='hidden' name='img' value='$friend_img'>
-           <input type='submit' name='ok' class='friendinput' value='登録'>
-           <input type='submit' name='ng' class='friendinput' value='やめる'><br>
+           <input type='submit' name='ok' class='friendinput' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+           <input type='submit' name='ng' class='friendinput' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
 FTOUROKU;
             }
 
             if ($row == 0) {
-                echo "該当なし";
+                echo
+                    "<p class='messege'>該当なし</p>";
             }
         }
     } catch (PDOException $e) {
@@ -107,8 +136,8 @@ FTOUROKU;
         echo <<<FTOUROKU
             <img src='upload/$_POST[img]' class='friendimg'>
             <p class='friendname'>$_POST[name]</p>
-           <input type='submit' id='talkjump' class='friendinput' value='トーク'>
-           <input type='submit' class='friendinput' value='もどる'><br>
+           <input type='submit' id='talkjump' class='friendinput' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+           <input type='submit' class='friendinput' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
 FTOUROKU;
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());
