@@ -140,8 +140,10 @@ FTOUROKU;
         echo <<<FTOUROKU
             <img src='upload/$_POST[img]' class='friendimg'>
             <p class='friendname'>$_POST[name]</p>
-           <input type='submit' id='talkjump' class='friendinput' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
-           <input type='submit' class='friendinput' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
+
+           <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+
+           <input type='submit' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
 FTOUROKU;
         if ($_SESSION["id2"] != $_POST['id']) {
             echo "<p class='messege'>すでに友達になっています</p>";
