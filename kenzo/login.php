@@ -92,9 +92,11 @@ function yoyaku($evalue)
             <input type="password" id="pass" name="pass" required="required" placeholder="パスワード">
             
             <input type="hidden" name="hidden">
+            <div class="touroku_submit">
             <input type="submit" id="submit" value="ログイン">
+            <a href="touroku.php">アカウントない人新規登録</a>
+            </div>
         </form>
-        <a href="touroku.php">アカウントない人新規登録</a>
     </div>
     
 login;

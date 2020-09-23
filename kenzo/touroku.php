@@ -230,7 +230,9 @@ function yoyaku($evalue)
 
         
                 <input type="hidden" name="hidden">
+                <div class="touroku_submit">
                 <input type="submit" id="submit" value="登録する">
+                </div>
             </form>
         </div>
        

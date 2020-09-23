@@ -49,7 +49,7 @@ hgroup p{
     border: 1px solid #ebebeb;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
     z-index: 0;
-    text-align: center;
+    
     
 }
 
@@ -133,6 +133,11 @@ input:first-of-type{
     background: rgba(241, 241, 241, 0.712);
     
 }
+.touroku_submit{
+    display: grid;
+    width: 100%;
+    text-align: center;
+}
 .back a{
     color: #636363;
     font-size: 16px;
@@ -146,7 +151,7 @@ input:first-of-type{
 }
 #submit{
     width: 200px;
-    margin: 50px auto 10px;
+    margin: 30px auto 50px;
     border-radius: 30px;
     border: 1px solid #757575;
     padding: 10px;
