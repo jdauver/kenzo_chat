@@ -1,7 +1,8 @@
 <?php
 session_start();
 ?>
-<!-- みんなでまとめてるやつ -->
+<!-- みんなでまとめてるやつ 
+css付いてない-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
     <link rel="stylesheet" href="css/etcetera.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,10 +43,9 @@ session_start();
             <input type="submit" value="OK" name="submit">
         </form>
     </section>
-    <!-- 
-    <section>
+
+    <!-- <section>
         <form action="friend_search.php" method="POST" class="form_style" id="form_style">
-           
             <div id="search-wrap">
                 <input type="search" placeholder="ID検索" name="id" required>
                 <div id="fri-search" class="search"></div>
@@ -56,6 +56,8 @@ session_start();
 
         </form>
     </section> -->
+
+
 </body>
 
 </html>
@@ -91,19 +93,21 @@ if (isset($_POST["submit"])) {
                 echo <<<FTOUROKU
             <img src='upload/$friend_img' class='friendimg'>
             <p class='friendname'>$friend_name</p>
+
            <form action="friend_search.php" method="post">
            <input type='hidden' name='id' value='$_POST[id]'>
            <input type='hidden' name='name' value='$friend_name'>
            <input type='hidden' name='img' value='$friend_img'>
-           <input type='submit' name='ok' class='friendinput' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
-           <input type='submit' name='ng' class='friendinput' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
+
+           <input type='submit' name='ok' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+
+           <input type='submit' name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
 FTOUROKU;
             }
 
             if ($row == 0) {
-                echo
-                    "<p class='messege'>該当なし</p>";
+                echo "<p class='messege'>該当なし</p>";
             }
         }
     } catch (PDOException $e) {
@@ -136,9 +140,14 @@ FTOUROKU;
         echo <<<FTOUROKU
             <img src='upload/$_POST[img]' class='friendimg'>
             <p class='friendname'>$_POST[name]</p>
-           <input type='submit' id='talkjump' class='friendinput' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
-           <input type='submit' class='friendinput' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
+
+           <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+
+           <input type='submit' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
 FTOUROKU;
+        if ($_SESSION["id2"] != $_POST['id']) {
+            echo "<p class='messege'>すでに友達になっています</p>";
+        }
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());
     }
