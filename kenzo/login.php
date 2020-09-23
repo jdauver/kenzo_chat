@@ -88,7 +88,7 @@ function yoyaku($evalue)
         </div>
         <div class="evalue">$evalue</div>
         <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
-            <input type="text" id="pass" name="name" required="required" placeholder="お名前">
+            <input type="text" id="name" name="name" required="required" placeholder="お名前">
             <input type="password" id="pass" name="pass" required="required" placeholder="パスワード">
             
             <input type="hidden" name="hidden">
