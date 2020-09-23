@@ -244,36 +244,47 @@ $(function () {
     })
     $("#pass").on("blur", check1);
     $("#id").on("blur", check2);
+    $("#submit").on("click", check3);
+
 
     function check1() {
         var pass1 = $("#pass").val();
 
-        if (pass1.match(/\w/[6, 20])) {
-            alert ("英数字以外は記入できません");
-            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
-        } else if (pass1.match(/\W/[6, 20])) {
-            $("#pass").attr("placeholder", "英数字以外は記入できません。");
-            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
+        if (!pass1.match(/^([a-zA-Z0-9]{6,20})$/)) {
+            if ($(".passng").html() !== "英数字の6〜20文字以内でしか記入できません。") {
+                $("#pass").before("<p class='passng'>英数字の6〜20文字以内でしか記入できません。</p>");
+                $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
+            }
         } else if (pass1 == "") {
-            $("#pass").attr("placeholder", "６〜２０文字以内、英数字のみでご記入ください");
+            $("#pass").attr("placeholder", "6〜20文字以内、英数字のみでご記入ください");
             $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
-        };
+        } else {
+            $(".passng").html("");
+            $("#pass").css("background", "transparent");
+        }
     };
     function check2() {
-        var pass2 = $("#pass").val();
+        var pass2 = $("#id").val();
 
-        if (!pass2.match(/\w/gim)) {
-            $("#pass").attr("placeholder", "英数字以外は記入できません。");
-            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
-        } else if (pass2.match([/\W/gim])) {
-            $("#pass").attr("placeholder", "英数字以外は記入できません。");
-            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
-        } else if (pass2 == "") {
-            $("#pass").attr("placeholder", "６〜２０文字以内、英数字のみでご記入ください");
-            $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
-        };
+        if (!pass2.match(/^([a-zA-Z0-9]{6,20})$/)) {
+            if ($(".idng").html() !== "英数字の6〜20文字以内でしか記入できません。") {
+                $("#id").before("<p class='idng'>英数字の6〜20文字以内でしか記入できません。</p>");
+                $("#id").css("background", "rgba(255, 103, 103, 0.445)");
+            }
+        }else if (pass2 == "") {
+            $("#id").attr("placeholder", "6〜20文字以内、英数字のみでご記入ください");
+            $("#id").css("background", "rgba(255, 103, 103, 0.445)");
+        } else {
+            $(".idng").html("");
+            $("#id").css("background", "transparent");
+        }
     };
-
+    function check3() {
+        if ($(".idng").html() == "英数字の6〜20文字以内でしか記入できません。" || $(".passng").html() == "英数字の6〜20文字以内でしか記入できません。") {
+            alert("登録フォームに誤りがあります。");
+            return false;
+        }
+    }
 
 
 });
