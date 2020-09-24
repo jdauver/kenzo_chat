@@ -24,7 +24,7 @@ body {
     background-color: rgb(104, 83, 73);
 }
 .touroku_img_logout{
-    margin-top: 6px;
+    /* margin-top: 6px; */
     width: 32px;
 }
 .touroku_img_logout:hover{
