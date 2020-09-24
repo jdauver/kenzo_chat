@@ -112,21 +112,22 @@ if (isset($_POST["id"])) {
 
             if ($row > 0) {
                 echo <<<FTOUROKU
-            <img src='$friend_img' class='friendimg'>
+        <div class='ftouroku'>
+            <img src='upload/$friend_img' class='friendimg'>
             <p class='friendname'>$friend_name</p>
-           <form action="friend_search.php" method="post">
+           <form action="friend_search.php" id='touroku_form' method="post">
            <input type='hidden' name='id' value='$_POST[id]'>
            <input type='hidden' name='name' value='$friend_name'>
            <input type='hidden' name='img' value='$friend_img'>
 
 
-           <input type='submit' name='ok' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+           <input type='submit' name='ok' id='touroku' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
 
 
            <input type='submit' name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
-
+        </div>
 
 FTOUROKU;
             }
@@ -138,9 +139,21 @@ FTOUROKU;
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());
     }
+}
 
-    // id検索して名前出てきてその下の"登録"を押したときの処理
-} else if (isset($_POST["ok"])) {
+
+// 友達登録したとき
+if (isset($_POST["ok"])) {
+
+    echo <<<kesu
+    <script>
+    $(function () {
+
+        $(".ftouroku").html("");
+    });
+    </script>
+kesu;
+
     try {
         $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
@@ -171,7 +184,7 @@ FTOUROKU;
             $_SESSION["id2"] = $_POST['id'];
 
             echo <<<FTOUROKU
-            <img src='$_POST[img]' class='friendimg'>
+            <img src='upload/$_POST[img]' class='friendimg'>
             <p class='friendname'>$_POST[name]</p>
 
            <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
@@ -186,5 +199,6 @@ FTOUROKU;
         die("PDO Error:" . $e->getMessage());
     }
 }
+
 
 ?>

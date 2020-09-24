@@ -302,4 +302,8 @@ $(document).ready(function () {
     $('#sagasu').click(function () {
         $('#form_style').submit();
     });
+
+    // $('#touroku').click(function () {
+    //     $('#touroku_form').submit();
+    // });
 });

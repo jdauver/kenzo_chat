@@ -63,9 +63,10 @@ try {
 
 
     <section id="section_account">
-        <div id="section_img" class="section_account_img_style">
-            
+
+        <div id="section_img" class="section_account_img_style" style="background-image: url('upload/$_SESSION[img]');">
         </div>
+
         <div id="section_name">
             <h2>{$_SESSION['name']}</h2>
         </div>
@@ -73,31 +74,25 @@ try {
 
     </section>
 
+   
+
     <section id="friend_style">
 
-            <div id="cursor" class="display">
-                <div class="friend_p_box">
-                    <p class="friend_p">友達</p>
-                    <p class="friend_p">{$kensyo}</p>
-                </div>
-                <img id='friend_id' class="friend_img" src='img/down1.png'>
+        <div id="cursor" class="display">
+            <div class="friend_p_box">
+                <p class="friend_p">友達</p>
+                <p class="friend_p">{$kensyo}</p>
             </div>
+            <img id='friend_id' class="friend_img" src='img/down1.png'>
+        </div>
 
-            <div id="scroll_info">
-            <div id="scroll_box">
+    
+        <div id="scroll_info">
+        <div id="scroll_box">
 
 MAIN;
 
-    echo <<<IMG
-<script type="text/javascript">
-$(function(){
-    
-    $(".section_account_img_style").css("background-image","url(upload/$_SESSION[img])");
-    
-});
 
-</script>
-IMG;
 
     $friend = $db->query("SELECT * FROM tomo_$_SESSION[id]");
     $i = 0;
@@ -111,25 +106,17 @@ IMG;
             echo <<<FRIEND
             <div class="friend{$i} friends">
 
-                <div class="friend_imgs"></div>
+                <div class="friend_imgs" style="background-image: url('upload/$val[img]');"></div>
                 <p>$val[name]</p>
                 <input id="hiddenimg" type="hidden" value="$val[img]">
                 <input id="hiddenid" type="hidden" value="$val[id]">
+                
             </div>
+
 FRIEND;
         }
         $i++;
         /* 友達の画像を背景に出しているソース------------ */
-        echo <<<IMG
-            <script type="text/javascript">
-                $(function(){
-                    
-                    $(".friend_imgs").css("background-image","url(upload/$val[img])");
-
-                });
-
-            </script>
-IMG;
     }
 
     echo <<<UNDER
