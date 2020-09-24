@@ -49,6 +49,9 @@ cssつき　ボタン効かね-->
     </section>
 </body>
 
+<div class="footer">
+</div>
+
 </html>
 
 <?php
