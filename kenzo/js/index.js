@@ -244,7 +244,6 @@ $(function () {
     })
 
     /* ログインと登録の正規表現 */
-    $("#name").on("blur", check0);
     $("#pass").on("blur", check1);
     $("#id").on("blur", check2);
     $("#submit").on("click", check3);
@@ -264,7 +263,7 @@ $(function () {
             $(".nameng").html("");
 
         } else {
-            // alert ("aaa");
+            // alert ("aaa")aaaaa;
             $(".nameng").html("");
             $("#name").css("background", "transparent");
         }
