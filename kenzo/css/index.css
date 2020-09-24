@@ -5,7 +5,33 @@ body{
     background: rgb(240,210,176);
 }
 
-
+.hhh{
+    text-align: center;
+}
+.hhh h1{
+    margin: 0;
+}
+.hhh p{
+    margin: 0;
+}
+.rogin_touroku_style{
+    text-align: right;
+    width: 100%;
+}
+.rogin_touroku_style a{
+    display: grid;
+    text-decoration: none;
+    margin-right: 20px;
+    color: rgb(104, 83, 73);
+}
+.rogin_touroku_style a:hover{
+    /* color: rgb(146, 146, 146); */
+    color: rgb(180, 180, 180);
+    transition: all 1s;
+}
+.rogin_touroku_style i{
+    font-size: 50px;
+}
 /* 予約フォーム------------------------------------------ */
 
 hgroup { 
@@ -70,6 +96,22 @@ hgroup p{
 
 }
 #pass{
+    font-size: 16px; 
+    width: 70vw;
+    max-width: 350px;
+    padding: 10px 0;
+    margin: 0;
+    -webkit-appearance: none;
+    display: block;
+    color: #636363;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+    /* background: rgb(240,210,176); */
+    background: transparent;
+
+}
+#login_pass{
     font-size: 16px; 
     width: 70vw;
     max-width: 350px;

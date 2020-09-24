@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-icon" href="image/favicon.ico">
     <link rel="stylesheet" href="css/index.css">
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <title>新規登録</title>
@@ -18,10 +19,9 @@
 
 <body>
 
-    <header>
-        <a href='touroku.php'>新規登録</a><br>
-        <a href='login.php'>ログイン</a>
-    </header>
+  
+        
+        
 
 </body>
 
@@ -97,6 +97,9 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
         <div class="hhh">
             <h1 class="en">REGISTAR</h1>
             <p>新規登録</p>
+            <div class="rogin_touroku_style">
+            <a href='login.php'>ログイン</a>
+             </div>
         </div>
         <div class="toroku">
             <hgroup>
@@ -208,6 +211,11 @@ function yoyaku($evalue)
         <div class="hhh">
             <h1 class="en">REGISTAR</h1>
             <p>新規登録</p>
+            <div class="rogin_touroku_style">
+            <a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+                    </li>
+            <a href='login.php'>ログイン</a>
+             </div>
         </div>
         <div class="toroku">
             <div class="evalue">$evalue</div>
