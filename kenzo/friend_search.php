@@ -1,8 +1,6 @@
 <?php
 session_start();
 ?>
-<!-- 自分が作ったやつ 
-cssつき　ボタン効かね-->
 <!DOCTYPE html>
 <html lang="ja">
 
