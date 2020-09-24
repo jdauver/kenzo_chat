@@ -62,7 +62,7 @@ if (isset($_POST["hidden"])) {
                     <p>ログイン</p>
                 </div>
 
-                <div class=""><h2>ログイン完了</h2></div>
+                <div class="login_kanryou"><h2>ログイン完了</h2></div>
                 <p>{$_SESSION["name"]}さん</p>
                 <a href="account_main.php">トップへ</a>
 ZIBUN;
