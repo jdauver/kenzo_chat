@@ -49,6 +49,9 @@ cssつき　ボタン効かね-->
     </section>
 </body>
 
+<div class="footer">
+</div>
+
 </html>
 
 <?php
@@ -112,8 +115,10 @@ if (isset($_POST["id"])) {
 
             if ($row > 0) {
                 echo <<<FTOUROKU
-        <div class='ftouroku'>
-            <img src='upload/$friend_img' class='friendimg'>
+         <div class='ftouroku'>
+
+         <div class="search_img"         style="background-image: url('upload/$friend_img');">
+        </div>
             <p class='friendname'>$friend_name</p>
            <form action="friend_search.php" id='touroku_form' method="post">
            <input type='hidden' name='id' value='$_POST[id]'>
@@ -122,7 +127,6 @@ if (isset($_POST["id"])) {
 
 
            <input type='submit' name='ok' id='touroku' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
-
 
 
            <input type='submit' name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
@@ -184,7 +188,8 @@ kesu;
             $_SESSION["id2"] = $_POST['id'];
 
             echo <<<FTOUROKU
-            <img src='upload/$_POST[img]' class='friendimg'>
+             <div class="search_img"         style="background-image: url('upload/$friend_img');">
+        </div>
             <p class='friendname'>$_POST[name]</p>
 
            <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>

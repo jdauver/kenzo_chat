@@ -32,6 +32,27 @@ body{
 .rogin_touroku_style i{
     font-size: 50px;
 }
+
+
+.rogin_touroku_style1{
+    text-align: center;
+    width: 100%;
+}
+.rogin_touroku_style1 a{
+    display: grid;
+    text-decoration: none;
+    margin-right: 20px;
+    color: rgb(104, 83, 73);
+}
+.rogin_touroku_style1 a:hover{
+    /* color: rgb(146, 146, 146); */
+    color: rgb(180, 180, 180);
+    transition: all 1s;
+}
+.rogin_touroku_style1 i{
+    font-size: 50px;
+}
+
 /* 予約フォーム------------------------------------------ */
 
 hgroup { 
@@ -75,9 +96,10 @@ hgroup p{
     border: 1px solid #ebebeb;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
     z-index: 0;
-    
-    
+    text-align: center;
 }
+    
+    
 
 #name{
     font-size: 16px; 
@@ -127,9 +149,43 @@ hgroup p{
     background: transparent;
 
 }
-.group p{
+#kakunin{
+    font-size: 16px; 
+    width: 70vw;
+    max-width: 350px;
+    padding: 10px 0;
+    margin: 0;
+    -webkit-appearance: none;
+    display: block;
+    color: #636363;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+    /* background: rgb(240,210,176); */
+    background: transparent;
+    text-align: center;
+}
+.nameng{
+    font-size: 15px;
+    color: rgb(240, 45, 45);
+    margin: 0;
+}
+.passng{
+    font-size: 15px;
+    color: rgb(240, 45, 45);
+    margin: 0;
+    
+}
+.idng{
+    font-size: 15px;
+    color: rgb(240, 45, 45);
+    margin: 0;
+    
+}
+.touroku_p_style{
     font-size: 10px;
     margin: 0;
+    
 }
 #id{
     font-size: 16px; 
@@ -163,13 +219,11 @@ input:first-of-type{
     margin-top: 60px;
 }
 .back{
-    width: 50vw;
+    width: 200px;
     max-width: 350px;
     padding: 10px 0;
-    
     display: block;
-    
-    margin: 50px auto 10px;
+    margin: 0 auto 10px;
     border-radius: 30px;
     border: 1px solid #757575;
     background: rgba(241, 241, 241, 0.712);
@@ -193,7 +247,7 @@ input:first-of-type{
 }
 #submit{
     width: 200px;
-    margin: 30px auto 50px;
+    margin: 30px auto 45px;
     border-radius: 30px;
     border: 1px solid #757575;
     padding: 10px;
@@ -218,7 +272,9 @@ input:focus { outline: none; }
     margin: 0 0 20px;
 }
 
-
+.tx{
+    text-align: center;
+}
 
 
 
