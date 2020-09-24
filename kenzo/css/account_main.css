@@ -14,6 +14,14 @@ body {
     justify-content: flex-end;
     background-color: rgb(104, 83, 73);
 }
+.touroku_img_logout{
+    margin-top: 6px;
+    width: 32px;
+}
+.touroku_img_logout:hover{
+    opacity: 0.6;
+    transition: all 1s;
+}
 
 #account_nav {
     display: flex;
@@ -34,7 +42,8 @@ body {
 }
 
 .a_style:hover {
-    opacity: 0.5;
+    color: rgb(180, 180, 180);
+    transition: all 1s;
 }
 
 /* セクションの設定 */
