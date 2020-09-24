@@ -7,6 +7,7 @@ body {
     background-color: rgb(240, 210, 176);
 }
 
+/* ヘッダー */
 #top {
     width: 100%;
     height: auto;
@@ -25,6 +26,7 @@ body {
 
 #account_nav {
     display: flex;
+    align-items: center;
 }
 
 #ul_style {
@@ -35,9 +37,12 @@ body {
 .li_style {
     padding: 0 1rem 0 1rem;
 }
+.li_style:last-of-type{
+    padding: 5px 1rem 0 1rem;
 
+}
 .a_style {
-    font-size: 1.5rem;
+    font-size: 32px;
     color: rgb(226, 226, 226);
 }
 

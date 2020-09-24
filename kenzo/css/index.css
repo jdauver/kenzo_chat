@@ -246,6 +246,7 @@ input:first-of-type{
     transition: all 0.5s;
 }
 #submit{
+    -webkit-appearance: none;
     width: 200px;
     margin: 30px auto 45px;
     border-radius: 30px;

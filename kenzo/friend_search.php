@@ -28,7 +28,7 @@ cssつき　ボタン効かね-->
                 </li>
                 <li class="li_style"><a href="friend_search.php" class="a_style"><i class="fa fa-user-plus" id="img2"></i></a></li>
                 <li class="li_style"><a href="setting.php" class="a_style"><i class="fa fa-cog" id="img3"></i></a></li>
-                <li class="li_style"><a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+                <li class="li_style"><a href="login.php" class="a_style"><img class="touroku_img_logout" src="img/logout.png"></a>
                 </li>
             </ul>
         </nav>
@@ -48,9 +48,9 @@ cssつき　ボタン効かね-->
         </form>
     </section>
 </body>
-
+<!-- 
 <div class="footer">
-</div>
+</div> -->
 
 </html>
 
@@ -92,9 +92,9 @@ cssつき　ボタン効かね-->
 if (isset($_POST["id"])) {
     try {
         //データーベースに接続
-        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -159,9 +159,9 @@ if (isset($_POST["ok"])) {
 kesu;
 
     try {
-        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
