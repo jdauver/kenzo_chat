@@ -149,4 +149,11 @@ p.messege {
     opacity:0.5;
 }
 
-
+.search_img{
+    width: 250px;   
+    height: 250px;
+    background-position: center;
+    margin: 60px auto 0;
+    background-size: cover;
+    border-radius: 50%;
+}
