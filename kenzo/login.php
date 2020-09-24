@@ -14,6 +14,8 @@ if (isset($_POST["hidden"])) {
         $name = $_POST["name"];
         $pass = $_POST["pass"];
 
+        
+
 
         $qq = "SELECT COUNT(*) FROM kenzo_account WHERE name='$name' AND pass='$pass'";
 
