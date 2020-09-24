@@ -228,7 +228,7 @@ function yoyaku($evalue)
             <hgroup>
                 <h1>新規登録</h1>
             </hgroup>
-            <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
+            <form id="form" class="form2" action="$_SERVER[SCRIPT_NAME]" method="POST">
                 <div class="group">
                     <input type="text" id="name" name="name" placeholder="お名前" required="required">
                 </div>
