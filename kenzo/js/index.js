@@ -264,7 +264,7 @@ $(function () {
             $(".nameng").html("");
 
         } else {
-            // alert ("aaa");
+            // alert ("aaa")aaaaa;
             $(".nameng").html("");
             $("#name").css("background", "transparent");
         }
