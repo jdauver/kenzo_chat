@@ -536,3 +536,10 @@ input:focus { outline: none; }
     }
 
 }
+
+.form2{
+    /* background-color:#fff3b8; */
+    background-color:#fffef9;
+    /* background-color:#fddea5; */
+    text-shadow: 50%;
+}
