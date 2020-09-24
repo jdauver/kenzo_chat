@@ -14,18 +14,9 @@ body{
     justify-content: flex-end;
     background-color: rgb(104, 83, 73);
 }
-.touroku_img_logout{
-    margin-top: 6px;
-    width: 32px;
-}
-.touroku_img_logout:hover{
-    opacity: 0.6;
-    transition: all 1s;
-}
 
 #account_nav {
     display: flex;
-    align-items: center;
 }
 
 #ul_style {
@@ -36,24 +27,16 @@ body{
 .li_style {
     padding: 0 1rem 0 1rem;
 }
-.li_style:last-of-type{
-    padding: 5px 1rem 0 1rem;
 
-}
 .a_style {
-    font-size: 32px;
+    font-size: 1.5rem;
     color: rgb(226, 226, 226);
 }
 
 .a_style:hover {
-    color: rgb(180, 180, 180);
-    transition: all 1s;
+    opacity: 0.5;
+    transition: all 0.5s;
 }
-
-
-
-
-
 
 .setting{
     color: #636363;
@@ -191,7 +174,6 @@ button:hover{
 }
 
 #ok{
-    -webkit-appearance: none;
     width: 70vw;
     max-width: 150px;
     font-size: 16px;

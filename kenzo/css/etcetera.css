@@ -2,20 +2,19 @@
 html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
     /*rem算出をしやすくするために*/
 }
 body {
     width: 100%;
     height: 100%;
-    margin: 0;
+    margin: 0 auto;
     background-color: rgb(240, 210, 176);
     text-align: center;
 }
 
 
 /* header */
-/* ヘッダー */
 #top {
     width: 100%;
     height: 90px;
@@ -23,6 +22,8 @@ body {
     justify-content: flex-end;
     background-color: rgb(104, 83, 73);
 }
+<<<<<<< HEAD
+=======
 .touroku_img_logout{
     margin-top: 2.5px;
     width: 32px;
@@ -32,36 +33,24 @@ body {
     transition: all 1s;
 }
 
+>>>>>>> 6f53dde6ed58987a4e666156d90bc900db7e1bc9
 #account_nav {
     display: flex;
-    align-items: center;
 }
-
-#ul_style {
+#top #ul_style {
     display: inherit;
     list-style: none;
 }
-
-.li_style {
+#top .li_style {
     padding: 0 1rem 0 1rem;
 }
-.li_style:last-of-type{
-    padding: 5px 1rem 0 1rem;
-
-}
-.a_style {
-    font-size: 32px;
+#top .a_style {
+    font-size: 1.5rem;
     color: rgb(226, 226, 226);
 }
-
-.a_style:hover {
-    color: rgb(180, 180, 180);
-    transition: all 1s;
+#top .a_style:hover {
+    opacity: 0.5;
 }
-
-
-
-
 
 
 *,*:before,*:after {
@@ -69,7 +58,6 @@ body {
     box-sizing: inherit;
 }
 .btn,a.btn,button.btn {
-    -webkit-appearance: none;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.5;
@@ -183,11 +171,3 @@ p.messege {
     border-radius: 50%;
 }
 
-
-.footer{
-    position: absolute;
-    top:100%;
-    width: 100%;
-    height:40px;
-    background-color: #685349;
-}

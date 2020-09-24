@@ -244,31 +244,11 @@ $(function () {
     })
 
     /* ログインと登録の正規表現 */
-    $("#name").on("blur", check0);
     $("#pass").on("blur", check1);
     $("#id").on("blur", check2);
     $("#submit").on("click", check3);
 
 
-    function check0() {
-        var pass0 = $("#name").val();
-        // alert(pass0.length);
-        if (pass0.length > 12) {
-            if ($(".nameng").html() !== "12文字以内でしか記入できません。") {
-                $("#name").before("<p class='nameng'>12文字以内でしか記入できません。</p>");
-                $("#name").css("background", "rgba(255, 103, 103, 0.445)");
-            }
-        } else if (pass0 == "") {
-            $("#name").attr("placeholder", "12文字以内でご記入ください");
-            $("#name").css("background", "rgba(255, 103, 103, 0.445)");
-            $(".nameng").html("");
-
-        } else {
-            // alert ("aaa");
-            $(".nameng").html("");
-            $("#name").css("background", "transparent");
-        }
-    };
     function check1() {
         var pass1 = $("#pass").val();
 
