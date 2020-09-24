@@ -49,44 +49,11 @@ cssつき　ボタン効かね-->
     </section>
 </body>
 
-<div class="footer">
-</div>
+
 
 </html>
 
 <?php
-
-//  // 川君　友達リスト表示
-// すでに友達になっている人のidからnameとimegeをとってくる方法
-
-
-// $friend = $db->query("SELECT * FROM kenzo_friend");
-// $i = 0;
-// foreach ($friend as $value) {
-// $f_array[] = $value["id"];
-
-
-// $f_table = $db->query("SELECT * FROM kenzo_account WHERE id='$f_array[$i]'");
-
-// foreach ($f_table as $val) {
-// $ft_array[] = $val["name"];
-// $ftid_array[] = $val["id"];
-// echo <<<FRIEND
-// <div class="friend{$i} friends">
-// <p>$ft_array[$i]</p>
-// <input id="hiddenid" type="hidden" value="$ftid_array[$i]">
-
-// </div>
-
-// FRIEND;
-// }
-// $i++;
-// }
-
-
-// 川君ここまで
-
-
 
 //値の確認
 if (isset($_POST["id"])) {
@@ -195,6 +162,7 @@ kesu;
            <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
            <input type='submit' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
+
 
 FTOUROKU;
         } else {
