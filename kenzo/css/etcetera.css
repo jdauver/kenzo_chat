@@ -22,8 +22,6 @@ body {
     justify-content: flex-end;
     background-color: rgb(104, 83, 73);
 }
-<<<<<<< HEAD
-=======
 .touroku_img_logout{
     margin-top: 2.5px;
     width: 32px;
@@ -33,7 +31,6 @@ body {
     transition: all 1s;
 }
 
->>>>>>> 6f53dde6ed58987a4e666156d90bc900db7e1bc9
 #account_nav {
     display: flex;
 }
