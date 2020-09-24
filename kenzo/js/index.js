@@ -273,7 +273,7 @@ $(function () {
                 $("#id").before("<p class='idng'>英数字の6〜20文字以内でしか記入できません。</p>");
                 $("#id").css("background", "rgba(255, 103, 103, 0.445)");
             }
-        }else if (pass2 == "") {
+        } else if (pass2 == "") {
             $("#id").attr("placeholder", "6〜20文字以内、英数字のみでご記入ください");
             $("#id").css("background", "rgba(255, 103, 103, 0.445)");
         } else {
@@ -291,3 +291,15 @@ $(function () {
 
 });
 
+// friend-searchページ
+// 虫眼鏡で検索
+$(document).ready(function () {
+    $('#fri-search').click(function () {
+        $('#form_style').submit();
+    });
+});
+$(document).ready(function () {
+    $('#sagasu').click(function () {
+        $('#form_style').submit();
+    });
+});
