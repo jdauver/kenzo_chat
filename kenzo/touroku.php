@@ -19,9 +19,9 @@
 
 <body>
 
-  
-        
-        
+
+
+
 
 </body>
 
@@ -98,6 +98,8 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
             <h1 class="en">REGISTAR</h1>
             <p>新規登録</p>
             <div class="rogin_touroku_style">
+            <a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+                    </li>
             <a href='login.php'>ログイン</a>
              </div>
         </div>
@@ -176,6 +178,10 @@ KAKUNIN;
 
                 <div class="tx">
                     <h2>登録が完了しました</h2>
+            <div class="rogin_touroku_style1">
+                <a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a></li>
+                <a href='login.php'>ログイン</a>
+             </div>
                 </div>
 
 
@@ -228,11 +234,11 @@ function yoyaku($evalue)
                 </div>
                 <div class="group">
                     <input type="password" id="pass" name="pass" placeholder="パスワード"  required="required">
-                <p>※英数字６文字以上20文字未満</p>
+                <p class="touroku_p_style">※英数字６文字以上20文字未満</p>
                 </div>
                 <div class="group">
                     <input type="text" id="id" name="id" placeholder="ID" required="required">
-                <p>※英数字６文字以上20文字未満</p>
+                <p class="touroku_p_style">※英数字６文字以上20文字未満</p>
                 </div>
                 </div>
 
