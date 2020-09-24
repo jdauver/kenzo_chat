@@ -22,6 +22,18 @@ body {
     justify-content: flex-end;
     background-color: rgb(104, 83, 73);
 }
+<<<<<<< HEAD
+=======
+.touroku_img_logout{
+    /* margin-top: 6px; */
+    width: 32px;
+}
+.touroku_img_logout:hover{
+    opacity: 0.6;
+    transition: all 1s;
+}
+
+>>>>>>> 6f53dde6ed58987a4e666156d90bc900db7e1bc9
 #account_nav {
     display: flex;
 }
@@ -147,6 +159,7 @@ p.messege {
 }
 .btn:hover{
     opacity:0.5;
+    transition: all 1s;
 }
 
 .search_img{
