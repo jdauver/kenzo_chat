@@ -71,28 +71,31 @@ body {
     margin: 24px 0 60px;
 }
 .friends{
-    width: 85vw;
+    width: 90vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
-    margin: 40px 0;
-    border-bottom: 1px solid;
+    margin: 20px auto;
+    /* border-bottom: 1px solid; */
     padding: 20px 0;
-}
-.friends:hover{
     background-color: rgba(240, 210, 176, 0.781);
     border-radius: 50px;
-    transition: all 1s;
 }
+/* .friends:hover{
+    
+    transition: all 1s;
+} */
 .friends p{
     font-size: 20px;
 }
 .friend_imgs{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-size: cover;
+    background-position: center;
+
 }
 
 #friend_style {
@@ -142,7 +145,7 @@ body {
     display: none;
 }
 #scroll_box{
-    width: 85vw;
+    width: 90vw;
     margin: 0 auto;
     /* justify-content: space-around;
     flex-wrap: wrap; */
@@ -171,6 +174,15 @@ body {
     .friends p{
         font-size: 30px;
     }
+
+    .friend_imgs{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+
+}
 }
 
 
@@ -195,7 +207,9 @@ body {
     .friend_p {
         font-size: 35px;
     }
-
+    .friends p{
+        margin: 40 auto;
+    }
     .friends p{
         font-size: 40px;
         margin: 0;
