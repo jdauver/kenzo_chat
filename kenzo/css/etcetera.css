@@ -171,6 +171,7 @@ p.messege {
 }
 .btn:hover{
     opacity:0.5;
+    transition: all 1s;
 }
 
 .search_img{
