@@ -200,6 +200,7 @@ w;
 
             $_SESSION['name'] = $_POST['name'];
             $_SESSION['img'] = $_POST['imgsrc'];
+            $_SESSION['back'] = $_POST['backsrc'];
 
             echo <<<js
                 <script>
