@@ -49,7 +49,8 @@ $(function () {
             dataType: "text",
             data: {
                 'id': $("#hiddenid", this).val(),
-                'img': $("#hiddenimg", this).val()
+                'img': $("#hiddenimg", this).val(),
+                'name': $("#hiddenname", this).val()
             }
 
         }).done(function (response) {

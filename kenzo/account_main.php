@@ -110,6 +110,7 @@ MAIN;
                 <p>$val[name]</p>
                 <input id="hiddenimg" type="hidden" value="$val[img]">
                 <input id="hiddenid" type="hidden" value="$val[id]">
+                <input id="hiddenname" type="hidden" value="$val[name]">
                 
             </div>
 

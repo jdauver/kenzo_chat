@@ -18,13 +18,13 @@ body {
 /* ヘッダー */
 #top {
     width: 100%;
-    height: auto;
+    height: 90px;
     display: flex;
     justify-content: flex-end;
     background-color: rgb(104, 83, 73);
 }
 .touroku_img_logout{
-    margin-top: 6px;
+    margin-top: 2.5px;
     width: 32px;
 }
 .touroku_img_logout:hover{

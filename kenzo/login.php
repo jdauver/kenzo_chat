@@ -53,6 +53,7 @@ if (isset($_POST["hidden"])) {
                 $_SESSION["name"] = $val["name"];
 
                 $_SESSION["img"] = $val["img"];
+                $_SESSION["back"] = $val["back"];
             }
 
             echo <<<ZIBUN

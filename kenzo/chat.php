@@ -15,12 +15,11 @@ echo <<<HEAD
             <a href="account_main.php" class="modoru">⇦</a>
             
 
-            <h2 class="aite_name"> $_SESSION[id2]</h2>
+            <h2 class="aite_name"> $_SESSION[name2]</h2>
 
             <div id="sitabtn"></div>
         </div><!-- head -->
     </header>
-    
 HEAD;
 ?>
 <!DOCTYPE html>
@@ -60,3 +59,15 @@ HEAD;
 
 
 </body>
+
+<?php
+echo <<<back
+    <script>
+        $(function () {
+            $("body").css("background-image", "url(uploadback/$_SESSION[back])");
+
+        });
+
+    </script>
+back;
+?>
