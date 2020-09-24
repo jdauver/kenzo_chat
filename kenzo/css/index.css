@@ -170,6 +170,11 @@ hgroup p{
     background: transparent;
     text-align: center;
 }
+.nameng{
+    font-size: 15px;
+    color: rgb(240, 45, 45);
+    margin: 0;
+}
 .passng{
     font-size: 15px;
     color: rgb(240, 45, 45);
@@ -246,6 +251,7 @@ input:first-of-type{
     transition: all 0.5s;
 }
 #submit{
+    -webkit-appearance: none;
     width: 200px;
     margin: 30px auto 45px;
     border-radius: 30px;
@@ -540,11 +546,4 @@ input:focus { outline: none; }
         width: 350px;
     }
 
-}
-
-.form2{
-    /* background-color:#fff3b8; */
-    background-color:#fffef9;
-    /* background-color:#fddea5; */
-    text-shadow: 50%;
 }

@@ -1,6 +1,8 @@
 <?php
 session_start();
 ?>
+<!-- 自分が作ったやつ 
+cssつき　ボタン効かね-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -10,7 +12,9 @@ session_start();
 
     <link rel="stylesheet" href="css/etcetera.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
@@ -26,7 +30,7 @@ session_start();
                 </li>
                 <li class="li_style"><a href="friend_search.php" class="a_style"><i class="fa fa-user-plus" id="img2"></i></a></li>
                 <li class="li_style"><a href="setting.php" class="a_style"><i class="fa fa-cog" id="img3"></i></a></li>
-                <li class="li_style"><a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+                <li class="li_style"><a href="login.php" class="a_style"><img class="touroku_img_logout" src="img/logout.png"></a>
                 </li>
             </ul>
         </nav>
@@ -46,20 +50,53 @@ session_start();
         </form>
     </section>
 </body>
-
-
+<!-- 
+<div class="footer">
+</div> -->
 
 </html>
 
 <?php
 
+//  // 川君　友達リスト表示
+// すでに友達になっている人のidからnameとimegeをとってくる方法
+
+
+// $friend = $db->query("SELECT * FROM kenzo_friend");
+// $i = 0;
+// foreach ($friend as $value) {
+// $f_array[] = $value["id"];
+
+
+// $f_table = $db->query("SELECT * FROM kenzo_account WHERE id='$f_array[$i]'");
+
+// foreach ($f_table as $val) {
+// $ft_array[] = $val["name"];
+// $ftid_array[] = $val["id"];
+// echo <<<FRIEND
+// <div class="friend{$i} friends">
+// <p>$ft_array[$i]</p>
+// <input id="hiddenid" type="hidden" value="$ftid_array[$i]">
+
+// </div>
+
+// FRIEND;
+// }
+// $i++;
+// }
+
+
+// 川君ここまで
+
+
+
 //値の確認
 if (isset($_POST["id"])) {
     try {
         //データーベースに接続
-        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -124,9 +161,9 @@ if (isset($_POST["ok"])) {
 kesu;
 
     try {
-        $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
@@ -160,7 +197,6 @@ kesu;
            <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
            <input type='submit' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
-
 
 FTOUROKU;
         } else {
