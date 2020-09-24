@@ -28,6 +28,8 @@ if (isset($_POST["hidden"])) {
     }
 
 
+
+
     $errors = count($error);
     if ($errors > 0) {
         foreach ($error as $value) {
