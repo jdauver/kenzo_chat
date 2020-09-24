@@ -85,6 +85,9 @@ function yoyaku($evalue)
         <div class="hhh">
             <h1 class="en">LOGIN</h1>
             <p>ログイン</p>
+            <div class="rogin_touroku_style">
+             <a href="touroku.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>新規登録</a>
+             </div>
         </div>
         <div class="evalue">$evalue</div>
         <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
@@ -94,7 +97,6 @@ function yoyaku($evalue)
             <input type="hidden" name="hidden">
             <div class="touroku_submit">
             <input type="submit" id="submit" value="ログイン">
-            <a href="touroku.php">アカウントない人新規登録</a>
             </div>
         </form>
     </div>
@@ -115,6 +117,8 @@ login;
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>ログイン</title>
 </head>
 
