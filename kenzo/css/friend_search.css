@@ -1,0 +1,187 @@
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* font-size: 62.5%; */
+    /*rem算出をしやすくするために*/
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgb(240, 210, 176);
+    text-align: center;
+}
+
+
+/* header */
+/* ヘッダー */
+#top {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(104, 83, 73);
+}
+.touroku_img_logout{
+    margin-top: 2.5px;
+    width: 32px;
+}
+.touroku_img_logout:hover{
+    opacity: 0.6;
+    transition: all 1s;
+}
+
+#account_nav {
+    display: flex;
+    align-items: center;
+}
+
+#ul_style {
+    display: inherit;
+    list-style: none;
+}
+
+.li_style {
+    padding: 0 1rem 0 1rem;
+}
+.li_style:last-of-type{
+    padding: 5px 1rem 0 1rem;
+
+}
+.a_style {
+    font-size: 32px;
+    color: rgb(226, 226, 226);
+}
+
+.a_style:hover {
+    color: rgb(180, 180, 180);
+    transition: all 1s;
+}
+
+
+
+
+
+
+*,*:before,*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+#sagasu{
+    padding:8px 20px;
+}
+.btn,a.btn,button.btn {
+    -webkit-appearance: none;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+a.btn--red.btn--cubic {
+    border-bottom: 5px solid #000;
+}
+a.btn--red.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #000;
+}
+a.btn--radius {
+    border-radius: 100vh;
+}
+.btn {
+    background-color: rgb(104, 83, 73);
+    border-radius: 2em;
+    color:#e2e2e2;
+}
+.fa-position-right {
+    position: absolute;
+    top: calc(50% - .5em);
+    right: 1rem;
+}
+section{
+    width: 100%;
+}
+.form_style{
+    text-align: center;
+}
+input[type="search"] {
+    height: 45px;
+    margin: 40px auto;
+    width: 30vw;
+    font-size: 20px;
+    max-width: 400px;
+    min-width: 260px;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+#search-wrap{
+    width: 30vw;
+    position: relative;
+    margin:0 auto;
+    text-align: center;
+    max-width: 400px;
+    min-width: 260px;
+}
+.search{
+    background-image: url(../img/loupe.png);
+    background-size: cover;
+    /* display: inline-block; */
+    background-repeat: no-repeat;
+    /* position: relative; */
+    cursor:pointer;
+}
+
+#fri-search {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    top: 39%;
+    left: 88%;
+}
+
+
+
+.syo-btn {
+    padding: 5px 10px;
+    width: 80px;
+    height: 40px;
+    margin: 25px;;
+}
+
+p.friendname {
+    font:  bold 25px cursive;
+}
+
+p.messege {
+    font: italic bold 16px cursive;
+}
+.btn:hover{
+    opacity:0.5;
+}
+
+.search_img{
+    width: 250px;   
+    height: 250px;
+    background-position: center;
+    margin: 60px auto 0;
+    background-size: cover;
+    border-radius: 50%;
+}
+
