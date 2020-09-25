@@ -82,7 +82,11 @@ $(function () {
                         } else if (before_array[1] < after_array[1]) {
                             $(".message .talk:last").before("<div class='date'>" + Number(hiduke[1]) + "月" + Number(hiduke[2]) + "日" + "</div>");
                         }
-
+                        if (after_array[0] == "zibun") {
+                            $('html, body').animate({
+                                scrollTop: $('.message .talk:last-of-type').offset().top
+                            }, 700);
+                        }
                         if (after_array[0] == "aite") {
                             if ($('.message .talk:last-of-type').prev().offset().top > $('.message_box').offset().top + 150) {
                                 alert("新着コメントがあります");
@@ -95,6 +99,7 @@ $(function () {
 
 
                     }
+
                 }
 
                 $(".zibun-topuga").css("background-image", "url(upload/" + talk[2] + ")");
