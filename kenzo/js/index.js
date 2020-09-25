@@ -28,7 +28,7 @@ $(function () {
 
         if ($("#friend_id1").attr("class") == "friend_img") {
             // alert("ddd");
-            $("#friend_id1").attr("src", "img/down1.png");
+            // $("#friend_id1").attr("src", "img/down1.png");
             // alert("eee");
             $("#friend_id").attr("src", "img/down1.png");
             $("#scroll_info").slideUp("slow");
