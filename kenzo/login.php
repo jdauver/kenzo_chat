@@ -43,7 +43,6 @@ if (isset($_POST["hidden"])) {
             // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
             $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
-
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "SELECT * FROM kenzo_account WHERE name='$name' AND pass='$pass'";
             $stmt = $db->prepare($sql);
@@ -63,9 +62,10 @@ if (isset($_POST["hidden"])) {
                     <p>ログイン</p>
                 </div>
 
-                <div class="login_kanryou"><h2>ログイン完了</h2></div>
+                <div class="login_kanryou"><h2>ログイン完了</h2>
                 <p>{$_SESSION["name"]}さん</p>
                 <a href="account_main.php">トップへ</a>
+                </div>
 ZIBUN;
         } catch (PDOException $e) {
             die("PDO Error:" . $e->getMessage());

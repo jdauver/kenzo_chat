@@ -226,7 +226,7 @@ function yoyaku($evalue)
         <div class="toroku">
             <div class="evalue">$evalue</div>
             <hgroup>
-                <h1>新規登録</h1>
+                
             </hgroup>
             <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
                 <div class="group">

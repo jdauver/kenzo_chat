@@ -28,7 +28,7 @@ $(function () {
 
         if ($("#friend_id1").attr("class") == "friend_img") {
             // alert("ddd");
-            $("#friend_id1").attr("src", "img/down1.png");
+            // $("#friend_id1").attr("src", "img/down1.png");
             // alert("eee");
             $("#friend_id").attr("src", "img/down1.png");
             $("#scroll_info").slideUp("slow");
@@ -64,6 +64,7 @@ $(function () {
     });
 
 
+    // ページの一番下に行くボタン
     $("#sitabtn").on("click", function () {
         $('html, body').animate({
             scrollTop: $(document).height()
@@ -88,13 +89,13 @@ $(function () {
     });
 
     // 送信押したとき一番下へーーーーーー
-    $("#send").on("click", function () {
-        if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
-            $('html, body').animate({
-                scrollTop: $(document).height()
-            }, 700);
-        }
-    });
+    // $("#send").on("click", function () {
+    //     if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
+    //         $('html, body').animate({
+    //             scrollTop: $(document).height()
+    //         }, 700);
+    //     }aaa
+    // });
 
 
 

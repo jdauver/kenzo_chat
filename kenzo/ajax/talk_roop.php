@@ -7,6 +7,22 @@ try {
     // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', 'root');
     // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
     $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+
+
+    $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
+    $q = $db->query($qq);
+    $kensyo = $q->fetchColumn();
+
+    $db->query("DELETE FROM kenzo_talk WHERE num NOT IN (
+    SELECT * FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]') OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]') ORDER BY num desc LIMIT 100)");
+
+    // $d_spl = "SELECT * FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]') OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]') ORDER BY num desc";
+
+
+
+
+
+
     $sql = "SELECT * FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]' AND num>$_POST[id]) OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]' AND num>$_POST[id]) ORDER BY date,time";
     $stmt = $db->prepare($sql);
     $stmt->execute();
