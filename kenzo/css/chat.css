@@ -4,12 +4,14 @@ body{
     font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     background: rgb(240,210,176);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-repeat: repeat;
+    /* background-position: center; */
     background-attachment: fixed;
+    background:url(../img/cloud.jpg);
+
 
 }
-body:before{
+/* body:before{
     content: "";
     display:block;
     position:fixed;
@@ -20,7 +22,7 @@ body:before{
     height:100vh;
     background:url(../img/IMG_0123.jpg) center no-repeat;
     background-size:cover;
-}
+} */
 
 .chat_head{
     background: rgb(104, 83, 73);
