@@ -240,13 +240,14 @@ function yoyaku($evalue)
                     <input type="text" id="id" class="idng" name="id" placeholder="ID" required="required">
                 <p class="touroku_p_style">※英数字６文字以上20文字未満</p>
                 </div>
-                </div>
-
-        
                 <input type="hidden" name="hidden">
                 <div class="touroku_submit">
                 <input type="submit" id="submit" value="登録する">
                 </div>
+                </div>
+
+        
+                
             </form>
         </div>
        
