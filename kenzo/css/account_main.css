@@ -84,13 +84,13 @@ body {
     margin: 20px auto;
     /* border-bottom: 1px solid; */
     padding: 20px 0;
-    background-color: rgba(240, 210, 176, 0.781);
+    background-color: rgba(240, 210, 176);
     /* border-radius: 50px; */
 }
-/* .friends:hover{
-    
+.friends:hover{
+    background-color: rgb(240, 223, 204);
     transition: all 1s;
-} */
+}
 .friends p{
     font-size: 16px;
 }
