@@ -11,6 +11,7 @@ body {
     margin: 0;
     background-color: rgb(240, 210, 176);
     text-align: center;
+    color:#636363;
 }
 
 
@@ -62,8 +63,27 @@ body {
 
 
 
+h2 {
+    display: block;
+    font-size: 1.8em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 0;
 
-
+}
+p{
+    display: block;
+    font-size: 0.7em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top: -5px;
+}
 *,*:before,*:after {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
@@ -121,7 +141,7 @@ section{
 }
 input[type="search"] {
     height: 45px;
-    margin: 40px auto;
+    margin: 20px auto 35px;
     width: 30vw;
     font-size: 20px;
     max-width: 400px;
@@ -134,7 +154,7 @@ input[type="search"] {
 #search-wrap{
     width: 30vw;
     position: relative;
-    margin:0 auto;
+    margin:0 auto 0;
     text-align: center;
     max-width: 400px;
     min-width: 260px;
@@ -167,6 +187,7 @@ input[type="search"] {
 
 p.friendname {
     font:  bold 25px cursive;
+    margin-bottom: 10px;
 }
 
 p.messege {
@@ -177,11 +198,19 @@ p.messege {
 }
 
 .search_img{
-    width: 250px;   
-    height: 250px;
+    width: 150px;   
+    height: 150px;
     background-position: center;
-    margin: 60px auto 0;
+    margin: 30px auto 0;
     background-size: cover;
     border-radius: 50%;
 }
 
+
+/* スマホ以上-------------------------- */
+@media screen and (min-width:414px){
+    /* body{
+        font-size:0.2rem;
+    } */
+
+}
