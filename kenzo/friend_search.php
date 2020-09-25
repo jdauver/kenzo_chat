@@ -119,7 +119,7 @@ if (isset($_POST["id"])) {
                 echo <<<FTOUROKU
          <div class='ftouroku'>
 
-         <div class="search_img"         style="background-image: url('upload/$friend_img');">
+         <div class="search_img" style="background-image: url('upload/$friend_img');">
         </div>
             <p class='friendname'>$friend_name</p>
            <form action="friend_search.php" id='touroku_form' method="post">
