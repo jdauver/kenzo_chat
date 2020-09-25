@@ -12,9 +12,12 @@ body{
 
 .hhh{
     text-align: center;
+    margin-top: 80px;
 }
 .hhh h1{
     margin: 0;
+    letter-spacing: 10px;
+    font-size: 50px;
 }
 .hhh p{
     margin: 0;
@@ -102,6 +105,8 @@ hgroup p{
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
     z-index: 0;
     text-align: center;
+    background-color: #f0f0f0;
+    box-shadow: 5px 5px 3px 1px #8d8c86;
 }
     
     
@@ -234,6 +239,23 @@ input:first-of-type{
     background: rgba(241, 241, 241, 0.712);
     
 }
+.login_kanryou{
+    text-align: center;
+}
+.login_kanryou h2{
+    margin-top: 100px;
+}
+.login_kanryou p{
+    font-size: 20px;
+}
+.login_kanryou a{
+    color: #747474;
+    font-size: 20px;
+}
+.login_kanryou a:hover{
+    color: #414040;
+    transition: all 2s;
+}
 .touroku_submit{
     display: grid;
     width: 100%;
@@ -253,7 +275,7 @@ input:first-of-type{
 #submit{
     -webkit-appearance: none;
     width: 200px;
-    margin: 30px auto 45px;
+    margin: 50px auto 45px;
     border-radius: 30px;
     border: 1px solid #757575;
     padding: 10px;
