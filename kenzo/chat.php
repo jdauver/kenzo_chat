@@ -31,7 +31,8 @@ HEAD;
     <meta name="robots" content="noindex">
     <meta name="robots" content="nofollow">
     <!-- <link rel="icon" type="image/x-icon" href="image/favicon.ico"> -->
-    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
+    <link rel="stylesheet" href="css/chat.css">
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/index2.js"></script>
@@ -61,7 +62,8 @@ HEAD;
 </body>
 
 <?php
-echo <<<back
+?>
+<!-- echo <<<back
     <script>
         $(function () {
             $("body").css("background-image", "url(uploadback/$_SESSION[back])");
@@ -69,5 +71,4 @@ echo <<<back
         });
 
     </script>
-back;
-?>
+back; -->
