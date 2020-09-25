@@ -1,8 +1,6 @@
 <?php
 session_start();
 ?>
-<!-- 自分が作ったやつ 
-cssつき　ボタン効かね-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -10,9 +8,8 @@ cssつき　ボタン効かね-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/etcetera.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/friend_search.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -38,6 +35,8 @@ cssつき　ボタン効かね-->
 
 
     <section>
+        <h2>友達を探す</h2>
+        <p>ID名から友達を探す</p>
         <form action="friend_search.php" method="POST" class="form_style" id="form_style">
             <div id="search-wrap">
                 <input type="search" placeholder="ID検索" name="id" required>
@@ -50,43 +49,10 @@ cssつき　ボタン効かね-->
         </form>
     </section>
 </body>
-<!-- 
-<div class="footer">
-</div> -->
 
 </html>
 
 <?php
-
-//  // 川君　友達リスト表示
-// すでに友達になっている人のidからnameとimegeをとってくる方法
-
-
-// $friend = $db->query("SELECT * FROM kenzo_friend");
-// $i = 0;
-// foreach ($friend as $value) {
-// $f_array[] = $value["id"];
-
-
-// $f_table = $db->query("SELECT * FROM kenzo_account WHERE id='$f_array[$i]'");
-
-// foreach ($f_table as $val) {
-// $ft_array[] = $val["name"];
-// $ftid_array[] = $val["id"];
-// echo <<<FRIEND
-// <div class="friend{$i} friends">
-// <p>$ft_array[$i]</p>
-// <input id="hiddenid" type="hidden" value="$ftid_array[$i]">
-
-// </div>
-
-// FRIEND;
-// }
-// $i++;
-// }
-
-
-// 川君ここまで
 
 
 
@@ -168,12 +134,11 @@ kesu;
 
 
         // すでに友達になっているか確認
-        $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
-        $q = $db->query($qq);
-        $kensyo = $q->fetchColumn();
-
-
-        if ($kensyo == 0) {
+        // $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
+        // $q = $db->query($qq);
+        // $kensyo = $q->fetchColumn();
+        // 以下の[kensho=0は本番ではイコールに変える]
+        if ($kensyo < 1000) {
             $stmt = $db->prepare(
                 "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'
             );
@@ -195,6 +160,14 @@ kesu;
             <p class='friendname'>$_POST[name]</p>
 
            <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+
+
+           
+           <input id="frimg" type="hidden" value="$friend_img">
+            <input id="frid" type="hidden" value='$_POST[id]'>
+            <input id="hiddenname" type="hidden" value="$friend_name">
+
+
 
            <input type='submit' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
 
