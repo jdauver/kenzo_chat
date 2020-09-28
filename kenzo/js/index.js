@@ -28,7 +28,7 @@ $(function () {
 
         if ($("#friend_id1").attr("class") == "friend_img") {
             // alert("ddd");
-            // $("#friend_id1").attr("src", "img/down1.png");
+            $("#friend_id1").attr("src", "img/down1.png");
             // alert("eee");
             $("#friend_id").attr("src", "img/down1.png");
             $("#scroll_info").slideUp("slow");
@@ -64,7 +64,6 @@ $(function () {
     });
 
 
-    // ページの一番下に行くボタン
     $("#sitabtn").on("click", function () {
         $('html, body').animate({
             scrollTop: $(document).height()
@@ -89,13 +88,13 @@ $(function () {
     });
 
     // 送信押したとき一番下へーーーーーー
-    // $("#send").on("click", function () {
-    //     if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
-    //         $('html, body').animate({
-    //             scrollTop: $(document).height()
-    //         }, 700);
-    //     }aaa
-    // });
+    $("#send").on("click", function () {
+        if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
+            $('html, body').animate({
+                scrollTop: $(document).height()
+            }, 700);
+        }
+    });
 
 
 
@@ -241,9 +240,27 @@ $(function () {
 
     // 友達になってトーク押したときチャットに飛ぶ------
     $("#talkjump").click(function () {
-        window.location.href = 'chat.php';
+        $.ajax({
+            url: "ajax/friend_search.ajax.php",
+            type: "post",
+            dataType: "text",
+            data: {
+                'id': $("#frid").val(),
+                'img': $("#frimg").val(),
+                'name': $("#friname").val()
+            }
 
-    })
+        }).done(function () {
+            // var array = JSON.parse(response);
+            window.location.href = 'chat.php';
+
+
+        }).fail(function (xhr, textStatus, errorThrown) {
+            location.reload();
+        });
+    });
+
+
 
     /* ログインと登録の正規表現 */
     $("#name").on("blur", check0);
@@ -329,3 +346,31 @@ $(document).ready(function () {
     //     $('#touroku_form').submit();
     // });
 });
+
+$(function () {
+    $('#yameru').click(function () {
+        window.location.href = "friend_search.php";
+    })
+})
+
+// 友達検索画面から友達になって"トーク"ボタン押したとき
+// $('.friend_talk').click(function () {
+//     $.ajax({
+//         url: "ajax/friend_search.ajax.php",
+//         type: "post",
+//         dataType: "text",
+//         data: {
+//             'id': $("#frid", this).val(),
+//             'img': $("#frimg", this).val(),
+//             'name': $("#friname", this).val()
+//         }
+
+//     }).done(function (response) {
+//         var array = JSON.parse(response);
+//         window.location.href = 'chat.php';
+
+
+//     }).fail(function (xhr, textStatus, errorThrown) {
+//         location.reload();
+//     });
+// });
