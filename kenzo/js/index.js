@@ -3,18 +3,20 @@ $(function () {
     // メインページーーーーーーーーーーーーーーーーーー
 
     // 友達人数の紹介
+    // alert("aaa");
     $("#cursor").on("click", function () {
         /* クラスがfriend_imgどうかの確認 */
         if ($("#friend_id").attr("class") == "friend_img") {
+            // alert("aaa");
             /* friend_idのsrcを変える */
             $("#friend_id").attr("src", "img/up1.png");
+            // alert("bbb");
+
             $("#scroll_info").slideDown("slow");
-
-            $('html, body').animate({
-                scrollTop: $('#cursor').offset().top
-            }, 700);
-
+            // alert("ccc");
         } else if ($("#friend_id").attr("class") == "") {
+            // alert("bbb");
+
             $("#scroll_info").slideUp("slow");
             $("#friend_id").attr("src", "img/down1.png");
         }
@@ -22,6 +24,7 @@ $(function () {
     });
 
     $("#upstyle").on("click", function () {
+        // alert("ccc");
 
         if ($("#friend_id1").attr("class") == "friend_img") {
             // alert("ddd");
@@ -78,8 +81,7 @@ $(function () {
             data: { 'message': $(".textarea").val() }
 
         }).done(function () {
-            // var kensyo = JSON.parse(response);
-            // console.log(kensyo);
+
         }).fail(function (xhr, textStatus, errorThrown) {
             location.reload();
         });
@@ -324,6 +326,8 @@ $(function () {
             return false;
         }
     }
+
+
 });
 
 // friend-searchページ
@@ -341,41 +345,15 @@ $(document).ready(function () {
     // $('#touroku').click(function () {
     //     $('#touroku_form').submit();
     // });
-
-        //ログアウトの設定
-        // alert("aaa");
-        $(document).ready(function() {
-            $('#id_li_style').on("click", function () {
-                ret = confirm("ログインページに戻ります。ログアウトしますか？");
-                if (ret == true) {
-                    location.href = "login.php";
-
-                }
-            });
-        });
-    //ログアウトを押した処理
-    $('#id_li_style').click(function () {
-        $.ajax({
-            url: "logout_ajax.php",
-            type: "SESSTION",
-            dataType: "text",
-            data: postdate,
-
-        }).done(function (response) {
-            var array = JSON.parse(response);
-            window.location.href = 'login.php';
-
-
-        }).fail(function (xhr, textStatus, errorThrown) {
-            location.reload();
-        });
-    });
-
-
 });
 
 $(function () {
     $('#yameru').click(function () {
+        window.location.href = "friend_search.php";
+    })
+})
+$(function () {
+    $('#modoru').click(function () {
         window.location.href = "friend_search.php";
     })
 })
