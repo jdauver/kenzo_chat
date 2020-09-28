@@ -12,9 +12,9 @@ try {
     foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
         if ($message["img"]) {
             if ($message["id"] == $_SESSION["id"]) {
-                $talk[] = "<div id='$message[num]' class='zibun $message[date] talk'><span class='time'>" . $message['time'] . "</span> <img src='talk_img/$message[img]' class='zibun-img'>　<div class='zibun-topuga'></div></div>";
+                $talk[] = "<div id='$message[num]' class='zibun $message[date] talk'><span class='time'>" . $message['time'] . "</span> <div id='lity_info' src='talk_img/$message[img]' data-lity='data-lity'><img src='talk_img/$message[img]' class='zibun-img'></div>　<div class='zibun-topuga'></div></div>";
             } else {
-                $talk[] = "<div id='$message[num]' class='aite $message[date] talk'><div class='aite-topuga'></div>　<img src='talk_img/$message[img]' class='aite-img'> <span class='time'>" . $message['time'] . "</span></div>";
+                $talk[] = "<div id='$message[num]' class='aite $message[date] talk'><div class='aite-topuga'></div>　<div id='lity_info' src='talk_img/$message[img]' data-lity='data-lity'><img src='talk_img/$message[img]' class='aite-img'></div> <span class='time'>" . $message['time'] . "</span></div>";
             }
         } else {
             if ($message["id"] == $_SESSION["id"]) {
