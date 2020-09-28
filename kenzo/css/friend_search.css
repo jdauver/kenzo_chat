@@ -167,6 +167,8 @@ input[type="search"] {
     /* position: relative; */
     cursor:pointer;
     -webkit-background-size: cover;
+    -webkit-transform: none;
+    transform: none;
 }
 
 #fri-search {
@@ -207,6 +209,8 @@ p.messege {
     border-radius: 50%;
     -webkit-background-size: cover;
     -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
 }
 
 

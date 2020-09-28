@@ -67,6 +67,8 @@ body {
     border-radius: 50%;
     -webkit-background-size: cover;
     -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
 }
 #section_name {
     text-align: center;
@@ -101,6 +103,8 @@ body {
     background-position: center;
     -webkit-background-size: cover;
     -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
     margin: 0 20px 0 20px;
 
 }
@@ -190,6 +194,8 @@ body {
         background-position: center;
         -webkit-background-size: cover;
         -webkit-background-position: center;
+        -webkit-transform: none;
+         transform: none;
     }
 }
 
@@ -229,5 +235,7 @@ body {
         background-size: cover;
         -webkit-background-size: cover;
         -webkit-background-position: center;
+        -webkit-transform: none;
+        transform: none;
     }
 }
