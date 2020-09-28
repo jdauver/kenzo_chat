@@ -126,6 +126,10 @@ label:hover{
     background-image: url('../img/camera.png');
     background-size: cover;
     background-position: center;
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
 }
 .file_back{
     width: 60px;
@@ -133,6 +137,10 @@ label:hover{
     background-image: url('../img/photo.png');
     background-size: cover;
     background-position: center;
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
 }
 
 #pv{
@@ -140,6 +148,10 @@ label:hover{
     height: 200px;
     background-size: cover;
     background-position: center;
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
     margin: 0 auto;
 
 }

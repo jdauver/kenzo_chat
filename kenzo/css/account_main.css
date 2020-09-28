@@ -65,6 +65,10 @@ body {
     margin: 60px auto 0;
     background-size: cover;
     border-radius: 50%;
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
 }
 #section_name {
     text-align: center;
@@ -78,14 +82,11 @@ body {
 .friends{
     width: 90vw;
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
     cursor: pointer;
     margin: 20px auto;
-    /* border-bottom: 1px solid; */
     padding: 20px 0;
     background-color: rgba(240, 210, 176);
-    /* border-radius: 50px; */
 }
 .friends:hover{
     background-color: rgb(240, 223, 204);
@@ -100,6 +101,10 @@ body {
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
+    -webkit-transform: none;
+    transform: none;
     margin: 0 20px 0 20px;
 
 }
@@ -182,13 +187,16 @@ body {
     }
 
     .friend_imgs{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-
-}
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        -webkit-background-size: cover;
+        -webkit-background-position: center;
+        -webkit-transform: none;
+         transform: none;
+    }
 }
 
 
@@ -225,5 +233,8 @@ body {
         height: 160px;
         border-radius: 50%;
         background-size: cover;
+        -webkit-background-size: cover;
+        -webkit-transform: none;
+        transform: none;
     }
 }

@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="css/friend_search.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
 
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -97,7 +98,7 @@ if (isset($_POST["id"])) {
            <input type='submit' name='ok' id='touroku' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
 
-           <input type='submit' name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
+           <input type='submit' id="yameru" name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
         </div>
 
@@ -137,7 +138,7 @@ kesu;
         // $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
         // $q = $db->query($qq);
         // $kensyo = $q->fetchColumn();
-        // 以下の[kensho=0は本番ではイコールに変える]
+        // 以下は本番でkensho==0に変える]
         if ($kensyo < 1000) {
             $stmt = $db->prepare(
                 "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'
@@ -155,21 +156,21 @@ kesu;
             $_SESSION["id2"] = $_POST['id'];
 
             echo <<<FTOUROKU
-             <div class="search_img"         style="background-image: url('upload/$friend_img');">
+             <div class="search_img" style="background-image: url('upload/$friend_img');">
         </div>
             <p class='friendname'>$_POST[name]</p>
 
            <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
 
+           <input type='submit' id='talkback' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
+
            
-           <input id="frimg" type="hidden" value="$friend_img">
-            <input id="frid" type="hidden" value='$_POST[id]'>
-            <input id="hiddenname" type="hidden" value="$friend_name">
-
-
-
-           <input type='submit' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
+        <div class="friend_talk">
+            <input id="frimg" type="hidden" value="$friend_img">
+             <input id="frid" type="hidden" value='$_POST[id]'>
+             <input id="friname" type="hidden" value="$friend_name">
+        </div> 
 
 FTOUROKU;
         } else {
