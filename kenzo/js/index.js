@@ -322,34 +322,35 @@ $(document).ready(function () {
     //     $('#touroku_form').submit();
     // });
 
-        //ログアウトの設定
-        // alert("aaa");
-        $(document).ready(function() {
-            $('#id_li_style').on("click", function () {
-                ret = confirm("ログインページに戻ります。ログアウトしますか？");
-                if (ret == true) {
-                    location.href = "login.php";
+    //ログアウトの設定
+    $(function () {
+        $('#id_li_style').on("click", function () {
+            ret = confirm("ログインページに戻ります。ログアウトしますか？");
+            if (ret == true) {
+        
+                $.ajax({
+                    type: "POST",
+                    url: "../kenzo/ajax/logout_ajax.php",
+                    data: {
+                        "logout": "logout_ajax",
+                    },
+                    dataType: "json",
+                }).done(function (response) {
+                    // console.log(response);
+                    // var array = JSON.parse(response);
 
-                }
-            });
-        });
-    //ログアウトを押した処理
-    $('#id_li_style').click(function () {
-        $.ajax({
-            url: "logout_ajax.php",
-            type: "SESSTION",
-            dataType: "text",
-            data: postdate,
-
-        }).done(function (response) {
-            var array = JSON.parse(response);
-            window.location.href = 'login.php';
+                    window.location.href = 'login.php';
 
 
-        }).fail(function (xhr, textStatus, errorThrown) {
-            location.reload();
+                }).fail(function (xhr, textStatus, errorThrown) {
+                    location.reload();
+
+                });
+
+            }
         });
     });
+    
 
 
 });
