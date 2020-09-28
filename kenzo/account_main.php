@@ -10,7 +10,6 @@ session_start();
     <meta name="robots" content="noindex">
     <meta name="robots" content="nofollow">
     <!-- <link rel="icon" type="image/x-icon" href="image/favicon.ico"> -->
-    <!-- <link rel="stylesheet" href="css/index.css"> -->
     <link rel="stylesheet" href="css/account_main.css">
 
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -117,7 +116,6 @@ MAIN;
 FRIEND;
         }
         $i++;
-        /* 友達の画像を背景に出しているソース------------ */
     }
 
     echo <<<UNDER

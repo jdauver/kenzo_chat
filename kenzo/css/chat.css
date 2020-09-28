@@ -115,12 +115,21 @@ body{
     width: 170px;
     height: auto;
     border-radius: 10px;
+    cursor: pointer;
 }
 .aite-img{
     width: 170px;
     height: auto;
     border-radius: 10px;
-
+    cursor: pointer;
+}
+.zibun-img:hover{
+    opacity: 0.6;
+    /* transition: all 1s; */
+}
+.aite-img:hover{
+    opacity: 0.6;
+    /* transition: all 1s; */
 }
 
 .zibun-topuga{
@@ -199,8 +208,6 @@ body{
     opacity: 0.5;
     transition: all 0.5s;
 }
-
-
 
 
 
