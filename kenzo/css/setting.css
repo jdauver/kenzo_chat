@@ -127,6 +127,7 @@ label:hover{
     background-size: cover;
     background-position: center;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 .file_back{
     width: 60px;
@@ -135,6 +136,7 @@ label:hover{
     background-size: cover;
     background-position: center;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 
 #pv{
@@ -143,6 +145,7 @@ label:hover{
     background-size: cover;
     background-position: center;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
     margin: 0 auto;
 
 }

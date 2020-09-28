@@ -206,6 +206,7 @@ p.messege {
     background-size: cover;
     border-radius: 50%;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 
 

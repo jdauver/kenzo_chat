@@ -55,6 +55,7 @@ body{
     background-size: cover;
     background-position: center;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
     width: 50px;
     height: 50px;
     position: fixed;
@@ -140,6 +141,7 @@ body{
     background-size: cover;
     background-position: center;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 .aite-topuga{
     width: 60px;
@@ -148,6 +150,7 @@ body{
     background-size: cover;
     background-position: center;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 .date{
     width:80vw;
@@ -196,6 +199,7 @@ body{
     background-size: cover;
     background-position: center;
     -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 .set_input {
     display: none;
