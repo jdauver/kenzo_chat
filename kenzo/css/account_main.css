@@ -80,14 +80,11 @@ body {
 .friends{
     width: 90vw;
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
     cursor: pointer;
     margin: 20px auto;
-    /* border-bottom: 1px solid; */
     padding: 20px 0;
     background-color: rgba(240, 210, 176);
-    /* border-radius: 50px; */
 }
 .friends:hover{
     background-color: rgb(240, 223, 204);
