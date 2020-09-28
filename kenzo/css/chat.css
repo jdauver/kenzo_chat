@@ -54,6 +54,8 @@ body{
     background: url(../img/sita.png) no-repeat;
     background-size: cover;
     background-position: center;
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
     width: 50px;
     height: 50px;
     position: fixed;
@@ -115,12 +117,21 @@ body{
     width: 170px;
     height: auto;
     border-radius: 10px;
+    cursor: pointer;
 }
 .aite-img{
     width: 170px;
     height: auto;
     border-radius: 10px;
-
+    cursor: pointer;
+}
+.zibun-img:hover{
+    opacity: 0.6;
+    /* transition: all 1s; */
+}
+.aite-img:hover{
+    opacity: 0.6;
+    /* transition: all 1s; */
 }
 
 .zibun-topuga{
@@ -129,7 +140,8 @@ body{
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 .aite-topuga{
     width: 60px;
@@ -137,7 +149,8 @@ body{
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 .date{
     width:80vw;
@@ -185,7 +198,8 @@ body{
     background: url("../img/file.png");
     background-size: cover;
     background-position: center;
-
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 .set_input {
     display: none;
@@ -199,8 +213,6 @@ body{
     opacity: 0.5;
     transition: all 0.5s;
 }
-
-
 
 
 

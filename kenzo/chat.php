@@ -31,11 +31,12 @@ HEAD;
     <meta name="robots" content="noindex">
     <meta name="robots" content="nofollow">
     <!-- <link rel="icon" type="image/x-icon" href="image/favicon.ico"> -->
-    <!-- <link rel="stylesheet" href="css/index.css"> -->
     <link rel="stylesheet" href="css/chat.css">
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/index2.js"></script>
+    <link rel="stylesheet" href="css/lity.min.css">
+    <script src="js/lity.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <title>チャット</title>
 </head>

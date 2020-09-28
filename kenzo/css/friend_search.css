@@ -166,6 +166,7 @@ input[type="search"] {
     background-repeat: no-repeat;
     /* position: relative; */
     cursor:pointer;
+    -webkit-background-size: cover;
 }
 
 #fri-search {
@@ -204,6 +205,8 @@ p.messege {
     margin: 15px auto;
     background-size: cover;
     border-radius: 50%;
+    -webkit-background-size: cover;
+    -webkit-background-position: center;
 }
 
 

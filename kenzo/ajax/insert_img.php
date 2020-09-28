@@ -23,7 +23,17 @@ try {
     $params = array(':name' => $_SESSION['name'], ':date' => $date, ':time' => $time, ':id' => $_SESSION['id'], ':id2' => $_SESSION['id2'], ':img' => $_FILES["file"]['name']);
     $stmt->execute($params);
 
-    echo json_encode("a");
+
+    $qq = "SELECT COUNT(*) FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]') OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]')";
+    $q = $db->query($qq);
+    $kensyo = $q->fetchColumn();
+
+    if ($kensyo > 100) {
+        $delete = $kensyo - 100;
+        $db->query("DELETE FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]') OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]') ORDER BY num LIMIT $delete");
+    }
+
+    // echo json_encode("a");
 } catch (PDOException $e) {
     die("PDO Error:" . $e->getMessage());
 }
