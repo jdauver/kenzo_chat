@@ -345,6 +345,41 @@ $(document).ready(function () {
     // $('#touroku').click(function () {
     //     $('#touroku_form').submit();
     // });
+<<<<<<< HEAD
+=======
+
+    //ログアウトの設定
+    $(function () {
+        $('#id_li_style').on("click", function () {
+            ret = confirm("ログインページに戻ります。ログアウトしますか？");
+            if (ret == true) {
+        
+                $.ajax({
+                    type: "POST",
+                    url: "../kenzo/ajax/logout_ajax.php",
+                    data: {
+                        "logout": "logout_ajax",
+                    },
+                    dataType: "json",
+                }).done(function (response) {
+                    // console.log(response);
+                    // var array = JSON.parse(response);
+
+                    window.location.href = 'login.php';
+
+
+                }).fail(function (xhr, textStatus, errorThrown) {
+                    location.reload();
+
+                });
+
+            }
+        });
+    });
+    
+
+
+>>>>>>> 5f041a5892ee2b0ff051994f248b545be8e089e4
 });
 
 $(function () {
