@@ -1,6 +1,8 @@
 <?php
 session_start();
 ?>
+<!-- 自分が作ったやつ 
+cssつき　ボタン効かね-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -8,11 +10,9 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/friend_search.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/etcetera.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
@@ -28,7 +28,7 @@ session_start();
                 </li>
                 <li class="li_style"><a href="friend_search.php" class="a_style"><i class="fa fa-user-plus" id="img2"></i></a></li>
                 <li class="li_style"><a href="setting.php" class="a_style"><i class="fa fa-cog" id="img3"></i></a></li>
-                <li class="li_style"><a href="login.php" class="a_style"><img class="touroku_img_logout" src="img/logout.png"></a>
+                <li class="li_style"><a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
                 </li>
             </ul>
         </nav>
@@ -36,8 +36,6 @@ session_start();
 
 
     <section>
-        <h2>友達を探す</h2>
-        <p>ID名から友達を探す</p>
         <form action="friend_search.php" method="POST" class="form_style" id="form_style">
             <div id="search-wrap">
                 <input type="search" placeholder="ID検索" name="id" required>
@@ -54,6 +52,36 @@ session_start();
 </html>
 
 <?php
+
+//  // 川君　友達リスト表示
+// すでに友達になっている人のidからnameとimegeをとってくる方法
+
+
+// $friend = $db->query("SELECT * FROM kenzo_friend");
+// $i = 0;
+// foreach ($friend as $value) {
+// $f_array[] = $value["id"];
+
+
+// $f_table = $db->query("SELECT * FROM kenzo_account WHERE id='$f_array[$i]'");
+
+// foreach ($f_table as $val) {
+// $ft_array[] = $val["name"];
+// $ftid_array[] = $val["id"];
+// echo <<<FRIEND
+// <div class="friend{$i} friends">
+// <p>$ft_array[$i]</p>
+// <input id="hiddenid" type="hidden" value="$ftid_array[$i]">
+
+// </div>
+
+// FRIEND;
+// }
+// $i++;
+// }
+
+
+// 川君ここまで
 
 
 
@@ -84,23 +112,21 @@ if (isset($_POST["id"])) {
 
             if ($row > 0) {
                 echo <<<FTOUROKU
-         <div class='ftouroku'>
-
-         <div class="search_img" style="background-image: url('upload/$friend_img');">
-        </div>
+            <img src='$friend_img' class='friendimg'>
             <p class='friendname'>$friend_name</p>
-           <form action="friend_search.php" id='touroku_form' method="post">
+           <form action="friend_search.php" method="post">
            <input type='hidden' name='id' value='$_POST[id]'>
            <input type='hidden' name='name' value='$friend_name'>
            <input type='hidden' name='img' value='$friend_img'>
 
 
-           <input type='submit' name='ok' id='touroku' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
+           <input type='submit' name='ok' value='登録' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
 
-           <input type='submit' id="yameru" name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
+
+           <input type='submit' name='ng' value='やめる' class="syo-btn friendinput btn btn--red btn--radius btn--cubic"><i class="fas fa-position-right"></i><br>
            </form>
-        </div>
+
 
 FTOUROKU;
             }
@@ -112,21 +138,9 @@ FTOUROKU;
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());
     }
-}
 
-
-// 友達登録したとき
-if (isset($_POST["ok"])) {
-
-    echo <<<kesu
-    <script>
-    $(function () {
-
-        $(".ftouroku").html("");
-    });
-    </script>
-kesu;
-
+    // id検索して名前出てきてその下の"登録"を押したときの処理
+} else if (isset($_POST["ok"])) {
     try {
         $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
         // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
@@ -135,11 +149,12 @@ kesu;
 
 
         // すでに友達になっているか確認
-        // $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
-        // $q = $db->query($qq);
-        // $kensyo = $q->fetchColumn();
-        // 以下は本番でkensho==0に変える]
-        if ($kensyo < 1000) {
+        $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
+        $q = $db->query($qq);
+        $kensyo = $q->fetchColumn();
+
+
+        if ($kensyo == 0) {
             $stmt = $db->prepare(
                 "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'
             );
@@ -156,21 +171,12 @@ kesu;
             $_SESSION["id2"] = $_POST['id'];
 
             echo <<<FTOUROKU
-             <div class="search_img" style="background-image: url('upload/$friend_img');">
-        </div>
+            <img src='$_POST[img]' class='friendimg'>
             <p class='friendname'>$_POST[name]</p>
 
            <input type='submit' id='talkjump' value='トーク' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i>
 
-
-           <input type='submit' id='talkback' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
-
-           
-        <div class="friend_talk">
-            <input id="frimg" type="hidden" value="$friend_img">
-             <input id="frid" type="hidden" value='$_POST[id]'>
-             <input id="friname" type="hidden" value="$friend_name">
-        </div> 
+           <input type='submit' value='もどる' class="friendinput btn btn--red btn--radius btn--cubic syo-btn"><i class="fas fa-position-right"></i><br>
 
 FTOUROKU;
         } else {
@@ -180,6 +186,5 @@ FTOUROKU;
         die("PDO Error:" . $e->getMessage());
     }
 }
-
 
 ?>

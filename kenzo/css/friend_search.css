@@ -71,7 +71,7 @@ h2 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 0;
 
 }
@@ -82,7 +82,7 @@ p{
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    margin-top: -5px;
+    margin-top: -10px;
 }
 *,*:before,*:after {
     -webkit-box-sizing: inherit;
@@ -175,7 +175,7 @@ input[type="search"] {
     position: absolute;
     height: 28px;
     width: 28px;
-    top: 39%;
+    top: 32%;
     left: 88%;
 }
 
@@ -204,7 +204,7 @@ p.messege {
     width: 150px;   
     height: 150px;
     background-position: center;
-    margin: 30px auto 0;
+    margin: 15px auto;
     background-size: cover;
     border-radius: 50%;
     -webkit-background-size: cover;
