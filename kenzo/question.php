@@ -1,3 +1,16 @@
+<?php
+session_start();
+// ログイン切れてたらログインページに---------
+if (!isset($_SESSION['name'])) {
+    echo <<<kireta
+    <script>
+        alert("もう一度ログインしてください");
+        window.location.href = 'login.php';
+    </script>
+kireta;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -10,7 +23,7 @@
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>q</title>
+    <title>使用方法</title>
 
 </head>
 
@@ -29,7 +42,13 @@
         </nav>
     </header>
 
-    <section></section>
+    <section>
+        <div class="guide">
+            <h2>ガイド</h2>
+        </div>
+
+
+    </section>
 
 </body>
 

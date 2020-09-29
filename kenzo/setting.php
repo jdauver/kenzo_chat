@@ -1,5 +1,14 @@
 <?php
 session_start();
+// ログイン切れてたらログインページに---------
+if (!isset($_SESSION['name'])) {
+    echo <<<kireta
+    <script>
+        alert("もう一度ログインしてください");
+        window.location.href = 'login.php';
+    </script>
+kireta;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,8 +40,12 @@ session_start();
 
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+            $name = htmlentities($_POST["name"]);
+            $pass = htmlentities($_POST["pass"]);
+
             if ($_POST["name"] != "") {
-                $array[0] = $_POST['name'];
+                $array[0] = $name;
             } elseif ($_POST["name"] == "") {
                 $r = $db->query("SELECT * FROM kenzo_account WHERE id='$s_id'");
                 foreach ($r as $s_val) {
@@ -41,7 +54,7 @@ session_start();
             }
 
             if ($_POST["pass"] != "") {
-                $array[1] = $_POST['pass'];
+                $array[1] = $pass;
             } elseif ($_POST["pass"] == "") {
                 $r = $db->query("SELECT * FROM kenzo_account WHERE id='$s_id'");
                 foreach ($r as $s_val) {
@@ -59,11 +72,28 @@ session_start();
             }
 
 
+
+
+
+            // パスワード重複チェック
+            $qq = "SELECT COUNT(*) FROM kenzo_account WHERE pass='$pass'";
+            $q = $db->query($qq);
+            $kensyo = $q->fetchColumn();
+
+            if ($kensyo > 0) {
+                $error[] = "<p class='error'>そのパスワードはすでに使用されてます</p>";
+            }
+
+
+
+
             $img = $_FILES['img']['name'];
             $img_tmp =  $_FILES['img']['tmp_name'];
 
             is_uploaded_file($img);
             is_uploaded_file($img_tmp);
+
+
 
             //画像をuploadファイルに保存
             move_uploaded_file($img_tmp, 'upload/' . $img);
@@ -80,7 +110,22 @@ session_start();
         $img_name = $_FILES['img']['name'];
         $img_tmp =  $_FILES['img']['tmp_name'];
 
-        echo <<<w
+
+
+
+
+        $errors = count($error);
+
+        // もし配列errorに一つでもエラー内容が入っていたらエラーを表示してまた登録画面へーーー
+        if ($errors > 0) {
+
+            foreach ($error as $value) {
+
+                $evalue = $value . "<br>";
+            }
+            setting($value);
+        } else {
+            echo <<<w
         <header id="top">
          <img src='img/q.png' class='q'>
             <nav id="account_nav">
@@ -131,7 +176,7 @@ session_start();
             </script>
 
 w;
-        // }
+        }
     } elseif ($_POST['ok']) {
 
 
@@ -169,6 +214,14 @@ js;
             die("PDO Error:" . $e->getMessage());
         }
     } else {
+        setting($evalue);
+    }
+
+
+
+    function setting($evalue)
+    {
+
         unset($_SESSION["file_img"]);
         //ホーム画面の設定
         try {
@@ -182,7 +235,6 @@ js;
             foreach ($zibun as $zibunval) {
                 $name = $zibunval["name"];
                 $img = $zibunval["img"];
-                // $back = $zibunval["back"];
             }
             echo <<< MOD
         <header id="top">
@@ -200,18 +252,20 @@ js;
         </header>
         <div class="setting">
             <h2>アカウント設定</h2>
-            <p>アカウント情報を変更できます</p>
         </div>
+
+        <div class="evalue">$evalue</div>
 
         <form class=setting_form action="" id=updateform method="POST" enctype="multipart/form-data">
 
             <div class="group">
-                <input id='name' class='input_text name' type="text" name="name" placeholder="ニックネーム" class="set_input">
+                <input id='name' class='input_text name set_input' type="text" name="name" placeholder="ニックネーム">
+                 <p class="alert">※12文字以内</p>
             </div>
 
             <div class="group">
-                 <input id='pass' class='input_text pass' type="text" name="pass" placeholder="パスワード" class="set_input2">
-                 <p>※英数字６文字以上20文字未満</p>
+                 <input id='pass' class='input_text pass set_input2' type="text" name="pass" placeholder="パスワード">
+                 <p class="alert">※英数字６文字以上20文字未満</p>
             </div>
 
             <div class='img_wrap'>
