@@ -33,61 +33,59 @@ session_start();
         </nav>
     </header>
 
+    <main>
+        <section>
+            <h2>友達を探す</h2>
+            <p>ID名から友達を探す</p>
+            <form action="friend_search.php" method="POST" class="form_style" id="form_style">
+                <div id="search-wrap">
+                    <input type="search" placeholder="ID検索" name="id" required>
+                    <div id="fri-search" class="search"></div>
+                    <br>
+                </div>
 
-    <section>
-        <h2>友達を探す</h2>
-        <p>ID名から友達を探す</p>
-        <form action="friend_search.php" method="POST" class="form_style" id="form_style">
-            <div id="search-wrap">
-                <input type="search" placeholder="ID検索" name="id" required>
-                <div id="fri-search" class="search"></div>
-                <br>
-            </div>
+                <input type="button" value="探す" class="btn btn--red btn--radius btn--cubic" id="sagasu"><i class="fas fa-position-right"></i>
 
-            <input type="button" value="探す" class="btn btn--red btn--radius btn--cubic" id="sagasu"><i class="fas fa-position-right"></i>
+            </form>
+        </section>
 
-        </form>
-    </section>
-</body>
 
-</html>
-
-<?php
+        <?php
 
 
 
-//値の確認
-if (isset($_POST["id"])) {
-    try {
-        //データーベースに接続
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+        //値の確認
+        if (isset($_POST["id"])) {
+            try {
+                //データーベースに接続
+                $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+                // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+                // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
 
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 
-        if ($_POST["id"] != "") { //入力有無を確認
+                if ($_POST["id"] != "") { //入力有無を確認
 
-            if ($_POST["id"] == $_SESSION['id']) {
-                echo "<p class='messege'>自分は友達にできません</p>";
-            } else {
+                    if ($_POST["id"] == $_SESSION['id']) {
+                        echo "<p class='messege'>自分は友達にできません</p>";
+                    } else {
 
-                $stmt = $db->query("SELECT * FROM kenzo_account WHERE id = '$_POST[id]'");
-                //SQL文を実行して、結果を$stmtに代入する。
-
-
-                foreach ($stmt as $row) {
-                    // データベースのフィールド名で出力
-                    $friend_name = $row["name"];
-                    $friend_img = $row["img"];
-                }
+                        $stmt = $db->query("SELECT * FROM kenzo_account WHERE id = '$_POST[id]'");
+                        //SQL文を実行して、結果を$stmtに代入する。
 
 
-                if ($row > 0) {
-                    echo <<<FTOUROKU
+                        foreach ($stmt as $row) {
+                            // データベースのフィールド名で出力
+                            $friend_name = $row["name"];
+                            $friend_img = $row["img"];
+                        }
+
+
+                        if ($row > 0) {
+                            echo <<<FTOUROKU
          <div class='ftouroku'>
 
          <div class="search_img" style="background-image: url('upload/$friend_img');">
@@ -107,26 +105,26 @@ if (isset($_POST["id"])) {
         </div>
 
 FTOUROKU;
+                        }
+                        if ($row == 0) {
+                            echo "<p class='messege'>該当なし</p>";
+                        }
+                    }
+                    // 自分は友達にできない
+
+
+
                 }
-                if ($row == 0) {
-                    echo "<p class='messege'>該当なし</p>";
-                }
+            } catch (PDOException $e) {
+                die("PDO Error:" . $e->getMessage());
             }
-            // 自分は友達にできない
-
-
-
         }
-    } catch (PDOException $e) {
-        die("PDO Error:" . $e->getMessage());
-    }
-}
 
 
-// 友達登録したとき
-if (isset($_POST["ok"])) {
+        // 友達登録したとき
+        if (isset($_POST["ok"])) {
 
-    echo <<<kesu
+            echo <<<kesu
     <script>
     $(function () {
 
@@ -135,36 +133,36 @@ if (isset($_POST["ok"])) {
     </script>
 kesu;
 
-    try {
-        // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
-        // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
-        $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            try {
+                $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
+                // $db = new PDO('mysql:host=127.0.0.1; dbname=kenzo_chat', 'root');
+                // $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        // すでに友達になっているか確認
-        // $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
-        // $q = $db->query($qq);
-        // $kensyo = $q->fetchColumn();
-        // 以下は本番でkensho==0に変える
+                // すでに友達になっているか確認
+                // $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
+                // $q = $db->query($qq);
+                // $kensyo = $q->fetchColumn();
+                // 以下は本番でkensho==0に変える
 
-        if ($kensyo < 1000) {
-            $stmt = $db->prepare(
-                "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'
-            );
+                if ($kensyo < 1000) {
+                    $stmt = $db->prepare(
+                        "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'
+                    );
 
-            $stmt->bindParam(':id', $_POST['id']);
-            $stmt->execute();
-            $stmt = $db->prepare(
-                "INSERT INTO tomo_$_POST[id] (id)" . 'VALUES(:id)'
-            );
+                    $stmt->bindParam(':id', $_POST['id']);
+                    $stmt->execute();
+                    $stmt = $db->prepare(
+                        "INSERT INTO tomo_$_POST[id] (id)" . 'VALUES(:id)'
+                    );
 
-            $stmt->bindParam(':id', $_SESSION['id']);
-            $stmt->execute();
+                    $stmt->bindParam(':id', $_SESSION['id']);
+                    $stmt->execute();
 
-            $_SESSION["id2"] = $_POST['id'];
+                    $_SESSION["id2"] = $_POST['id'];
 
-            echo <<<FTOUROKU
+                    echo <<<FTOUROKU
              <div class="search_img" style="background-image: url('upload/$friend_img');">
         </div>
             <p class='friendname'>$_POST[name]</p>
@@ -182,13 +180,17 @@ kesu;
         </div> 
 
 FTOUROKU;
-        } else {
-            echo "<p class='messege'>すでに友達になっています</p>";
+                } else {
+                    echo "<p class='messege'>すでに友達になっています</p>";
+                }
+            } catch (PDOException $e) {
+                die("PDO Error:" . $e->getMessage());
+            }
         }
-    } catch (PDOException $e) {
-        die("PDO Error:" . $e->getMessage());
-    }
-}
 
 
-?>
+        ?>
+    </main>
+</body>
+
+</html>
