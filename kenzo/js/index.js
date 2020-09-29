@@ -390,24 +390,3 @@ $(function () {
     })
 })
 
-// 友達検索画面から友達になって"トーク"ボタン押したとき
-// $('.friend_talk').click(function () {
-//     $.ajax({
-//         url: "ajax/friend_search.ajax.php",
-//         type: "post",
-//         dataType: "text",
-//         data: {
-//             'id': $("#frid", this).val(),
-//             'img': $("#frimg", this).val(),
-//             'name': $("#friname", this).val()
-//         }
-
-//     }).done(function (response) {
-//         var array = JSON.parse(response);
-//         window.location.href = 'chat.php';
-
-
-//     }).fail(function (xhr, textStatus, errorThrown) {
-//         location.reload();
-//     });
-// });
