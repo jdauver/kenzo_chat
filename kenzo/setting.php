@@ -1,5 +1,14 @@
 <?php
 session_start();
+// ログイン切れてたらログインページに---------
+if (!isset($_SESSION['name'])) {
+    echo <<<kireta
+    <script>
+        alert("もう一度ログインしてください");
+        window.location.href = 'login.php';
+    </script>
+kireta;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">

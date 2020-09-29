@@ -1,3 +1,15 @@
+<?php
+session_start();
+// ログイン切れてたらログインページに---------
+if (!isset($_SESSION['name'])) {
+    echo <<<kireta
+    <script>
+        alert("もう一度ログインしてください");
+        window.location.href = 'login.php';
+    </script>
+kireta;
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -29,7 +41,13 @@
         </nav>
     </header>
 
-    <section></section>
+    <section>
+        <div class="guide">
+            <h2>ガイド</h2>
+        </div>
+
+
+    </section>
 
 </body>
 
