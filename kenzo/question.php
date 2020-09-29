@@ -10,6 +10,7 @@ if (!isset($_SESSION['name'])) {
 kireta;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 

@@ -252,7 +252,6 @@ js;
         </header>
         <div class="setting">
             <h2>アカウント設定</h2>
-            <p>アカウント情報を変更できます</p>
         </div>
 
         <div class="evalue">$evalue</div>
