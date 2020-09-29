@@ -145,12 +145,11 @@ KAKUNIN;
 
 
         $img = "hito.png";
-        $back = "back.png";
 
 
         $stmt = $db->prepare(
-            'INSERT INTO kenzo_account(name,pass,id,img,back)' .
-                'VALUES(:name,:pass,:id,:img,:back)'
+            'INSERT INTO kenzo_account(name,pass,id,img)' .
+                'VALUES(:name,:pass,:id,:img)'
         );
 
 
@@ -158,7 +157,6 @@ KAKUNIN;
         $stmt->bindParam(':pass', $pass);
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':img', $img);
-        $stmt->bindParam(':back', $back);
 
 
         $stmt->execute();

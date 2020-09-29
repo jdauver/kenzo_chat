@@ -141,7 +141,7 @@ kireta;
         </header>
 
         <div class="setting">
-            <h2>$_SESSION[name]さんの確認画面</h2>
+            <h2>変更確認画面</h2>
         </div>
 
         <form class=setting_form action="" method="POST" enctype="multipart/form-data">

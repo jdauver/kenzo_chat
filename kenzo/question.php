@@ -47,6 +47,21 @@ kireta;
             <h2>ガイド</h2>
         </div>
 
+        <div class="account_main">
+            <h3>アカウントページについて</h3>
+        </div>
+
+        <div class="f_search">
+            <h3>友達検索機能について</h3>
+        </div>
+
+        <div class="setting">
+            <h3>アカウント設定について</h3>
+        </div>
+
+        <div class="chat">
+            <h3>チャットについて</h3>
+        </div>
 
     </section>
 
