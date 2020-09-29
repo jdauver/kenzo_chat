@@ -36,20 +36,21 @@ $(function () {
 
     // ajaxでphpと連動ーーーーーーーーーーーー
 
-    // 友達押したとき処理
-    $('.friends').click(function () {
+    // 友達になってトーク押したときチャットに飛ぶ------
+    $("#talkjump").click(function () {
+        window.location.href = 'chat.php';
         $.ajax({
-            url: "ajax/ajax.php",
+            url: "ajax/friend_search.ajax.php",
             type: "post",
             dataType: "text",
             data: {
-                'id': $("#hiddenid", this).val(),
-                'img': $("#hiddenimg", this).val(),
-                'name': $("#hiddenname", this).val()
+                'id': $("#frid").val(),
+                'img': $("#frimg").val(),
+                'name': $("#friname").val()
             }
 
-        }).done(function (response) {
-            var array = JSON.parse(response);
+        }).done(function () {
+            // var array = JSON.parse(response);
             window.location.href = 'chat.php';
 
 
@@ -57,6 +58,7 @@ $(function () {
             location.reload();
         });
     });
+
 
 
     $("#sitabtn").on("click", function () {
