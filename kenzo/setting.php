@@ -147,7 +147,7 @@ w;
             $img_tmp = $_POST["tmp"];
 
             //SQLを準備
-            $r = $db->prepare("UPDATE kenzo_account SET name=:name,img=:img,pass=:pass,back=:back WHERE id='{$_SESSION['id']}'");
+            $r = $db->prepare("UPDATE kenzo_account SET name=:name,img=:img,pass=:pass WHERE id='{$_SESSION['id']}'");
 
             //$_POST["name"]、$_POST["img"]、$_POST["pass"]、$_POST["back"]、が先ほどのreadonlyの情報
             $r->bindParam(':name', $_POST["name"]);
@@ -206,11 +206,11 @@ js;
         <form class=setting_form action="" id=updateform method="POST" enctype="multipart/form-data">
 
             <div class="group">
-                <input class='input_text name' type="text" name="name" placeholder="ニックネーム" class="set_input">
+                <input id='name' class='input_text name' type="text" name="name" placeholder="ニックネーム" class="set_input">
             </div>
 
             <div class="group">
-                 <input class='input_text pass' type="text" name="pass" placeholder="パスワード" class="set_input2">
+                 <input id='pass' class='input_text pass' type="text" name="pass" placeholder="パスワード" class="set_input2">
                  <p>※英数字６文字以上20文字未満</p>
             </div>
 

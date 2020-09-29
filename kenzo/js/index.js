@@ -31,13 +31,32 @@ $(function () {
     });
 
 
-
     // トークページーーーーーーーーーーーーーーー
 
     // ajaxでphpと連動ーーーーーーーーーーーー
+    $(".friends").click(function () {
+        $.ajax({
+            url: "ajax/ajax.php",
+            type: "post",
+            dataType: "text",
+            data: {
+                'id': $("#hiddenid", this).val(),
+                'img': $("#hiddenimg", this).val(),
+                'name': $("#hiddenname", this).val()
+            }
+
+        }).done(function (response) {
+            var array = JSON.parse(response);
+            window.location.href = 'chat.php';
+
+
+        }).fail(function (xhr, textStatus, errorThrown) {
+            location.reload();
+        });
+    });
 
     // 友達になってトーク押したときチャットに飛ぶ------
-    $("#talkjump").click(function () {
+    $("#search_talk").click(function () {
         window.location.href = 'chat.php';
         $.ajax({
             url: "ajax/friend_search.ajax.php",
@@ -231,32 +250,6 @@ $(function () {
         }
 
     });
-
-
-
-
-    // 友達になってトーク押したときチャットに飛ぶ------
-    $("#talkjump").click(function () {
-        $.ajax({
-            url: "ajax/friend_search.ajax.php",
-            type: "post",
-            dataType: "text",
-            data: {
-                'id': $("#frid").val(),
-                'img': $("#frimg").val(),
-                'name': $("#friname").val()
-            }
-
-        }).done(function () {
-            // var array = JSON.parse(response);
-            window.location.href = 'chat.php';
-
-
-        }).fail(function (xhr, textStatus, errorThrown) {
-            location.reload();
-        });
-    });
-
 
 
     /* ログインと登録の正規表現 */
