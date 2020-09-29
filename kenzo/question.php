@@ -10,7 +10,7 @@
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>q</title>
+    <title>使用方法</title>
 
 </head>
 
