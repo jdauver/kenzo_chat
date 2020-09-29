@@ -343,34 +343,34 @@ $(document).ready(function () {
     // });
 
     //ログアウトの設定
-    $(function () {
-        $('#id_li_style').on("click", function () {
-            ret = confirm("ログインページに戻ります。ログアウトしますか？");
-            if (ret == true) {
-        
-                $.ajax({
-                    type: "POST",
-                    url: "../kenzo/ajax/logout_ajax.php",
-                    data: {
-                        "logout": "logout_ajax",
-                    },
-                    dataType: "json",
-                }).done(function (response) {
-                    // console.log(response);
-                    // var array = JSON.parse(response);
+    // $(function () {
+    $('#id_li_style').on("click", function () {
+        ret = confirm("ログインページに戻ります。ログアウトしますか？");
+        if (ret == true) {
 
-                    window.location.href = 'login.php';
+            $.ajax({
+                type: "POST",
+                url: "ajax/logout_ajax.php",
+                data: {
+                    "logout": "logout_ajax",
+                },
+                dataType: "json",
+            }).done(function (response) {
+                // console.log(response);
+                // var array = JSON.parse(response);
+
+                window.location.href = 'login.php';
 
 
-                }).fail(function (xhr, textStatus, errorThrown) {
-                    location.reload();
+            }).fail(function (xhr, textStatus, errorThrown) {
+                location.reload();
 
-                });
+            });
 
-            }
-        });
+        }
     });
-    
+    // });
+
 
 
 });
