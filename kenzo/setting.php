@@ -226,7 +226,6 @@ js;
             foreach ($zibun as $zibunval) {
                 $name = $zibunval["name"];
                 $img = $zibunval["img"];
-                // $back = $zibunval["back"];
             }
             echo <<< MOD
         <header id="top">
