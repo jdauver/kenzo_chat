@@ -46,7 +46,7 @@ try {
 
  
     <header id="top">
-         <img src='img/q.png' class='q'>
+         <a href="question.php"><img src='img/q.png' class='q'></a>
             <nav id="account_nav">
                 <ul id="ul_style">
                     <li class="li_style"><a href="account_main.php" class="a_style"><i class="fa fa-home" id="img1"></i></a>
