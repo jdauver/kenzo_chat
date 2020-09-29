@@ -86,7 +86,7 @@ h2 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    margin-top: 45px;
+    margin-top: 30px;
     margin-bottom: 0;
 
 }
@@ -204,7 +204,7 @@ input[type="search"] {
 }
 
 p.friendname {
-    font-size:16px;
+    font-size:20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -235,9 +235,16 @@ p.messege {
 
 /* PC以上-------------------------- */
 @media screen and (min-width:768px){
-.search_img{
-    width: 250px;
-    height: 250px;
-    margin:30px auto;
+    .search_img{
+        width: 250px;
+        height: 250px;
+        margin:30px auto;
+    }
+
+
+    p.friendname {
+        font-size:24px;
+        font-weight: bold;
+        margin-bottom: 10px;
 }
 }
