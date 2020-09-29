@@ -3,19 +3,17 @@ $(function () {
     // メインページーーーーーーーーーーーーーーーーーー
 
     // 友達人数の紹介
-    // alert("aaa");
     $("#cursor").on("click", function () {
         /* クラスがfriend_imgどうかの確認 */
         if ($("#friend_id").attr("class") == "friend_img") {
-            // alert("aaa");
             /* friend_idのsrcを変える */
             $("#friend_id").attr("src", "img/up1.png");
-            // alert("bbb");
 
             $("#scroll_info").slideDown("slow");
-            // alert("ccc");
+            $('html, body').animate({
+                scrollTop: $('#cursor').offset().top
+            }, 700);
         } else if ($("#friend_id").attr("class") == "") {
-            // alert("bbb");
 
             $("#scroll_info").slideUp("slow");
             $("#friend_id").attr("src", "img/down1.png");
@@ -24,25 +22,19 @@ $(function () {
     });
 
     $("#upstyle").on("click", function () {
-        // alert("ccc");
 
         if ($("#friend_id1").attr("class") == "friend_img") {
-            // alert("ddd");
             $("#friend_id1").attr("src", "img/down1.png");
-            // alert("eee");
             $("#friend_id").attr("src", "img/down1.png");
             $("#scroll_info").slideUp("slow");
         }
     });
 
 
-
     // トークページーーーーーーーーーーーーーーー
 
     // ajaxでphpと連動ーーーーーーーーーーーー
-
-    // 友達押したとき処理
-    $('.friends').click(function () {
+    $(".friends").click(function () {
         $.ajax({
             url: "ajax/ajax.php",
             type: "post",
@@ -62,6 +54,30 @@ $(function () {
             location.reload();
         });
     });
+
+    // 友達になってトーク押したときチャットに飛ぶ------
+    $("#search_talk").click(function () {
+        window.location.href = 'chat.php';
+        $.ajax({
+            url: "ajax/friend_search.ajax.php",
+            type: "post",
+            dataType: "text",
+            data: {
+                'id': $("#frid").val(),
+                'img': $("#frimg").val(),
+                'name': $("#friname").val()
+            }
+
+        }).done(function () {
+            // var array = JSON.parse(response);
+            window.location.href = 'chat.php';
+
+
+        }).fail(function (xhr, textStatus, errorThrown) {
+            location.reload();
+        });
+    });
+
 
 
     $("#sitabtn").on("click", function () {
@@ -236,32 +252,6 @@ $(function () {
     });
 
 
-
-
-    // 友達になってトーク押したときチャットに飛ぶ------
-    $("#talkjump").click(function () {
-        $.ajax({
-            url: "ajax/friend_search.ajax.php",
-            type: "post",
-            dataType: "text",
-            data: {
-                'id': $("#frid").val(),
-                'img': $("#frimg").val(),
-                'name': $("#friname").val()
-            }
-
-        }).done(function () {
-            // var array = JSON.parse(response);
-            window.location.href = 'chat.php';
-
-
-        }).fail(function (xhr, textStatus, errorThrown) {
-            location.reload();
-        });
-    });
-
-
-
     /* ログインと登録の正規表現 */
     $("#name").on("blur", check0);
     $("#pass").on("blur", check1);
@@ -390,24 +380,3 @@ $(function () {
     })
 })
 
-// 友達検索画面から友達になって"トーク"ボタン押したとき
-// $('.friend_talk').click(function () {
-//     $.ajax({
-//         url: "ajax/friend_search.ajax.php",
-//         type: "post",
-//         dataType: "text",
-//         data: {
-//             'id': $("#frid", this).val(),
-//             'img': $("#frimg", this).val(),
-//             'name': $("#friname", this).val()
-//         }
-
-//     }).done(function (response) {
-//         var array = JSON.parse(response);
-//         window.location.href = 'chat.php';
-
-
-//     }).fail(function (xhr, textStatus, errorThrown) {
-//         location.reload();
-//     });
-// });

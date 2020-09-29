@@ -1,5 +1,14 @@
 <?php
 session_start();
+// ログイン切れてたらログインページに---------
+if (!isset($_SESSION['name'])) {
+    echo <<<kireta
+    <script>
+        alert("もう一度ログインしてください");
+        window.location.href = 'login.php';
+    </script>
+kireta;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -7,17 +16,14 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <meta name="robots" content="nofollow">
-    <!-- <link rel="icon" type="image/x-icon" href="image/favicon.ico"> -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/account_main.css">
-
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>アカウントページ</title>
-    
+
 </head>
 
 <body>
@@ -49,6 +55,7 @@ try {
 
  
     <header id="top">
+         <a href="question.php"><img src='img/q.png' class='q'></a>
             <nav id="account_nav">
                 <ul id="ul_style">
                     <li class="li_style"><a href="account_main.php" class="a_style"><i class="fa fa-home" id="img1"></i></a>

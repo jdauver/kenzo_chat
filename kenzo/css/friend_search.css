@@ -12,6 +12,8 @@ body {
     background-color: rgb(240, 210, 176);
     text-align: center;
     color:#636363;
+    position:relative;
+    font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 
@@ -24,6 +26,7 @@ body {
     justify-content: flex-end;
     background-color: rgb(104, 83, 73);
 }
+
 .touroku_img_logout{
     margin-top: 2.5px;
     width: 32px;
@@ -32,7 +35,18 @@ body {
     opacity: 0.6;
     transition: all 1s;
 }
-
+.q{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    cursor: pointer;
+}
+.q:hover{
+    opacity: 0.6;
+    transition: all 1s;
+}
 #account_nav {
     display: flex;
     align-items: center;
@@ -53,6 +67,7 @@ body {
 .a_style {
     font-size: 32px;
     color: rgb(226, 226, 226);
+    cursor: pointer;
 }
 
 .a_style:hover {
@@ -175,7 +190,7 @@ input[type="search"] {
     position: absolute;
     height: 28px;
     width: 28px;
-    top: 32%;
+    top: 29%;
     left: 88%;
 }
 
@@ -189,12 +204,15 @@ input[type="search"] {
 }
 
 p.friendname {
-    font:  bold 25px cursive;
+    font-size:20px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 p.messege {
-    font: italic bold 16px cursive;
+    font-size:16px;
+    font-weight: bold;
+    margin-top: 40px;
 }
 .btn:hover{
     opacity:0.5;
@@ -214,10 +232,19 @@ p.messege {
 }
 
 
-/* スマホ以上-------------------------- */
-@media screen and (min-width:414px){
-    /* body{
-        font-size:0.2rem;
-    } */
 
+/* PC以上-------------------------- */
+@media screen and (min-width:768px){
+    .search_img{
+        width: 250px;
+        height: 250px;
+        margin:30px auto;
+    }
+
+
+    p.friendname {
+        font-size:24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+}
 }

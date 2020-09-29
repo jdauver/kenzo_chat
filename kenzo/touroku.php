@@ -6,9 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <meta name="robots" content="nofollow">
-    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/index.css">
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,7 +67,7 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
 
 
         if ($kensyo > 0) {
-            $error[] = "<p class='error'>そのパスワードはすでに使用されてます</p>";
+            $error[] = "<p class='error'>そのIDはすでに使用されてます</p>";
         }
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());
