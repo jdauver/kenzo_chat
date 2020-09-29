@@ -234,6 +234,7 @@ body {
         border-radius: 50%;
         background-size: cover;
         -webkit-background-size: cover;
+        -webkit-background-position: center;
         -webkit-transform: none;
         transform: none;
     }
