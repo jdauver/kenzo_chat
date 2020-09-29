@@ -59,32 +59,14 @@ session_start();
             }
 
 
-            if ($_FILES['imgback']['size'] > 0) {
-                $array[3] = $_FILES['imgback']['name'];
-            } else {
-                $r = $db->query("SELECT * FROM kenzo_account WHERE id='$s_id'");
-                foreach ($r as $s_val) {
-                    $array[3] = $s_val["back"];
-                }
-            }
-
-
             $img = $_FILES['img']['name'];
             $img_tmp =  $_FILES['img']['tmp_name'];
 
-            $back = $_FILES['imgback']['name'];
-            $back_tmp =  $_FILES['imgback']['tmp_name'];
-
             is_uploaded_file($img);
             is_uploaded_file($img_tmp);
-            is_uploaded_file($back);
-            is_uploaded_file($back_tmp);
 
             //画像をuploadファイルに保存
             move_uploaded_file($img_tmp, 'upload/' . $img);
-
-            //画像をuploadbackファイルに保存
-            move_uploaded_file($back_tmp, 'uploadback/' . $back);
         } catch (PDOException $e) {
             die("PDO Error:" . $e->getMessage());
         }
@@ -94,13 +76,9 @@ session_start();
         $names = $array[0];
         $pass = $array[1];
         $img = $array[2];
-        $back = $array[3];
 
         $img_name = $_FILES['img']['name'];
         $img_tmp =  $_FILES['img']['tmp_name'];
-
-        $back_name = $_FILES['imgback']['name'];
-        $back_tmp =  $_FILES['imgback']['tmp_name'];
 
         echo <<<w
         <header id="top">
@@ -115,7 +93,7 @@ session_start();
                     </li>
                 </ul>
             </nav>
-    </header>
+        </header>
 
         <div class="setting">
             <h2>$_SESSION[name]さんの確認画面</h2>
@@ -132,14 +110,9 @@ session_start();
             <div class='img_wrap'>
                 <div id='pv' class='pv_img'></div>
             </div>
-            <div class='back_wrap'>
-                <div id='pv' class='pv_back'></div>
-            </div>
-
+            
             <input type="hidden" value="$img_tmp" name="tmp" readonly>
-            <input type="hidden" value="$back_tmp" name="backtmp" readonly>
             <input type="hidden" value="$img" name="imgsrc" readonly>
-            <input type="hidden" value="$back" name="backsrc" readonly>
 
             <div class="button">
                 <input type="submit" name="ok" id="ok" value="確定"><br>
@@ -152,15 +125,7 @@ session_start();
             $(function(){
                 
                 $(".pv_img").css("background-image","url(upload/$img)");
-                $(".pv_back").css("background-image","url(uploadback/$back)");
-
-                if ($(".pv_back").css("background-image").match(/uploadback\/back\.png/)) {
-                    $(".pv_back").css("border", "solid 1px black");
-
-                } else {
-                    $(".pv_back").css("border", "none");
-
-                }
+                
              });
 
             </script>
@@ -181,28 +146,19 @@ w;
             $img = $_POST["imgsrc"];
             $img_tmp = $_POST["tmp"];
 
-            $back = $_POST["backsrc"];
-            $back_tmp = $_POST["backtmp"];
-
-
-
             //SQLを準備
             $r = $db->prepare("UPDATE kenzo_account SET name=:name,img=:img,pass=:pass,back=:back WHERE id='{$_SESSION['id']}'");
-
 
             //$_POST["name"]、$_POST["img"]、$_POST["pass"]、$_POST["back"]、が先ほどのreadonlyの情報
             $r->bindParam(':name', $_POST["name"]);
             $r->bindParam(':img', $_POST["imgsrc"]);
             $r->bindParam(':pass', $_POST["pass"]);
-            $r->bindParam(':back', $_POST["backsrc"]);
-
 
             //SQLを実行
             $r->execute();
 
             $_SESSION['name'] = $_POST['name'];
             $_SESSION['img'] = $_POST['imgsrc'];
-            $_SESSION['back'] = $_POST['backsrc'];
 
             echo <<<js
                 <script>
@@ -214,7 +170,6 @@ js;
         }
     } else {
         unset($_SESSION["file_img"]);
-        unset($_SESSION["file_back"]);
         //ホーム画面の設定
         try {
             // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
@@ -227,17 +182,18 @@ js;
             foreach ($zibun as $zibunval) {
                 $name = $zibunval["name"];
                 $img = $zibunval["img"];
-                $back = $zibunval["back"];
+                // $back = $zibunval["back"];
             }
             echo <<< MOD
         <header id="top">
+         <img src='img/q.png' class='q'>
             <nav id="account_nav">
                 <ul id="ul_style">
                     <li class="li_style"><a href="account_main.php" class="a_style"><i class="fa fa-home" id="img1"></i></a>
                     </li>
                     <li class="li_style"><a href="friend_search.php" class="a_style"><i class="fa fa-user-plus" id="img2"></i></a></li>
                     <li class="li_style"><a href="setting.php" class="a_style"><i class="fa fa-cog" id="img3"></i></a></li>
-                    <li class="li_style"><a href="login.php" class="a_style"><img class="touroku_img_logout"src="img/logout.png"></a>
+                    <li class="li_style" id="id_li_style"><a class="a_style"  ><img class="touroku_img_logout"src="img/logout.png"></a>
                     </li>
                 </ul>
             </nav>
@@ -265,16 +221,8 @@ js;
                         <input type="file" name="img" id="file_img" class="set_input3" accept="image/*">
                     </div>
                 </label>
-               
             </div>
-            <div class='back_wrap'>
-                <div id='pv' class='pv_back'></div>
-                <label class="setting_label">
-                    <div class="file_back">
-                        <input type="file" name="imgback" id="file_back" class="set_input4" accept="image/*">
-                    </div> 
-                </label>
-            </div>
+            
             <div class="button">
                 <button type="submit" name="update_submit" id="update_submit">変更</button><br>
                 <button type="reset">やり直す</button>
@@ -288,15 +236,6 @@ MOD;
             $(function(){
 
                 $(".pv_img").css("background-image","url(upload/$img)");
-                $(".pv_back").css("background-image","url(uploadback/$back)");
-
-                if ($(".pv_back").css("background-image").match(/uploadback\/back\.png/)) {
-                    $(".pv_back").css("border", "solid 1px black");
-
-                } else {
-                    $(".pv_back").css("border", "none");
-
-                }
 
              });
 

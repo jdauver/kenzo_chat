@@ -3,19 +3,17 @@ $(function () {
     // メインページーーーーーーーーーーーーーーーーーー
 
     // 友達人数の紹介
-    // alert("aaa");
     $("#cursor").on("click", function () {
         /* クラスがfriend_imgどうかの確認 */
         if ($("#friend_id").attr("class") == "friend_img") {
-            // alert("aaa");
             /* friend_idのsrcを変える */
             $("#friend_id").attr("src", "img/up1.png");
-            // alert("bbb");
 
             $("#scroll_info").slideDown("slow");
-            // alert("ccc");
+            $('html, body').animate({
+                scrollTop: $('#cursor').offset().top
+            }, 700);
         } else if ($("#friend_id").attr("class") == "") {
-            // alert("bbb");
 
             $("#scroll_info").slideUp("slow");
             $("#friend_id").attr("src", "img/down1.png");
@@ -24,12 +22,9 @@ $(function () {
     });
 
     $("#upstyle").on("click", function () {
-        // alert("ccc");
 
         if ($("#friend_id1").attr("class") == "friend_img") {
-            // alert("ddd");
             $("#friend_id1").attr("src", "img/down1.png");
-            // alert("eee");
             $("#friend_id").attr("src", "img/down1.png");
             $("#scroll_info").slideUp("slow");
         }
