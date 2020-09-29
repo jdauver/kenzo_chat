@@ -70,19 +70,24 @@ if (isset($_POST["id"])) {
 
 
         if ($_POST["id"] != "") { //入力有無を確認
-            $stmt = $db->query("SELECT * FROM kenzo_account WHERE id = '$_POST[id]'");
-            //SQL文を実行して、結果を$stmtに代入する。
+
+            if ($_POST["id"] == $_SESSION['id']) {
+                echo "<p class='messege'>自分は友達にできません</p>";
+            } else {
+
+                $stmt = $db->query("SELECT * FROM kenzo_account WHERE id = '$_POST[id]'");
+                //SQL文を実行して、結果を$stmtに代入する。
 
 
-            foreach ($stmt as $row) {
-                // データベースのフィールド名で出力
-                $friend_name = $row["name"];
-                $friend_img = $row["img"];
-            }
+                foreach ($stmt as $row) {
+                    // データベースのフィールド名で出力
+                    $friend_name = $row["name"];
+                    $friend_img = $row["img"];
+                }
 
 
-            if ($row > 0) {
-                echo <<<FTOUROKU
+                if ($row > 0) {
+                    echo <<<FTOUROKU
          <div class='ftouroku'>
 
          <div class="search_img" style="background-image: url('upload/$friend_img');">
@@ -102,11 +107,15 @@ if (isset($_POST["id"])) {
         </div>
 
 FTOUROKU;
+                }
+                if ($row == 0) {
+                    echo "<p class='messege'>該当なし</p>";
+                }
             }
+            // 自分は友達にできない
 
-            if ($row == 0) {
-                echo "<p class='messege'>該当なし</p>";
-            }
+
+
         }
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());
@@ -137,7 +146,8 @@ kesu;
         // $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
         // $q = $db->query($qq);
         // $kensyo = $q->fetchColumn();
-        // 以下は本番でkensho==0に変える]
+        // 以下は本番でkensho==0に変える
+
         if ($kensyo < 1000) {
             $stmt = $db->prepare(
                 "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'

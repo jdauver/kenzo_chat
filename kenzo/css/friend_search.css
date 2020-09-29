@@ -206,6 +206,7 @@ p.friendname {
 
 p.messege {
     font: italic bold 16px cursive;
+    margin-top: 40px;
 }
 .btn:hover{
     opacity:0.5;
