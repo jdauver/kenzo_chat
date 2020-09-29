@@ -37,7 +37,7 @@ $(function () {
     // ajaxでphpと連動ーーーーーーーーーーーー
 
     // 友達になってトーク押したときチャットに飛ぶ------
-    $("#talkjump").click(function () {
+    $("#search_talk").click(function () {
         window.location.href = 'chat.php';
         $.ajax({
             url: "ajax/friend_search.ajax.php",
