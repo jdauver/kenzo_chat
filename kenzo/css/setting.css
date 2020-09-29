@@ -86,11 +86,12 @@ body{
     margin: 0 auto;
 }
 .input_text{
+    display: inline-block;
     font-size: 16px; 
     width: 70vw;
     max-width: 350px;
     padding: 10px 0;
-    margin: 0 auto 40px;
+    margin: 0 auto ;
     -webkit-appearance: none;
     display: block;
     color: #636363;
@@ -102,12 +103,9 @@ body{
 .pass{
     margin-bottom: 0;
 }
-.input_text{
-    display: inline-block;
-}
 .alert{
     font-size:12px;
-    margin-top:0;
+    margin:0 0 20px;
     text-align: center;
 }
 .setting_label{
