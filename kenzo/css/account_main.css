@@ -24,6 +24,19 @@ body {
     transition: all 1s;
 }
 
+.q{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    cursor: pointer;
+}
+.q:hover{
+    opacity: 0.6;
+    transition: all 1s;
+}
+
 #account_nav {
     display: flex;
     align-items: center;
