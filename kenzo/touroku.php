@@ -67,7 +67,7 @@ if (isset($_POST["hidden"]) && !isset($_POST["hidden2"])) {
 
 
         if ($kensyo > 0) {
-            $error[] = "<p class='error'>そのパスワードはすでに使用されてます</p>";
+            $error[] = "<p class='error'>そのIDはすでに使用されてます</p>";
         }
     } catch (PDOException $e) {
         die("PDO Error:" . $e->getMessage());

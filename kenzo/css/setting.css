@@ -102,15 +102,14 @@ body{
 .pass{
     margin-bottom: 0;
 }
-.group p{
-    font-size: 10px;
-    color: #636363;
-    margin: 0;
-}
 .input_text{
     display: inline-block;
 }
-
+.alert{
+    font-size:12px;
+    margin-top:0;
+    text-align: center;
+}
 .setting_label{
     margin-right: 15px;
     padding-top:25px;
@@ -127,9 +126,7 @@ label:hover{
 .set_input3 {
     display: none;
 }
-.set_input4{
-    display: none;
-}
+
 
 .file_img{
     width: 60px;
@@ -142,17 +139,7 @@ label:hover{
     -webkit-transform: none;
     transform: none;
 }
-.file_back{
-    width: 60px;
-    height: 60px;
-    background-image: url('../img/photo.png');
-    background-size: cover;
-    background-position: center;
-    -webkit-background-size: cover;
-    -webkit-background-position: center;
-    -webkit-transform: none;
-    transform: none;
-}
+
 
 #pv{
     width: 200px;
@@ -170,21 +157,14 @@ label:hover{
     border-radius: 50%;
 
 }
-.pv_back{
-    border-radius: 50%;
-}
+
 .img_wrap{
     position: relative;
     width: 200px;
     margin: 50px auto 40px;
     padding: 20px 0;
 }
-.back_wrap{
-    position: relative;
-    width: 200px;
-    padding: 20px 0;
-    margin: 0 auto 40px;
-}
+
 .button{
     width:70vw;
     max-width: 150px;
@@ -207,12 +187,25 @@ button:hover{
     transition: all 0.5s;
 }
 
-#name,#pass{
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(104, 83, 73);;
+.nameng{
+    font-size: 15px;
+    color: rgb(240, 45, 45);
+    margin: 0;
+}
+.passng{
+    font-size: 15px;
+    color: rgb(240, 45, 45);
+    margin: 0;
+    
 }
 
+#name,#pass{
+    font-size: 16px;
+    color: rgb(104, 83, 73);;
+}
+#name:focus,#pass:focus{
+    outline: none;
+}
 #ok{
     -webkit-appearance: none;
     width: 70vw;
@@ -231,10 +224,14 @@ button:hover{
     text-decoration: none;
 }
 
+.error{
+    font-size:24px;
+    color: red;
+    text-align: center;
+}
+
 @media screen and (min-width:768px){
-    .group p{
-        font-size: 14px;
-    }
+   
     .setting_label{
         top : 80%;
     }
@@ -246,12 +243,9 @@ button:hover{
     .img_wrap{
         width: 350px;
     }
-    .back_wrap{
-        width: 350px;
-    }
-
+    
     #name,#pass{
-        font-size: 22px;
+        font-size: 20px;
     }
 
 
