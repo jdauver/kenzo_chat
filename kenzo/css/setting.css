@@ -54,6 +54,7 @@ body{
 .a_style {
     font-size: 32px;
     color: rgb(226, 226, 226);
+    cursor: pointer;
 }
 
 .a_style:hover {
