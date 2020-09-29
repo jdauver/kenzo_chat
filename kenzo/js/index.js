@@ -345,8 +345,6 @@ $(document).ready(function () {
     // $('#touroku').click(function () {
     //     $('#touroku_form').submit();
     // });
-<<<<<<< HEAD
-=======
 
     //ログアウトの設定
     // $(function () {
@@ -379,7 +377,6 @@ $(document).ready(function () {
 
 
 
->>>>>>> 5f041a5892ee2b0ff051994f248b545be8e089e4
 });
 
 $(function () {
