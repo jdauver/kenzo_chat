@@ -39,7 +39,7 @@ HEAD;
     <title>チャット</title>
 </head>
 
-<body>
+<body iod="chat">
 
     <div class="message"></div>
 

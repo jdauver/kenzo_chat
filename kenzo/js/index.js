@@ -380,3 +380,21 @@ $(function () {
     })
 })
 
+
+// chat画面　時間により背景画像変える
+var chat = document.getElementById('#chat');
+$(function () {
+    var today = new Date();
+    console.log(today.getSeconds());
+
+    if (today.getSeconds() >= 0 && today.getSeconds() < 5) {
+        $("#chat").css("background-image", "url(img/sora.png)");
+
+    } else if (today.getSeconds() >= 5 && today.getSeconds() <= 30) {
+        $("#chat").css("background-image", "url(img/yusora.jpg)"
+        );
+
+    } else {
+        $("#chat").css("background-image", "url(img/yozora.jpg)");
+    }
+});
