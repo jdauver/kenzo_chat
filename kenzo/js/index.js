@@ -382,20 +382,29 @@ $(function () {
 
 
 // chat画面　時間により背景画像変える
-var chat = document.getElementById('#chat');
+
 $(function () {
     var today = new Date();
     console.log(today.getSeconds());
 
-    if (today.getSeconds() >= 0 && today.getSeconds() < 5) {
+    if (today.getSeconds() >= 0 && today.getSeconds() < 10) {
         $("#chat").css("background-image", "url(img/sora.png)");
-
-    } else if (today.getSeconds() >= 5 && today.getSeconds() <= 60) {
-        $("#chat").css("background-image", "url(img/star2.jpg)"
-        );
-
     }
-    // else {
-    //     $("#chat").css("background-image", "url(img/yozora.jpg)");
-    // }
+    else if (today.getSeconds() >= 10 && today.getSeconds() <= 30) {
+        $("#chat").css("background-image", "url(img/yusora.jpg)"
+        );
+    }
+    else {
+        $("#chat").css("background-image", "url(img/star.jpg)");
+    }
+    if (today.getSeconds() > 30) {
+        $(".time").css("color", "white");
+        $(".date").css("color", "white");
+        $(".date").css("border-color", "white");
+    }
+    else {
+        $(".time").css("color", "black");
+        $(".date").css("color", "black");
+        $(".date").css("border-color", "black");
+    }
 });
