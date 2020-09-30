@@ -2,11 +2,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    background: rgb(240,210,176);
-    background-size: cover;
+    /* background: rgb(240,210,176); */
+    /* background-size: cover; */
     background-repeat: repeat;
     /* background-position: center; */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     /* background:url(../img/sora.png); */
 
 
@@ -241,6 +241,12 @@ body{
 @media screen and (min-width:768px){
 
     /* チャットページ */
+
+    body{
+        background-attachment: fixed;
+        background-size: cover;
+
+    }
     .zibun,.aite{
         margin: 50px 0;
     }
