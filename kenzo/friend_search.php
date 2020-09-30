@@ -23,7 +23,6 @@ kireta;
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
     <title>友達検索ページ</title>
 </head>
 
