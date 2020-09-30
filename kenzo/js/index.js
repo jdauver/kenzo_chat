@@ -390,11 +390,12 @@ $(function () {
     if (today.getSeconds() >= 0 && today.getSeconds() < 5) {
         $("#chat").css("background-image", "url(img/sora.png)");
 
-    } else if (today.getSeconds() >= 5 && today.getSeconds() <= 30) {
-        $("#chat").css("background-image", "url(img/yusora.jpg)"
+    } else if (today.getSeconds() >= 5 && today.getSeconds() <= 60) {
+        $("#chat").css("background-image", "url(img/star2.jpg)"
         );
 
-    } else {
-        $("#chat").css("background-image", "url(img/yozora.jpg)");
     }
+    // else {
+    //     $("#chat").css("background-image", "url(img/yozora.jpg)");
+    // }
 });
