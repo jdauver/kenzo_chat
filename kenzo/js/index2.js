@@ -37,6 +37,19 @@ $(function () {
         }
         $(".zibun-topuga").css("background-image", "url(upload/" + talk[1] + ")");
         $(".aite-topuga").css("background-image", "url(upload/" + talk[2] + ")");
+
+        var today = new Date();
+        if (today.getSeconds() >= 30) {
+            $(".time").css("color", "white");
+            $(".date").css("color", "white");
+            $(".date").css("border-color", "white");
+        } else {
+            $(".time").css("color", "black");
+            $(".date").css("color", "black");
+            $(".date").css("border-color", "black");
+        }
+
+
     }).fail(function (xhr, textStatus, errorThrown) {
         location.reload();
     });
@@ -96,14 +109,36 @@ $(function () {
                                 }, 700);
                             }
                         }
-
-
                     }
-
                 }
 
                 $(".zibun-topuga").css("background-image", "url(upload/" + talk[2] + ")");
                 $(".aite-topuga").css("background-image", "url(upload/" + talk[3] + ")");
+
+
+                var today = new Date();
+                if (today.getSeconds() >= 0 && today.getSeconds() < 10) {
+                    $("#chat").css("background-image", "url(img/sora.png)");
+                }
+                else if (today.getSeconds() >= 10 && today.getSeconds() <= 30) {
+                    $("#chat").css("background-image", "url(img/yusora.jpg)"
+                    );
+                }
+                else {
+                    $("#chat").css("background-image", "url(img/star.jpg)");
+                }
+
+                if (today.getSeconds() > 30) {
+                    $(".time").css("color", "white");
+                    $(".date").css("color", "white");
+                    $(".date").css("border-color", "white");
+                } else {
+                    $(".time").css("color", "black");
+                    $(".date").css("color", "black");
+                    $(".date").css("border-color", "black");
+                }
+
+
 
             }).fail(function (xhr, textStatus, errorThrown) {
                 location.reload();
@@ -126,6 +161,31 @@ $(function () {
                 $(".zibun-topuga").css("background-image", "url(upload/" + talk[2] + ")");
                 $(".aite-topuga").css("background-image", "url(upload/" + talk[3] + ")");
 
+
+                var today = new Date();
+                if (today.getSeconds() >= 0 && today.getSeconds() < 10) {
+                    $("#chat").css("background-image", "url(img/sora.png)");
+                }
+                else if (today.getSeconds() >= 10 && today.getSeconds() <= 30) {
+                    $("#chat").css("background-image", "url(img/yusora.jpg)"
+                    );
+                }
+                else {
+                    $("#chat").css("background-image", "url(img/star.jpg)");
+                }
+
+                if (today.getSeconds() > 30) {
+                    $(".time").css("color", "white");
+                    $(".date").css("color", "white");
+                    $(".date").css("border-color", "white");
+                }
+                else {
+                    $(".time").css("color", "black");
+                    $(".date").css("color", "black");
+                    $(".date").css("border-color", "black");
+                }
+
+                
             }).fail(function (xhr, textStatus, errorThrown) {
                 location.reload();
             });
