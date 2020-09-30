@@ -44,23 +44,24 @@ kireta;
 
     <section>
         <div class="guide">
-            <h2>ガイド</h2>
+            <h2>使用方法</h2>
         </div>
 
-        <div class="account_main">
-            <h3>アカウントページについて</h3>
+        <div class="account_main about">
+            <div class="about_wrap">
+                <h3>アカウントページについて</h3>
+                <img class="guide_img" src="img/account_main.png" alt="">
+                <p class="sita">↓</p>
+                <img class="guide_img" src="img/account_main2.png" alt="">
+            </div>
         </div>
 
-        <div class="f_search">
-            <h3>友達検索機能について</h3>
-        </div>
 
-        <div class="setting">
-            <h3>アカウント設定について</h3>
-        </div>
-
-        <div class="chat">
-            <h3>チャットについて</h3>
+        <div class="chat about">
+            <div class="about_wrap">
+                <h3>チャットについて</h3>
+                <img class="guide_img" src="img/chat.png" alt="">
+            </div>
         </div>
 
     </section>

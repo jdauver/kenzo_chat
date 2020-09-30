@@ -7,7 +7,7 @@ body{
     background-repeat: repeat;
     /* background-position: center; */
     background-attachment: fixed;
-    background:url(../img/sora.png);
+    /* background:url(../img/sora.png); */
 
 
 }
@@ -128,11 +128,11 @@ body{
     cursor: pointer;
 }
 .zibun-img:hover{
-    opacity: 0.6;
+    opacity: 0.8;
     /* transition: all 1s; */
 }
 .aite-img:hover{
-    opacity: 0.6;
+    opacity: 0.8;
     /* transition: all 1s; */
 }
 

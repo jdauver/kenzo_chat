@@ -203,53 +203,7 @@ $(function () {
         }
     });
 
-    // 設定ページの背景画像選択時プレビュー
-    $('#file_back').change(function () {
-        //propを使って、file[0]にアクセスする
-        var file2_ = $('#file_back').prop('files')[0];
 
-        //添付されたのが本当に画像かどうか、ファイル名と、ファイルタイプを正規表現で検証する
-        if ($("#file_back").val().length) {
-
-            if (!/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/.test(file2_.name) || !/(jpg|jpeg|png|gif)$/.test(file2_.type)) {
-                alert('JPG、GIF、PNGファイルの画像を添付してください。');
-                //添付された画像ファイルが１M以下か検証する
-            } else if (2048576 < file2_.size) {
-                alert('2MB以下の画像を添付してください。');
-            } else {
-
-                var reader_ = new FileReader();
-
-                reader_.onload = function () {
-
-                    $.ajax({
-                        url: "ajax/session_file_back.php",
-                        type: "post",
-                        dataType: "text",
-                        data: { 'img2': reader_.result }
-
-                    }).done(function (response) {
-                        var back = JSON.parse(response);
-                        $(".pv_back").css("background-image", "url(" + back + ")");
-
-                        if ($(".pv_back").css("background-image").match(/uploadback\/back\.png/)) {
-                            $(".pv_back").css("border", "solid 1px black");
-
-                        } else {
-                            $(".pv_back").css("border", "none");
-
-                        }
-                    }).fail(function (xhr, textStatus, errorThrown) {
-                        location.reload();
-                    });
-
-                }
-                reader_.readAsDataURL(file2_);
-
-            }
-        }
-
-    });
 
 
     /* ログインと登録の正規表現 */

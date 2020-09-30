@@ -64,3 +64,62 @@ body {
     color: rgb(180, 180, 180);
     transition: all 1s;
 }
+
+
+
+/* 内容ーーーーーーーーーーーーーーーーーーー */
+
+.guide{
+    margin: 20px auto 30px;
+}
+.guide h2{
+    font-size: 1.8em;
+    color: #636363;
+    text-align: center;
+}
+
+.about{
+    width: 95vw;
+    margin: 40px auto;
+    padding-bottom: 40px;
+    border-bottom: solid 1px black;
+}
+.about:last-of-type{
+    border:none;
+    padding: 0;
+}
+.about_wrap{
+    width: 95vw;
+    margin: 20px auto;
+}
+.guide_img{
+    width: 95vw;
+    height: auto;
+}
+
+.sita{
+    font-size: 40px;
+    margin: 0;
+    color: red;
+    text-align: center;
+}
+
+@media screen and (min-width:768px){
+
+    .about{
+        margin: 80px auto;
+        padding-bottom: 80px;
+    }
+    .about_wrap{
+        width: 80vw;
+        margin: 20px auto;
+    }
+    .guide_img{
+        width: 80vw;
+        height: auto;
+    }
+    .sita{
+        font-size: 60px;
+    }
+
+}
