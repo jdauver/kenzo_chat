@@ -79,7 +79,7 @@ $(function () {
     });
 
 
-
+    // チャットページの下ボタン
     $("#sitabtn").on("click", function () {
         $('html, body').animate({
             scrollTop: $(document).height()
@@ -88,33 +88,37 @@ $(function () {
 
 
 
-    // トーク内容送信時処理
+    // トーク内容送信時処理にデータベースに入れる
+
     $('#send').click(function () {
-        $.ajax({
-            url: "ajax/insert_talk.php",
-            type: "post",
-            dataType: "text",
-            data: { 'message': $(".textarea").val() }
+        if ($(".textarea").val() != "") {
+            $.ajax({
+                url: "ajax/insert_talk.php",
+                type: "post",
+                dataType: "text",
+                data: { 'message': $(".textarea").val() }
 
-        }).done(function () {
+            }).done(function () {
 
-        }).fail(function (xhr, textStatus, errorThrown) {
-            location.reload();
-        });
-    });
-
-    // 送信押したとき一番下へーーーーーー
-    $("#send").on("click", function () {
-        if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
-            $('html, body').animate({
-                scrollTop: $(document).height()
-            }, 700);
+            }).fail(function (xhr, textStatus, errorThrown) {
+                location.reload();
+            });
         }
     });
 
 
+    // 送信押したとき一番下へーーーーーー
+    // $("#send").on("click", function () {
+    //     if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
+    //         $('html, body').animate({
+    //             scrollTop: $(document).height()
+    //         }, 700);
+    //     }
+    // });
 
-    // 画像選択時処理ーーーーーーーーーーーーーーー
+
+
+    // 画像選択時に正規表現　　データベースに入れるーーーーーーーーーーーーーーー
     $('#img').on('change', function () {
 
         //fileの値は空ではなくなるはず
@@ -123,7 +127,6 @@ $(function () {
 
             //propを使って、file[0]にアクセスする
             var image_ = $('#img').prop('files')[0];
-
             //添付されたのが本当に画像かどうか、ファイル名と、ファイルタイプを正規表現で検証する
             if (!/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/.test(image_.name) || !/(jpg|jpeg|png|gif)$/.test(image_.type)) {
                 alert('JPG、GIF、PNGファイルの画像を添付してください。');
@@ -227,11 +230,11 @@ $(function () {
             $(".nameng").html("");
 
         } else {
-            // alert ("aaa");
-            $(".nameng").html("");
+            $(".nameng").remove();
             $("#name").css("background", "transparent");
         }
     };
+
     function check1() {
         var pass1 = $("#pass").val();
 
@@ -244,10 +247,11 @@ $(function () {
             $("#pass").attr("placeholder", "6〜20文字以内、英数字のみでご記入ください");
             $("#pass").css("background", "rgba(255, 103, 103, 0.445)");
         } else {
-            $(".passng").html("");
+            $(".passng").remove();
             $("#pass").css("background", "transparent");
         }
     };
+
     function check2() {
         var pass2 = $("#id").val();
 
@@ -260,10 +264,11 @@ $(function () {
             $("#id").attr("placeholder", "6〜20文字以内、英数字のみでご記入ください");
             $("#id").css("background", "rgba(255, 103, 103, 0.445)");
         } else {
-            $(".idng").html("");
+            $(".idng").remove();
             $("#id").css("background", "transparent");
         }
     };
+
     function check3() {
         if ($(".idng").html() == "英数字の6〜20文字以内でしか記入できません。" || $(".passng").html() == "英数字の6〜20文字以内でしか記入できません。") {
             alert("登録フォームに誤りがあります。");

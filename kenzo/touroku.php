@@ -225,14 +225,14 @@ function yoyaku($evalue)
             </hgroup>
             <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
                 <div class="group">
-                    <input type="text" id="name" class="nameng" name="name" placeholder="お名前" required="required">
+                    <input type="text" id="name" name="name" placeholder="お名前" required="required">
                 </div>
                 <div class="group">
-                    <input type="password" id="pass" class="passng" name="pass" placeholder="パスワード"  required="required">
+                    <input type="password" id="pass" name="pass" placeholder="パスワード"  required="required">
                 <p class="touroku_p_style">※英数字６文字以上20文字未満</p>
                 </div>
                 <div class="group">
-                    <input type="text" id="id" class="idng" name="id" placeholder="ID" required="required">
+                    <input type="text" id="id" name="id" placeholder="ID" required="required">
                 <p class="touroku_p_style">※英数字６文字以上20文字未満</p>
                 </div>
                 <input type="hidden" name="hidden">

@@ -143,12 +143,28 @@ hgroup p{
     background: transparent;
 
 }
+#login_name{
+    font-size: 16px; 
+    width: 70vw;
+    max-width: 350px;
+    padding: 10px 0;
+    margin: 0 auto 40px;
+    -webkit-appearance: none;
+    display: block;
+    color: #636363;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+    /* background: rgb(240,210,176); */
+    background: transparent;
+
+}
 #login_pass{
     font-size: 16px; 
     width: 70vw;
     max-width: 350px;
     padding: 10px 0;
-    margin: 0;
+    margin: 0 auto 40px;
     -webkit-appearance: none;
     display: block;
     color: #636363;

@@ -62,13 +62,14 @@ body{
 }
 
 .aite_name{
+    font-size: 19px;
     margin-left: 5vw;
     color: white;
 }
 .message{
     width: 95vw;
     margin: 100px auto;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 .zibun{
     display: flex;
@@ -147,6 +148,7 @@ body{
     transform: none;
 }
 .date{
+    font-size: 18px;
     width:80vw;
     margin: 0 auto;
     text-align: center;
@@ -235,11 +237,17 @@ body{
         background-size: cover;
 
     }
+    .aite_name{
+        font-size: 30px;
+        margin-left: 5vw;
+        color: white;
+    }
     .zibun,.aite{
         margin: 50px 0;
     }
     .date{
         margin: 60px auto;
+        font-size: 24px;
     }
 
     .zibun-message{

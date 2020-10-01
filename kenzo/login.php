@@ -1,6 +1,26 @@
 <?php
 session_start();
+?>
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/index.css">
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>ログイン</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<?php
 if (isset($_POST["hidden"])) {
     try {
         // $db = new PDO('mysql:host=localhost; dbname=kenzo_chat', 'root', '1234');
@@ -92,8 +112,8 @@ function yoyaku($evalue)
         </div>
         <div class="evalue">$evalue</div>
         <form id="form" action="$_SERVER[SCRIPT_NAME]" method="POST">
-            <input type="text" id="name" class="nameng" name="name" required="required" placeholder="お名前">
-            <input type="password" id="login_pass" class="passng" name="pass" required="required" placeholder="パスワード">
+            <input type="text" id="login_name" name="name" required="required" placeholder="お名前">
+            <input type="password" id="login_pass" name="pass" required="required" placeholder="パスワード">
             
             <input type="hidden" name="hidden">
             <div class="touroku_submit">
@@ -105,25 +125,3 @@ function yoyaku($evalue)
 login;
 }
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/index.css">
-    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>ログイン</title>
-</head>
-
-<body>
-
-
-
-</body>
-
-</html>
