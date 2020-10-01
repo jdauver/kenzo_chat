@@ -39,7 +39,7 @@ $(function () {
         $(".aite-topuga").css("background-image", "url(upload/" + talk[2] + ")");
 
         var today = new Date();
-        if (today.getSeconds() >= 30) {
+        if (today.getHours() >= 19 || today.getHours() < 6) {
             $(".time").css("color", "white");
             $(".date").css("color", "white");
             $(".date").css("border-color", "white");
@@ -117,10 +117,10 @@ $(function () {
 
 
                 var today = new Date();
-                if (today.getSeconds() >= 0 && today.getSeconds() < 10) {
+                if (today.getHours() >= 6 && today.getHours() < 15) {
                     $("#chat").css("background-image", "url(img/sora.png)");
                 }
-                else if (today.getSeconds() >= 10 && today.getSeconds() <= 30) {
+                else if (today.getHours() >= 15 && today.getHours() < 19) {
                     $("#chat").css("background-image", "url(img/yusora.jpg)"
                     );
                 }
@@ -128,7 +128,7 @@ $(function () {
                     $("#chat").css("background-image", "url(img/star.jpg)");
                 }
 
-                if (today.getSeconds() > 30) {
+                if (today.getHours() >= 19 || today.getHours() < 6) {
                     $(".time").css("color", "white");
                     $(".date").css("color", "white");
                     $(".date").css("border-color", "white");
@@ -163,10 +163,10 @@ $(function () {
 
 
                 var today = new Date();
-                if (today.getSeconds() >= 0 && today.getSeconds() < 10) {
+                if (today.getHours() >= 6 && today.getHours() < 15) {
                     $("#chat").css("background-image", "url(img/sora.png)");
                 }
-                else if (today.getSeconds() >= 10 && today.getSeconds() <= 30) {
+                else if (today.getHours() >= 15 && today.getHours < 19) {
                     $("#chat").css("background-image", "url(img/yusora.jpg)"
                     );
                 }
@@ -174,7 +174,7 @@ $(function () {
                     $("#chat").css("background-image", "url(img/star.jpg)");
                 }
 
-                if (today.getSeconds() > 30) {
+                if (today.getHours() >= 19) {
                     $(".time").css("color", "white");
                     $(".date").css("color", "white");
                     $(".date").css("border-color", "white");
