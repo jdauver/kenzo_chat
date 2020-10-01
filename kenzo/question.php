@@ -59,9 +59,7 @@ kireta;
         <div class="chat about">
             <div class="about_wrap">
                 <h3>チャットについて</h3>
-                <div id='lity_info' src="img/chat.png" data-lity='data-lity'>
-                    <img class="guide_img" src="img/chat.png" alt="">
-                </div>
+                <img class="guide_img" src="img/chat.png" alt="">
                 <div class="tyui">
                     <p>※相手とのトークの内容が100件を超えた場合は古いものから削除されていきます</p>
                     <p>※画像ファイルは　JPG　GIF　PNG　のみ送信することができます</p>
