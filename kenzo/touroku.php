@@ -213,9 +213,8 @@ function yoyaku($evalue)
             <h1 class="en">REGISTAR</h1>
             <p>新規登録</p>
             <div class="rogin_touroku_style">
-            <a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i></a>
+            <a href="login.php" class="a_style"><i class="fa fa-sign-out" id="img4"></i>ログイン</a>
                     </li>
-            <a href='login.php'>ログイン</a>
              </div>
         </div>
         <div class="toroku">
