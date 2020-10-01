@@ -149,12 +149,12 @@ kesu;
 
 
                 // すでに友達になっているか確認
-                // $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
-                // $q = $db->query($qq);
-                // $kensyo = $q->fetchColumn();
+                $qq = "SELECT COUNT(*) FROM tomo_$_SESSION[id] where id='$_POST[id]'";
+                $q = $db->query($qq);
+                $kensyo = $q->fetchColumn();
                 // 以下は本番でkensho==0に変える
 
-                if ($kensyo < 1000) {
+                if ($kensyo ==0) {
                     $stmt = $db->prepare(
                         "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'
                     );
