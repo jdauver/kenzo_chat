@@ -344,19 +344,19 @@ $(function () {
 
 $(function () {
     var today = new Date();
-    console.log(today.getSeconds());
+    // console.log(today.getSeconds());
 
-    if (today.getHours() >= 6 && today.getHours() < 15) {
+    if (today.getHours() >= 6 || today.getHours() < 17) {
         $("#chat").css("background-image", "url(img/sora.png)");
     }
-    else if (today.getHours() >= 15 && today.getHours() <= 19) {
+    else if (today.getHours() >= 17 || today.getHours() < 19) {
         $("#chat").css("background-image", "url(img/yusora.jpg)"
         );
     }
     else {
         $("#chat").css("background-image", "url(img/star.jpg)");
     }
-    if (today.getHours() > 19) {
+    if (today.getHours() >= 19) {
         $(".time").css("color", "white");
         $(".date").css("color", "white");
         $(".date").css("border-color", "white");
