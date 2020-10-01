@@ -25,6 +25,8 @@ body{
 .rogin_touroku_style{
     text-align: right;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 .rogin_touroku_style a{
     display: grid;
