@@ -233,6 +233,17 @@ button:hover{
     text-align: center;
 }
 
+
+.myid{
+    width: 70vw;
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
 @media screen and (min-width:768px){
    
     .setting_label{
@@ -251,6 +262,11 @@ button:hover{
         font-size: 20px;
     }
 
+    .myid h3{
+        font-size: 22px;
+    }
 
-
+    .myid p{
+        font-size: 18px;
+    }
 }

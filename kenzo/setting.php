@@ -281,6 +281,11 @@ js;
                 <button type="reset">やり直す</button>
             </div>
         </form>
+
+        <div class="myid">
+            <h3>あなたのIDです</h3>
+            <p>$_SESSION[id]</p>
+        </div>
 MOD;
 
 
