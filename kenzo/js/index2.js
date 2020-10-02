@@ -38,8 +38,9 @@ $(function () {
         $(".zibun-topuga").css("background-image", "url(upload/" + talk[1] + ")");
         $(".aite-topuga").css("background-image", "url(upload/" + talk[2] + ")");
 
+
         var today = new Date();
-        if (today.getHours() >= 19 || today.getHours() < 6) {
+        if (today.getSeconds() >= 40) {
             $(".time").css("color", "white");
             $(".date").css("color", "white");
             $(".date").css("border-color", "white");
@@ -48,6 +49,18 @@ $(function () {
             $(".date").css("color", "black");
             $(".date").css("border-color", "black");
         }
+
+
+        // var today = new Date();
+        // if (today.getHours() >= 19 && today.getHours() < 6) {
+        //     $(".time").css("color", "white");
+        //     $(".date").css("color", "white");
+        //     $(".date").css("border-color", "white");
+        // } else {
+        //     $(".time").css("color", "black");
+        //     $(".date").css("color", "black");
+        //     $(".date").css("border-color", "black");
+        // }
 
 
     }).fail(function (xhr, textStatus, errorThrown) {
@@ -117,10 +130,10 @@ $(function () {
 
 
                 var today = new Date();
-                if (today.getHours() >= 6 || today.getHours() < 17) {
+                if (today.getSeconds() >= 0 && today.getSeconds() < 20) {
                     $("#chat").css("background-image", "url(img/sora.png)");
                 }
-                else if (today.getHours() >= 17 || today.getHours() < 19) {
+                else if (today.getSeconds() >= 20 && today.getSeconds() < 40) {
                     $("#chat").css("background-image", "url(img/yusora.jpg)"
                     );
                 }
@@ -128,7 +141,7 @@ $(function () {
                     $("#chat").css("background-image", "url(img/star.jpg)");
                 }
 
-                if (today.getHours() >= 19 || today.getHours() < 6) {
+                if (today.getSeconds() >= 40) {
                     $(".time").css("color", "white");
                     $(".date").css("color", "white");
                     $(".date").css("border-color", "white");
@@ -137,6 +150,30 @@ $(function () {
                     $(".date").css("color", "black");
                     $(".date").css("border-color", "black");
                 }
+
+
+
+                // var today = new Date();
+                // if (today.getHours() >= 6 && today.getHours() < 17) {
+                //     $("#chat").css("background-image", "url(img/sora.png)");
+                // }
+                // else if (today.getHours() >= 17 && today.getHours() < 19) {
+                //     $("#chat").css("background-image", "url(img/yusora.jpg)"
+                //     );
+                // }
+                // else {
+                //     $("#chat").css("background-image", "url(img/star.jpg)");
+                // }
+
+                // if (today.getHours() >= 19 && today.getHours() < 6) {
+                //     $(".time").css("color", "white");
+                //     $(".date").css("color", "white");
+                //     $(".date").css("border-color", "white");
+                // } else {
+                //     $(".time").css("color", "black");
+                //     $(".date").css("color", "black");
+                //     $(".date").css("border-color", "black");
+                // }
 
 
 
@@ -162,11 +199,12 @@ $(function () {
                 $(".aite-topuga").css("background-image", "url(upload/" + talk[3] + ")");
 
 
+
                 var today = new Date();
-                if (today.getHours() >= 6 || today.getHours() < 17) {
+                if (today.getSeconds() >= 0 && today.getSeconds() < 20) {
                     $("#chat").css("background-image", "url(img/sora.png)");
                 }
-                else if (today.getHours() >= 17 || today.getHours < 19) {
+                else if (today.getSeconds() >= 20 && today.getSeconds() < 40) {
                     $("#chat").css("background-image", "url(img/yusora.jpg)"
                     );
                 }
@@ -174,7 +212,7 @@ $(function () {
                     $("#chat").css("background-image", "url(img/star.jpg)");
                 }
 
-                if (today.getHours() >= 19 || today.getHours() < 6) {
+                if (today.getSeconds() >= 40) {
                     $(".time").css("color", "white");
                     $(".date").css("color", "white");
                     $(".date").css("border-color", "white");
@@ -184,6 +222,31 @@ $(function () {
                     $(".date").css("color", "black");
                     $(".date").css("border-color", "black");
                 }
+
+
+
+                // var today = new Date();
+                // if (today.getHours() >= 6 && today.getHours() < 17) {
+                //     $("#chat").css("background-image", "url(img/sora.png)");
+                // }
+                // else if (today.getHours() >= 17 && today.getHours < 19) {
+                //     $("#chat").css("background-image", "url(img/yusora.jpg)"
+                //     );
+
+                // } else {
+                //     $("#chat").css("background-image", "url(img/star.jpg)");
+                // }
+
+                // if (today.getHours() >= 19 && today.getHours() < 6) {
+                //     $(".time").css("color", "white");
+                //     $(".date").css("color", "white");
+                //     $(".date").css("border-color", "white");
+
+                // }else {
+                //     $(".time").css("color", "black");
+                //     $(".date").css("color", "black");
+                //     $(".date").css("border-color", "black");
+                // }
 
                 
             }).fail(function (xhr, textStatus, errorThrown) {
