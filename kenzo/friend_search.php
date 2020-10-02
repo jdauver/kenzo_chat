@@ -74,9 +74,9 @@ kireta;
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-
                 if ($_POST["id"] != "") { //入力有無を確認
 
+                    // 自分は友達にできない
                     if ($_POST["id"] == $_SESSION['id']) {
                         echo "<p class='messege'>自分は友達にできません</p>";
                     } else {
@@ -118,10 +118,6 @@ FTOUROKU;
                             echo "<p class='messege'>該当なし</p>";
                         }
                     }
-                    // 自分は友達にできない
-
-
-
                 }
             } catch (PDOException $e) {
                 die("PDO Error:" . $e->getMessage());
@@ -154,7 +150,7 @@ kesu;
                 $kensyo = $q->fetchColumn();
                 // 以下は本番でkensho==0に変える
 
-                if ($kensyo ==0) {
+                if ($kensyo == 0) {
                     $stmt = $db->prepare(
                         "INSERT INTO tomo_$_SESSION[id] (id)" . 'VALUES(:id)'
                     );

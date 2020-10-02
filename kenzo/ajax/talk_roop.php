@@ -9,12 +9,6 @@ try {
     $db = new PDO('mysql:host=mysql1.php.xdomain.ne.jp; dbname=jdauver_kenzo', 'jdauver_kawa', 'jannedolls1227');
 
 
-
-    // $d_spl = "SELECT * FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]') OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]') ORDER BY num desc";
-
-
-
-
     $sql = "SELECT * FROM kenzo_talk WHERE (id='$_SESSION[id]' AND id2='$_SESSION[id2]' AND num>$_POST[id]) OR (id='$_SESSION[id2]' AND id2='$_SESSION[id]' AND num>$_POST[id]) ORDER BY date,time";
     $stmt = $db->prepare($sql);
     $stmt->execute();

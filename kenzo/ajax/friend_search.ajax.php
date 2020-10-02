@@ -13,14 +13,6 @@ try {
     $_SESSION["id2"] = $_POST["id"];
     $_SESSION["img2"] = $_POST["img"];
     $_SESSION["name2"] = $_POST["name"];
-
-
-    // $a = $_POST["id"];
-    // ----------------------------------------------
-    // echo json_encode($a);
-
-    // ----------------------------------------------
-
 } catch (PDOException $e) {
     die("PDO Error:" . $e->getMessage());
 }

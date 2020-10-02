@@ -2,19 +2,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    /* background: rgb(240,210,176); */
-    /* background-size: cover; */
     background-repeat: repeat;
-    /* background-position: center; */
-    /* background-attachment: fixed; */
-    /* background:url(../img/sora.png); */
-
-
 }
 
 .chat_head{
     background: rgb(104, 83, 73);
-    
     position: relative;
     top:0;
     position: fixed;
@@ -50,9 +42,7 @@ body{
     height: 50px;
     position: fixed;
     right: 15px;
-    /* top: 10px; */
     cursor: pointer;
-    /* opacity: 0.5; */
     z-index: 1;
 }
 
@@ -69,7 +59,6 @@ body{
 .message{
     width: 95vw;
     margin: 100px auto;
-    /* padding-bottom: 50px; */
 }
 .zibun{
     display: flex;
@@ -118,11 +107,9 @@ body{
 }
 .zibun-img:hover{
     opacity: 0.8;
-    /* transition: all 1s; */
 }
 .aite-img:hover{
     opacity: 0.8;
-    /* transition: all 1s; */
 }
 
 .zibun-topuga{
@@ -229,8 +216,6 @@ body{
 
 /* ipad以上--------------------------- */
 @media screen and (min-width:768px){
-
-    /* チャットページ */
 
     body{
         background-attachment: fixed;

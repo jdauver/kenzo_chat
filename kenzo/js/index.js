@@ -107,16 +107,6 @@ $(function () {
     });
 
 
-    // 送信押したとき一番下へーーーーーー
-    // $("#send").on("click", function () {
-    //     if ($('.message .talk:last-of-type').offset().top > $('.message_box').offset().top - 150) {
-    //         $('html, body').animate({
-    //             scrollTop: $(document).height()
-    //         }, 700);
-    //     }
-    // });
-
-
 
     // 画像選択時に正規表現　　データベースに入れるーーーーーーーーーーーーーーー
     $('#img').on('change', function () {
@@ -291,9 +281,6 @@ $(document).ready(function () {
         $('#form_style').submit();
     });
 
-    // $('#touroku').click(function () {
-    //     $('#touroku_form').submit();
-    // });
 
     //ログアウトの設定
     // $(function () {
@@ -322,10 +309,6 @@ $(document).ready(function () {
 
         }
     });
-    // });
-
-
-
 });
 
 $(function () {
@@ -344,7 +327,6 @@ $(function () {
 // 20秒ごと
 $(function () {
     var today = new Date();
-    // console.log(today.getSeconds());
 
     if (today.getSeconds() >= 0 && today.getSeconds() < 20) {
         $("#chat").css("background-image", "url(img/sora.png)");

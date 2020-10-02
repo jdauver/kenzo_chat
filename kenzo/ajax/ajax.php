@@ -16,11 +16,8 @@ try {
 
 
     $a = $_POST["id"];
-    // ----------------------------------------------
+
     echo json_encode($a);
-
-    // ----------------------------------------------
-
 } catch (PDOException $e) {
     die("PDO Error:" . $e->getMessage());
 }
