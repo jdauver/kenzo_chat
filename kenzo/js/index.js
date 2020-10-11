@@ -266,11 +266,12 @@ $(function () {
         }
     }
 
-
 });
 
+
+
 // friend-searchページ
-// 虫眼鏡で検索
+// 虫眼鏡で検索する
 $(document).ready(function () {
     $('#fri-search').click(function () {
         $('#form_style').submit();
@@ -282,6 +283,8 @@ $(document).ready(function () {
     });
 
 
+
+    
     //ログアウトの設定
     // $(function () {
     $('#id_li_style').on("click", function () {
@@ -325,48 +328,20 @@ $(function () {
 
 // chat画面　時間により背景画像変える
 // 20秒ごと
-$(function () {
-    var today = new Date();
-
-    if (today.getSeconds() >= 0 && today.getSeconds() < 20) {
-        $("#chat").css("background-image", "url(img/sora.png)");
-    }
-    else if (today.getSeconds() >= 20 && today.getSeconds() < 40) {
-        $("#chat").css("background-image", "url(img/yusora.jpg)"
-        );
-    }
-    else {
-        $("#chat").css("background-image", "url(img/star.jpg)");
-    }
-    if (today.getSeconds() >= 40) {
-        $(".time").css("color", "white");
-        $(".date").css("color", "white");
-        $(".date").css("border-color", "white");
-    }
-    else {
-        $(".time").css("color", "black");
-        $(".date").css("color", "black");
-        $(".date").css("border-color", "black");
-    }
-});
-
-
-
-// 本番用　昼・夕・晩
 // $(function () {
 //     var today = new Date();
 
-//     if (today.getHours() >= 6 && today.getHours() < 17) {
+//     if (today.getSeconds() >= 0 && today.getSeconds() < 20) {
 //         $("#chat").css("background-image", "url(img/sora.png)");
 //     }
-//     else if (today.getHours() >= 17 || today.getHours() < 19) {
+//     else if (today.getSeconds() >= 20 && today.getSeconds() < 40) {
 //         $("#chat").css("background-image", "url(img/yusora.jpg)"
 //         );
 //     }
 //     else {
 //         $("#chat").css("background-image", "url(img/star.jpg)");
 //     }
-//     if (today.getHours() >= 19) {
+//     if (today.getSeconds() >= 40) {
 //         $(".time").css("color", "white");
 //         $(".date").css("color", "white");
 //         $(".date").css("border-color", "white");
@@ -377,4 +352,31 @@ $(function () {
 //         $(".date").css("border-color", "black");
 //     }
 // });
+
+
+// 本番用　昼・夕・晩
+$(function () {
+    var today = new Date();
+
+    if (today.getHours() >= 6 && today.getHours() < 17) {
+        $("#chat").css("background-image", "url(img/sora.png)");
+    }
+    else if (today.getHours() >= 17 || today.getHours() < 19) {
+        $("#chat").css("background-image", "url(img/yusora.jpg)");
+    }
+    else {
+        $("#chat").css("background-image", "url(img/star.jpg)");
+    }
+
+    if (today.getHours() >= 19 || today.getHours() < 6) {
+        $(".time").css("color", "white");
+        $(".date").css("color", "white");
+        $(".date").css("border-color", "white");
+    } else {
+        $(".time").css("color", "black");
+        $(".date").css("color", "black");
+        $(".date").css("border-color", "black");
+    }
+});
+
 
